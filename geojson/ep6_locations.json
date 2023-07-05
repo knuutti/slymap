@@ -1,0 +1,176 @@
+{
+    "type": "FeatureCollection",
+    "features": [{
+        "type": "Feature",
+        "properties": {
+            "type": "job",
+            "character": "sly",
+            "name": "Cabin Crimes",
+            "location": {
+                "x": 5450,
+                "y": -6380,
+                "z": 1062
+            }
+        },
+        "geometry": {
+          "coordinates": [
+            -0.638,
+            0.545
+          ],
+          "type": "Point"
+        }
+      },{
+        "type": "Feature",
+        "properties": {
+            "type": "job",
+            "character": "sly",
+            "name": "Spice in the Sky",
+            "location": {
+                "x": 9781,
+                "y": -3711,
+                "z": 1008
+            }
+        },
+        "geometry": {
+          "coordinates": [
+            -0.3711,
+            0.9781
+          ],
+          "type": "Point"
+        }
+      },{
+        "type": "Feature",
+        "properties": {
+            "type": "job",
+            "character": "sly",
+            "name": "A Friend in Need",
+            "location": {
+                "x": -1548,
+                "y": -11053,
+                "z": 2037
+            }
+        },
+        "geometry": {
+          "coordinates": [
+            -1.1053,
+            -0.1548
+          ],
+          "type": "Point"
+        }
+      },{
+        "type": "Feature",
+        "properties": {
+            "type": "job",
+            "character": "bentley",
+            "name": "Ride the Iron Horse",
+            "location": {
+                "x": -515,
+                "y": -3276,
+                "z": 2150
+            }
+        },
+        "geometry": {
+          "coordinates": [
+            -0.3276,
+            -0.0515
+          ],
+          "type": "Point"
+        }
+      },{
+        "type": "Feature",
+        "properties": {
+            "type": "job",
+            "character": "murray",
+            "name": "Bear Cub Kidnapping",
+            "location": {
+                "x": 3449,
+                "y": 4991,
+                "z": 2205
+            }
+        },
+        "geometry": {
+          "coordinates": [
+            0.4991,
+            0.3449
+          ],
+          "type": "Point"
+        }
+      },{
+        "type": "Feature",
+        "properties": {
+            "type": "job",
+            "character": "bentley",
+            "name": "Aerial Assault",
+            "location": {
+                "x": 3556,
+                "y": -2365,
+                "z": 2533
+            }
+        },
+        "geometry": {
+          "coordinates": [
+            -0.2365,
+            0.3556
+          ],
+          "type": "Point"
+        }
+      },{
+        "type": "Feature",
+        "properties": {
+            "type": "job",
+            "character": "sly",
+            "name": "Theft on the Rails",
+            "location": {
+                "x": -4134,
+                "y": -12514,
+                "z": 2498
+            }
+        },
+        "geometry": {
+          "coordinates": [
+            -1.2514,
+            -0.4134
+          ],
+          "type": "Point"
+        }
+      },{
+        "type": "Feature",
+        "properties": {
+            "type": "job",
+            "character": "murray",
+            "name": "Operation: Choo-Choo",
+            "location": {
+                "x": -5903,
+                "y": 599,
+                "z": 3
+            }
+        },
+        "geometry": {
+          "coordinates": [
+            0.0599,
+            -0.5903
+          ],
+          "type": "Point"
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+            "type": "safehouse",
+            "name": "Safe House",
+            "location": {
+                "x": -11006,
+                "y": -958,
+                "z": 21
+            }
+        },
+        "geometry": {
+          "coordinates": [
+            -0.0958,
+            -1.1006
+          ],
+          "type": "Point"
+        }
+      }
+    ]
+  }

@@ -52,9 +52,9 @@ const fetchData = async () => {
     let res2 = await fetch(url2)
     data["treasures"] = await res2.json();
 
-    let url3 = "./geojson/locations.json";
+    let url3 = "./geojson/jobs.json";
     let res3 = await fetch(url3)
-    data["locations"] = await res3.json();
+    data["jobs"] = await res3.json();
 
     initMap(data)
 }
@@ -101,23 +101,16 @@ const initMap = (data) => {
         weight: 2
     }).addTo(map)
 
-    let locations = L.geoJSON(data["locations"], {
+    let jobs = L.geoJSON(data["jobs"], {
         pointToLayer: function(feature,latlng) {
-            if (feature.properties.type == "job") {
-                const character = feature.properties.character;
-                if (character == "sly") {
-                    return L.marker(latlng,{icon: sly_icon})
-                } else if (character == "bentley") {
-                    return L.marker(latlng,{icon: bentley_icon})
-                } else {
-                    return L.marker(latlng,{icon: murray_icon})
-                }
-            } else if (feature.properties.type == "safehouse") {
-                return L.marker(latlng,{icon: safehouse_icon})
+            const character = feature.properties.character;
+            if (character == "sly") {
+                return L.marker(latlng,{icon: sly_icon})
+            } else if (character == "bentley") {
+                return L.marker(latlng,{icon: bentley_icon})
+            } else {
+                return L.marker(latlng,{icon: murray_icon})
             }
-            
-            
-            
         },
         onEachFeature: getFeature,
         weight: 2
@@ -127,7 +120,7 @@ const initMap = (data) => {
 
     layerControl.addOverlay(bottles, "Bottles");
     layerControl.addOverlay(treasures, "Treasures");
-    layerControl.addOverlay(locations, "Locations");
+    layerControl.addOverlay(jobs, "Jobs");
     
     // Map on screen
     map.fitBounds(ep6.getBounds())

@@ -1,176 +1,196 @@
 {
-    "type": "FeatureCollection",
-    "features": [{
-        "type": "Feature",
-        "properties": {
-            "type": "job",
-            "character": "sly",
-            "name": "Cabin Crimes",
-            "location": {
-                "x": 5450,
-                "y": -6380,
-                "z": 1062
-            }
-        },
-        "geometry": {
-          "coordinates": [
-            -0.638,
-            0.545
-          ],
-          "type": "Point"
-        }
-      },{
-        "type": "Feature",
-        "properties": {
-            "type": "job",
-            "character": "sly",
-            "name": "Spice in the Sky",
-            "location": {
-                "x": 9781,
-                "y": -3711,
-                "z": 1008
-            }
-        },
-        "geometry": {
-          "coordinates": [
-            -0.3711,
-            0.9781
-          ],
-          "type": "Point"
-        }
-      },{
-        "type": "Feature",
-        "properties": {
-            "type": "job",
-            "character": "sly",
-            "name": "A Friend in Need",
-            "location": {
-                "x": -1548,
-                "y": -11053,
-                "z": 2037
-            }
-        },
-        "geometry": {
-          "coordinates": [
-            -1.1053,
-            -0.1548
-          ],
-          "type": "Point"
-        }
-      },{
-        "type": "Feature",
-        "properties": {
-            "type": "job",
-            "character": "bentley",
-            "name": "Ride the Iron Horse",
-            "location": {
-                "x": -515,
-                "y": -3276,
-                "z": 2150
-            }
-        },
-        "geometry": {
-          "coordinates": [
-            -0.3276,
-            -0.0515
-          ],
-          "type": "Point"
-        }
-      },{
-        "type": "Feature",
-        "properties": {
-            "type": "job",
-            "character": "murray",
-            "name": "Bear Cub Kidnapping",
-            "location": {
-                "x": 3449,
-                "y": 4991,
-                "z": 2205
-            }
-        },
-        "geometry": {
-          "coordinates": [
-            0.4991,
-            0.3449
-          ],
-          "type": "Point"
-        }
-      },{
-        "type": "Feature",
-        "properties": {
-            "type": "job",
-            "character": "bentley",
-            "name": "Aerial Assault",
-            "location": {
-                "x": 3556,
-                "y": -2365,
-                "z": 2533
-            }
-        },
-        "geometry": {
-          "coordinates": [
-            -0.2365,
-            0.3556
-          ],
-          "type": "Point"
-        }
-      },{
-        "type": "Feature",
-        "properties": {
-            "type": "job",
-            "character": "sly",
-            "name": "Theft on the Rails",
-            "location": {
-                "x": -4134,
-                "y": -12514,
-                "z": 2498
-            }
-        },
-        "geometry": {
-          "coordinates": [
-            -1.2514,
-            -0.4134
-          ],
-          "type": "Point"
-        }
-      },{
-        "type": "Feature",
-        "properties": {
-            "type": "job",
-            "character": "murray",
-            "name": "Operation: Choo-Choo",
-            "location": {
-                "x": -5903,
-                "y": 599,
-                "z": 3
-            }
-        },
-        "geometry": {
-          "coordinates": [
-            0.0599,
-            -0.5903
-          ],
-          "type": "Point"
-        }
+  "type": "FeatureCollection",
+  "features": [{
+      "type": "Feature",
+      "properties": {
+          "type": "job",
+          "character": "sly",
+          "name": "Satellite Sabotage",
+          "location": {
+              "x": 2602,
+              "y": -8141,
+              "z": 72
+          }
       },
-      {
-        "type": "Feature",
-        "properties": {
-            "type": "safehouse",
-            "name": "Safe House",
-            "location": {
-                "x": -11006,
-                "y": -958,
-                "z": 21
-            }
-        },
-        "geometry": {
-          "coordinates": [
-            -0.0958,
-            -1.1006
-          ],
-          "type": "Point"
-        }
+      "geometry": {
+        "coordinates": [
+          -0.8141,
+          0.2602
+        ],
+        "type": "Point"
       }
-    ]
-  }
+    },{
+      "type": "Feature",
+      "properties": {
+          "type": "job",
+          "character": "sly",
+          "name": "Breaking and Entering",
+          "location": {
+              "x": -3554,
+              "y": 8917,
+              "z": -268
+          }
+      },
+      "geometry": {
+        "coordinates": [
+          0.8917,
+          -0.3554
+        ],
+        "type": "Point"
+      }
+    },{
+      "type": "Feature",
+      "properties": {
+          "type": "job",
+          "character": "sly",
+          "name": "Follow Dimitri",
+          "location": {
+              "x": -5508,
+              "y": -6477,
+              "z": -172
+          }
+      },
+      "geometry": {
+        "coordinates": [
+          -0.6477,
+          -0.5508
+        ],
+        "type": "Point"
+      }
+    },{
+      "type": "Feature",
+      "properties": {
+          "type": "job",
+          "character": "sly",
+          "name": "Bug Dimitri's Office",
+          "location": {
+              "x": -5934,
+              "y": 1988,
+              "z": 364
+          }
+      },
+      "geometry": {
+        "coordinates": [
+          0.1988,
+          -0.5934
+        ],
+        "type": "Point"
+      }
+    },{
+      "type": "Feature",
+      "properties": {
+          "type": "job",
+          "character": "murray",
+          "name": "Waterpump Destruction",
+          "location": {
+              "x": 4823,
+              "y": -7499,
+              "z": -390
+          }
+      },
+      "geometry": {
+        "coordinates": [
+          -0.7499,
+          0.4823
+        ],
+        "type": "Point"
+      }
+    },{
+      "type": "Feature",
+      "properties": {
+          "type": "job",
+          "character": "murray",
+          "name": "Silence the Alarms",
+          "location": {
+              "x": 6607,
+              "y": -4334,
+              "z": 328
+          }
+      },
+      "geometry": {
+        "coordinates": [
+          -0.4334,
+          0.6607
+        ],
+        "type": "Point"
+      }
+    },{
+      "type": "Feature",
+      "properties": {
+          "type": "job",
+          "character": "sly",
+          "name": "Theatre Pickpocketing",
+          "location": {
+              "x": 2256,
+              "y": 3902,
+              "z": 1007
+          }
+      },
+      "geometry": {
+        "coordinates": [
+          0.3902,
+          0.2256
+        ],
+        "type": "Point"
+      }
+    },{
+      "type": "Feature",
+      "properties": {
+          "type": "job",
+          "character": "sly",
+          "name": "Moonligh Rendezvous",
+          "location": {
+              "x": -7107,
+              "y": 5056,
+              "z": 1272
+          }
+      },
+      "geometry": {
+        "coordinates": [
+          0.5056,
+          -0.7107
+        ],
+        "type": "Point"
+      }
+    },{
+      "type": "Feature",
+      "properties": {
+          "type": "job",
+          "character": "bentley",
+          "name": "Disco Demolitions",
+          "location": {
+              "x": 5659,
+              "y": -1608,
+              "z": -17
+          }
+      },
+      "geometry": {
+        "coordinates": [
+          -0.1608,
+          0.5659
+        ],
+        "type": "Point"
+      }
+    },{
+      "type": "Feature",
+      "properties": {
+          "type": "job",
+          "character": "bentley",
+          "name": "Operation: Thunder Beak",
+          "location": {
+              "x": -4010,
+              "y": -4271,
+              "z": 0
+          }
+      },
+      "geometry": {
+        "coordinates": [
+          -0.4271,
+          -0.401
+        ],
+        "type": "Point"
+      }
+    }
+
+  ]
+}

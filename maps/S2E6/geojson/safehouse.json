@@ -1,0 +1,23 @@
+{
+    "type": "FeatureCollection",
+    "features": [{
+        "type": "Feature",
+        "properties": {
+            "type": "safehouse",
+            "name": "Safe House",
+            "location": {
+                "x": -11006,
+                "y": -958,
+                "z": 21
+            }
+        },
+        "geometry": {
+          "coordinates": [
+            -0.0958,
+            -1.1006
+          ],
+          "type": "Point"
+        }
+      }
+    ]
+  }

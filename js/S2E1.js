@@ -65,8 +65,9 @@ const fetchData = async () => {
 
 const initMap = (data) => {
     let map = L.map('map', {
-        minZoom: 8,
+        minZoom: 8.5,
         maxZoom: 11,
+        zoomSnap: 0.25,
         crs: L.CRS.Simple
     })
 
@@ -76,7 +77,9 @@ const initMap = (data) => {
     let ne = map.unproject(L.point(1.33480608738,1.178694158075601+xOffset));
 
     // Base map
-    let ep6 = L.imageOverlay("./maps/map.png", [[sw.lat,sw.lng], [ne.lat,ne.lng]]).addTo(map)
+    
+    let paris_hub = L.imageOverlay("./maps/map.png", [[sw.lat,sw.lng], [ne.lat,ne.lng]]).addTo(map)
+    let paris_hub_bw = L.imageOverlay("./maps/map_bw.png", [[sw.lat,sw.lng], [ne.lat,ne.lng]])
 
     // Bottle icons
     let bottle_icon = getIcon("../../assets/bottle.png", [20, 32], [7, 28], [0, -28])
@@ -94,7 +97,7 @@ const initMap = (data) => {
         },
         onEachFeature: getFeature,
         weight: 2
-    }).addTo(map)
+    })
 
     let treasures = L.geoJSON(data["treasures"], {
         pointToLayer: function(feature,latlng) {
@@ -103,7 +106,7 @@ const initMap = (data) => {
         },
         onEachFeature: getFeature,
         weight: 2
-    }).addTo(map)
+    })
 
     let safehouse = L.geoJSON(data["safehouse"], {
         pointToLayer: function(feature,latlng) {
@@ -112,7 +115,7 @@ const initMap = (data) => {
         },
         onEachFeature: getFeature,
         weight: 2
-    }).addTo(map)
+    })
 
     let jobs = L.geoJSON(data["jobs"], {
         pointToLayer: function(feature,latlng) {
@@ -134,9 +137,12 @@ const initMap = (data) => {
         },
         onEachFeature: getFeature,
         weight: 2
-    }).addTo(map)
+    })
 
     let layerControl = L.control.layers().addTo(map);
+
+    layerControl.addBaseLayer(paris_hub, "Paris Hub")
+    layerControl.addBaseLayer(paris_hub_bw, "Paris Hub (Gray)")
 
     layerControl.addOverlay(bottles, "Bottles");
     layerControl.addOverlay(treasures, "Treasures");
@@ -144,7 +150,7 @@ const initMap = (data) => {
     layerControl.addOverlay(safehouse, "Safe House");
     
     // Map on screen
-    map.fitBounds(ep6.getBounds())
+    map.fitBounds(paris_hub.getBounds())
 
 }
 

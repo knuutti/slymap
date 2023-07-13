@@ -56,13 +56,18 @@ const fetchData = async () => {
     let res3 = await fetch(url3)
     data["jobs"] = await res3.json();
 
+    let url4 = "./geojson/safehouse.json";
+    let res4 = await fetch(url4)
+    data["safehouse"] = await res4.json();
+
     initMap(data)
 }
 
 const initMap = (data) => {
     let map = L.map('map', {
-        minZoom: 8,
+        minZoom: 8.5,
         maxZoom: 11,
+        zoomSnap: 0.25,
         crs: L.CRS.Simple
     })
 
@@ -72,7 +77,10 @@ const initMap = (data) => {
     let ne = map.unproject(L.point(1.3288069835111542192046556741028,1.418040737148399612027158098933+xOffset));
 
     // Base map
-    let ep6 = L.imageOverlay("./maps/map.png", [[sw.lat,sw.lng], [ne.lat,ne.lng]]).addTo(map)
+    let canada_hub = L.imageOverlay("./maps/map.png", [[sw.lat,sw.lng], [ne.lat,ne.lng]]).addTo(map)
+    let canada_hub_bw = L.imageOverlay("./maps/map_bw.png", [[sw.lat,sw.lng], [ne.lat,ne.lng]])
+
+    let cave = L.imageOverlay("./maps/cave.png", [[sw.lat,sw.lng], [ne.lat,ne.lng]])
 
     // Bottle icons
     let bottle_icon = getIcon("../../assets/bottle.png", [20, 32], [7, 28], [0, -28])
@@ -90,7 +98,7 @@ const initMap = (data) => {
         },
         onEachFeature: getFeature,
         weight: 2
-    }).addTo(map)
+    })
 
     let treasures = L.geoJSON(data["treasures"], {
         pointToLayer: function(feature,latlng) {
@@ -99,7 +107,16 @@ const initMap = (data) => {
         },
         onEachFeature: getFeature,
         weight: 2
-    }).addTo(map)
+    })
+
+    let safehouse = L.geoJSON(data["safehouse"], {
+        pointToLayer: function(feature,latlng) {
+            return L.marker(latlng,{icon: safehouse_icon})
+            
+        },
+        onEachFeature: getFeature,
+        weight: 2
+    })
 
     let jobs = L.geoJSON(data["jobs"], {
         pointToLayer: function(feature,latlng) {
@@ -114,16 +131,22 @@ const initMap = (data) => {
         },
         onEachFeature: getFeature,
         weight: 2
-    }).addTo(map)
+    })
 
     let layerControl = L.control.layers().addTo(map);
 
+    layerControl.addBaseLayer(canada_hub, "Canada Hub")
+    layerControl.addBaseLayer(canada_hub_bw, "Canada Hub (Gray)")
+
+    layerControl.addOverlay(cave, "Cave");
     layerControl.addOverlay(bottles, "Bottles");
     layerControl.addOverlay(treasures, "Treasures");
     layerControl.addOverlay(jobs, "Jobs");
+    layerControl.addOverlay(safehouse, "Safe House");
+
     
     // Map on screen
-    map.fitBounds(ep6.getBounds())
+    map.fitBounds(canada_hub.getBounds())
 
 }
 

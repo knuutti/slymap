@@ -1,0 +1,516 @@
+{
+  "type": "FeatureCollection",
+  "features": [{
+      "type": "Feature",
+      "properties": {
+          "type": "bottle",
+          "location": {
+              "x": 2717,
+              "y": -3297,
+              "z": -104
+          }
+      },
+      "geometry": {
+        "coordinates": [
+          -0.3297,
+          0.2717
+        ],
+        "type": "Point"
+      }
+    },{
+      "type": "Feature",
+      "properties": {
+          "type": "bottle",
+          "location": {
+              "x": 1811,
+              "y": -3880,
+              "z": 1037
+          }
+      },
+      "geometry": {
+        "coordinates": [
+          -0.388,
+          0.1811
+        ],
+        "type": "Point"
+      }
+    },{
+      "type": "Feature",
+      "properties": {
+          "type": "bottle",
+          "location": {
+              "x": 3963,
+              "y": -3568,
+              "z": 952
+          }
+      },
+      "geometry": {
+        "coordinates": [
+          -0.3568,
+          0.3963
+        ],
+        "type": "Point"
+      }
+    },{
+      "type": "Feature",
+      "properties": {
+          "type": "bottle",
+          "location": {
+              "x": 7594,
+              "y": -3686,
+              "z": 1056
+          }
+      },
+      "geometry": {
+        "coordinates": [
+          -0.3686,
+          0.7594
+        ],
+        "type": "Point"
+      }
+    },{
+      "type": "Feature",
+      "properties": {
+          "type": "bottle",
+          "location": {
+              "x": 8625,
+              "y": -1748,
+              "z": -334
+          }
+      },
+      "geometry": {
+        "coordinates": [
+          -0.1748,
+          0.8625
+        ],
+        "type": "Point"
+      }
+    },{
+      "type": "Feature",
+      "properties": {
+          "type": "bottle",
+          "location": {
+              "x": 6988,
+              "y": 2617,
+              "z": 431
+          }
+      },
+      "geometry": {
+        "coordinates": [
+          0.2617,
+          0.6988
+        ],
+        "type": "Point"
+      }
+    },{
+      "type": "Feature",
+      "properties": {
+          "type": "bottle",
+          "location": {
+              "x": 6009,
+              "y": 1391,
+              "z": 350
+          }
+      },
+      "geometry": {
+        "coordinates": [
+          0.1391,
+          0.6009
+        ],
+        "type": "Point"
+      }
+    },{
+      "type": "Feature",
+      "properties": {
+          "type": "bottle",
+          "location": {
+              "x": 3938,
+              "y": 610,
+              "z": 569
+          }
+      },
+      "geometry": {
+        "coordinates": [
+          0.061,
+          0.3938
+        ],
+        "type": "Point"
+      }
+    },{
+      "type": "Feature",
+      "properties": {
+          "type": "bottle",
+          "location": {
+              "x": 4385,
+              "y": 3494,
+              "z": 569
+          }
+      },
+      "geometry": {
+        "coordinates": [
+          0.3494,
+          0.4385
+        ],
+        "type": "Point"
+      }
+    },{
+      "type": "Feature",
+      "properties": {
+          "type": "bottle",
+          "location": {
+              "x": 4868,
+              "y": 6395,
+              "z": 769
+          }
+      },
+      "geometry": {
+        "coordinates": [
+          0.6395,
+          0.4868
+        ],
+        "type": "Point"
+      }
+    },{
+      "type": "Feature",
+      "properties": {
+          "type": "bottle",
+          "location": {
+              "x": 2903,
+              "y": 7063,
+              "z": 1629
+          }
+      },
+      "geometry": {
+        "coordinates": [
+          0.7063,
+          0.2903
+        ],
+        "type": "Point"
+      }
+    },{
+      "type": "Feature",
+      "properties": {
+          "type": "bottle",
+          "location": {
+              "x": 2495,
+              "y": 9073,
+              "z": 855
+          }
+      },
+      "geometry": {
+        "coordinates": [
+          0.9073,
+          0.2495
+        ],
+        "type": "Point"
+      }
+    },{
+      "type": "Feature",
+      "properties": {
+          "type": "bottle",
+          "location": {
+              "x": -301,
+              "y": 7917,
+              "z": 836
+          }
+      },
+      "geometry": {
+        "coordinates": [
+          0.7917,
+          -0.0301
+        ],
+        "type": "Point"
+      }
+    },{
+      "type": "Feature",
+      "properties": {
+          "type": "bottle",
+          "location": {
+              "x": -3531,
+              "y": 7303,
+              "z": 2000
+          }
+      },
+      "geometry": {
+        "coordinates": [
+          0.7303,
+          -0.3531
+        ],
+        "type": "Point"
+      }
+    },{
+      "type": "Feature",
+      "properties": {
+          "type": "bottle",
+          "location": {
+              "x": -6356,
+              "y": 6614,
+              "z": 702
+          }
+      },
+      "geometry": {
+        "coordinates": [
+          0.6614,
+          -0.6356
+        ],
+        "type": "Point"
+      }
+    },{
+      "type": "Feature",
+      "properties": {
+          "type": "bottle",
+          "location": {
+              "x": -3664,
+              "y": 10269,
+              "z": -328
+          }
+      },
+      "geometry": {
+        "coordinates": [
+          1.0269,
+          -0.3664
+        ],
+        "type": "Point"
+      }
+    },{
+      "type": "Feature",
+      "properties": {
+          "type": "bottle",
+          "location": {
+              "x": -2407,
+              "y": 4621,
+              "z": 753
+          }
+      },
+      "geometry": {
+        "coordinates": [
+          0.4621,
+          -0.2407
+        ],
+        "type": "Point"
+      }
+    },{
+      "type": "Feature",
+      "properties": {
+          "type": "bottle",
+          "location": {
+              "x": -873,
+              "y": 2299,
+              "z": 1209
+          }
+      },
+      "geometry": {
+        "coordinates": [
+          0.2299,
+          -0.0873
+        ],
+        "type": "Point"
+      }
+    },{
+      "type": "Feature",
+      "properties": {
+          "type": "bottle",
+          "location": {
+              "x": -594,
+              "y": 487,
+              "z": 637
+          }
+      },
+      "geometry": {
+        "coordinates": [
+          0.0487,
+          -0.0594
+        ],
+        "type": "Point"
+      }
+    },{
+      "type": "Feature",
+      "properties": {
+          "type": "bottle",
+          "location": {
+              "x": -4319,
+              "y": 184,
+              "z": 1334
+          }
+      },
+      "geometry": {
+        "coordinates": [
+          0.0184,
+          -0.4319
+        ],
+        "type": "Point"
+      }
+    },{
+      "type": "Feature",
+      "properties": {
+          "type": "bottle",
+          "location": {
+              "x": -5606,
+              "y": -4673,
+              "z": 956
+          }
+      },
+      "geometry": {
+        "coordinates": [
+          -0.4673,
+          -0.5606
+        ],
+        "type": "Point"
+      }
+    },{
+      "type": "Feature",
+      "properties": {
+          "type": "bottle",
+          "location": {
+              "x": -2390,
+              "y": -5734,
+              "z": 776
+          }
+      },
+      "geometry": {
+        "coordinates": [
+          -0.5734,
+          -0.239
+        ],
+        "type": "Point"
+      }
+    },{
+      "type": "Feature",
+      "properties": {
+          "type": "bottle",
+          "location": {
+              "x": -709,
+              "y": -2633,
+              "z": 1194
+          }
+      },
+      "geometry": {
+        "coordinates": [
+          -0.2633,
+          -0.0709
+        ],
+        "type": "Point"
+      }
+    },{
+      "type": "Feature",
+      "properties": {
+          "type": "bottle",
+          "location": {
+              "x": -126,
+              "y": -7547,
+              "z": 119
+          }
+      },
+      "geometry": {
+        "coordinates": [
+          -0.7547,
+          -0.0126
+        ],
+        "type": "Point"
+      }
+    },{
+      "type": "Feature",
+      "properties": {
+          "type": "bottle",
+          "location": {
+              "x": -5031,
+              "y": -8329,
+              "z": -330
+          }
+      },
+      "geometry": {
+        "coordinates": [
+          -0.8329,
+          -0.5031
+        ],
+        "type": "Point"
+      }
+    },{
+      "type": "Feature",
+      "properties": {
+          "type": "bottle",
+          "location": {
+              "x": -6937,
+              "y": -3420,
+              "z": -144
+          }
+      },
+      "geometry": {
+        "coordinates": [
+          -0.342,
+          -0.6937
+        ],
+        "type": "Point"
+      }
+    },{
+      "type": "Feature",
+      "properties": {
+          "type": "bottle",
+          "location": {
+              "x": -8459,
+              "y": 155,
+              "z": -328
+          }
+      },
+      "geometry": {
+        "coordinates": [
+          0.0155,
+          -0.8459
+        ],
+        "type": "Point"
+      }
+    },{
+      "type": "Feature",
+      "properties": {
+          "type": "bottle",
+          "location": {
+              "x": 3033,
+              "y": 4319,
+              "z": 454
+          }
+      },
+      "geometry": {
+        "coordinates": [
+          0.4319,
+          0.3033
+        ],
+        "type": "Point"
+      }
+    },{
+      "type": "Feature",
+      "properties": {
+          "type": "bottle",
+          "location": {
+              "x": 2070,
+              "y": 7216,
+              "z": 10
+          }
+      },
+      "geometry": {
+        "coordinates": [
+          0.7216,
+          0.207
+        ],
+        "type": "Point"
+      }
+    },{
+      "type": "Feature",
+      "properties": {
+          "type": "bottle",
+          "location": {
+              "x": 1520,
+              "y": 3585,
+              "z": 582
+          }
+      },
+      "geometry": {
+        "coordinates": [
+          0.3585,
+          0.152
+        ],
+        "type": "Point"
+      }
+    }
+
+  ]
+}

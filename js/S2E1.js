@@ -44,17 +44,21 @@ const getIcon = (url, size, anchor, popup) => {
 
 const fetchData = async () => {
     let data = {};
-    let url1 = "./geojson/ep6_bottles.json";
+    let url1 = "./geojson/bottles.json";
     let res1 = await fetch(url1)
     data["bottles"] = await res1.json();
 
-    let url2 = "./geojson/ep6_treasures.json";
+    let url2 = "./geojson/treasures.json";
     let res2 = await fetch(url2)
     data["treasures"] = await res2.json();
 
-    let url3 = "./geojson/ep6_locations.json";
+    let url3 = "./geojson/jobs.json";
     let res3 = await fetch(url3)
-    data["locations"] = await res3.json();
+    data["jobs"] = await res3.json();
+
+    let url4 = "./geojson/safehouse.json";
+    let res4 = await fetch(url4)
+    data["safehouse"] = await res4.json();
 
     initMap(data)
 }
@@ -67,20 +71,20 @@ const initMap = (data) => {
     })
 
     // Setting the bounds of the map (some arbitary x-offset is needed in this case)
-    const xOffset = .073865179437439379243452958292919
-    let sw = map.unproject(L.point(-1.5809893307468477206595538312318,-1.4917555771096023278370514064+xOffset));
-    let ne = map.unproject(L.point(1.3288069835111542192046556741028,1.418040737148399612027158098933+xOffset));
+    const xOffset = .093865179437439379243452958292919
+    let sw = map.unproject(L.point(-1.119783996,-1.27589592538+xOffset));
+    let ne = map.unproject(L.point(1.33480608738,1.178694158075601+xOffset));
 
     // Base map
-    let ep6 = L.imageOverlay("./assets/ep6.png", [[sw.lat,sw.lng], [ne.lat,ne.lng]]).addTo(map)
+    let ep6 = L.imageOverlay("./maps/map.png", [[sw.lat,sw.lng], [ne.lat,ne.lng]]).addTo(map)
 
     // Bottle icons
-    let bottle_icon = getIcon("./assets/bottle.png", [20, 32], [7, 28], [0, -28])
-    let treasure_icon = getIcon("./assets/treasure.png", [36, 30], [18, 15], [0, -28])
-    let sly_icon = getIcon("./assets/sly.png", [30, 30], [15, 15], [0, -28])
-    let bentley_icon = getIcon("./assets/bentley.png", [30, 30], [15, 15], [0, -28])
-    let murray_icon = getIcon("./assets/murray.png", [30, 30], [15, 15], [0, -28])
-    let safehouse_icon = getIcon("./assets/safehouse.png", [30, 30], [15, 15], [0, -28])
+    let bottle_icon = getIcon("../../assets/bottle.png", [20, 32], [7, 28], [0, -28])
+    let treasure_icon = getIcon("../../assets/treasure.png", [20, 32], [7, 28], [0, -28])
+    let sly_icon = getIcon("../../assets/sly.png", [30, 30], [15, 15], [0, -28])
+    let bentley_icon = getIcon("../../assets/bentley.png", [30, 30], [15, 15], [0, -28])
+    let murray_icon = getIcon("../../assets/murray.png", [30, 30], [15, 15], [0, -28])
+    let safehouse_icon = getIcon("../../assets/safehouse.png", [30, 30], [15, 15], [0, -28])
 
     // Bottles on the map from GeoJSON data
     let bottles = L.geoJSON(data["bottles"], {
@@ -101,7 +105,16 @@ const initMap = (data) => {
         weight: 2
     }).addTo(map)
 
-    let locations = L.geoJSON(data["locations"], {
+    let safehouse = L.geoJSON(data["safehouse"], {
+        pointToLayer: function(feature,latlng) {
+            return L.marker(latlng,{icon: safehouse_icon})
+            
+        },
+        onEachFeature: getFeature,
+        weight: 2
+    }).addTo(map)
+
+    let jobs = L.geoJSON(data["jobs"], {
         pointToLayer: function(feature,latlng) {
             if (feature.properties.type == "job") {
                 const character = feature.properties.character;
@@ -127,7 +140,8 @@ const initMap = (data) => {
 
     layerControl.addOverlay(bottles, "Bottles");
     layerControl.addOverlay(treasures, "Treasures");
-    layerControl.addOverlay(locations, "Locations");
+    layerControl.addOverlay(jobs, "Jobs");
+    layerControl.addOverlay(safehouse, "Safe House");
     
     // Map on screen
     map.fitBounds(ep6.getBounds())

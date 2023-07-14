@@ -1,0 +1,66 @@
+{
+    "type": "FeatureCollection",
+    "features": [{
+        "type": "Feature",
+        "properties": {
+            "type": "treasure",
+            "name": "Crystal Bell",
+            "value": "605",
+            "time": "", 
+            "location": {
+                "x": 5612,
+                "y": 1263,
+                "z": 4839
+            }
+        },
+        "geometry": {
+          "coordinates": [
+            0.1263,
+            0.5612
+          ],
+          "type": "Point"
+        }
+      },{
+        "type": "Feature",
+        "properties": {
+            "type": "treasure",
+            "name": "Alabaster Chalice",
+            "value": "654",
+            "time": "45", 
+            "location": {
+                "x": 6862,
+                "y": 5953,
+                "z": 938
+            }
+        },
+        "geometry": {
+          "coordinates": [
+            0.5953,
+            0.6862
+          ],
+          "type": "Point"
+        }
+      },{
+        "type": "Feature",
+        "properties": {
+            "type": "treasure",
+            "name": "Golden Plate",
+            "value": "704",
+            "time": "45", 
+            "location": {
+                "x": 4760,
+                "y": 967,
+                "z": 256
+            }
+        },
+        "geometry": {
+          "coordinates": [
+            0.0967,
+            0.476
+          ],
+          "type": "Point"
+        }
+      }
+
+    ]
+  }

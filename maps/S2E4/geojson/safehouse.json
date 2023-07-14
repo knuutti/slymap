@@ -1,23 +1,24 @@
 {
-    "type": "FeatureCollection",
-    "features": [{
-        "type": "Feature",
-        "properties": {
-            "type": "safehouse",
-            "name": "Safe House",
-            "location": {
-                "x": -11006,
-                "y": -958,
-                "z": 21
-            }
-        },
-        "geometry": {
-          "coordinates": [
-            -0.0958,
-            -1.1006
-          ],
-          "type": "Point"
-        }
+  "type": "FeatureCollection",
+  "features": [{
+      "type": "Feature",
+      "properties": {
+          "type": "safehouse",
+          "name": "Safe House",
+          "location": {
+              "x": -10567,
+              "y": -7428,
+              "z": 100
+          }
+      },
+      "geometry": {
+        "coordinates": [
+          -0.7428,
+          -1.0567
+        ],
+        "type": "Point"
       }
-    ]
-  }
+    }
+
+  ]
+}

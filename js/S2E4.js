@@ -72,18 +72,18 @@ const initMap = (data) => {
     })
 
     // Setting the bounds of the map (some arbitary x-offset is needed in this case)
-    const xOffset = .073865179437439379243452958292919
-    let sw = map.unproject(L.point(-1.5809893307468477206595538312318,-1.4917555771096023278370514064+xOffset));
-    let ne = map.unproject(L.point(1.3288069835111542192046556741028,1.418040737148399612027158098933+xOffset));
+    const xOffset = .89
+    let sw = map.unproject(L.point(-1.2749273959341,-1.65246853823814133+xOffset));
+    let ne = map.unproject(L.point(1.14520813165537,0.7676669893514036786+xOffset));
 
     // Base map
-    let canada_hub = L.imageOverlay("./maps/map.png", [[sw.lat,sw.lng], [ne.lat,ne.lng]]).addTo(map)
-    let canada_hub_bw = L.imageOverlay("./maps/map_bw.png", [[sw.lat,sw.lng], [ne.lat,ne.lng]])
+    let base_map = L.imageOverlay("./maps/map.png", [[sw.lat,sw.lng], [ne.lat,ne.lng]]).addTo(map)
+    let base_map_bw = L.imageOverlay("./maps/map_bw.png", [[sw.lat,sw.lng], [ne.lat,ne.lng]])
 
     let tunnel = L.imageOverlay("./maps/tunnel.png", [[sw.lat,sw.lng], [ne.lat,ne.lng]])
 
     // Bottle icons
-    let bottle_icon = getIcon("../../assets/bottle.png", [20, 32], [7, 28], [0, -28])
+    let bottle_icon = getIcon("../../assets/bottle.png", [20, 32], [10, 16], [0, -28])
     let treasure_icon = getIcon("../../assets/treasure.png", [20, 32], [7, 28], [0, -28])
     let sly_icon = getIcon("../../assets/sly.png", [30, 30], [15, 15], [0, -28])
     let bentley_icon = getIcon("../../assets/bentley.png", [30, 30], [15, 15], [0, -28])
@@ -131,22 +131,22 @@ const initMap = (data) => {
         },
         onEachFeature: getFeature,
         weight: 2
-    })
+    }).addTo(map)
 
     let layerControl = L.control.layers().addTo(map);
 
-    layerControl.addBaseLayer(canada_hub, "Prague Hub")
-    layerControl.addBaseLayer(canada_hub_bw, "Prague Hub (Gray)")
+    layerControl.addBaseLayer(base_map, "Prague Hub")
+    layerControl.addBaseLayer(base_map_bw, "Prague Hub (Gray)")
 
     layerControl.addOverlay(tunnel, "Tunnel");
-    // layerControl.addOverlay(bottles, "Bottles");
-    // layerControl.addOverlay(treasures, "Treasures");
-    // layerControl.addOverlay(jobs, "Jobs");
-    // layerControl.addOverlay(safehouse, "Safe House");
+    layerControl.addOverlay(bottles, "Bottles");
+    layerControl.addOverlay(treasures, "Treasures");
+    layerControl.addOverlay(jobs, "Jobs");
+    layerControl.addOverlay(safehouse, "Safe House");
 
     
     // Map on screen
-    map.fitBounds(canada_hub.getBounds())
+    map.fitBounds(base_map.getBounds())
 
 }
 

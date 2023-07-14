@@ -1,157 +1,177 @@
 {
-    "type": "FeatureCollection",
-    "features": [{
-        "type": "Feature",
-        "properties": {
-            "type": "job",
-            "character": "sly",
-            "name": "Cabin Crimes",
-            "location": {
-                "x": 5450,
-                "y": -6380,
-                "z": 1062
-            }
-        },
-        "geometry": {
-          "coordinates": [
-            -0.638,
-            0.545
-          ],
-          "type": "Point"
-        }
-      },{
-        "type": "Feature",
-        "properties": {
-            "type": "job",
-            "character": "sly",
-            "name": "Spice in the Sky",
-            "location": {
-                "x": 9781,
-                "y": -3711,
-                "z": 1008
-            }
-        },
-        "geometry": {
-          "coordinates": [
-            -0.3711,
-            0.9781
-          ],
-          "type": "Point"
-        }
-      },{
-        "type": "Feature",
-        "properties": {
-            "type": "job",
-            "character": "sly",
-            "name": "A Friend in Need",
-            "location": {
-                "x": -1548,
-                "y": -11053,
-                "z": 2037
-            }
-        },
-        "geometry": {
-          "coordinates": [
-            -1.1053,
-            -0.1548
-          ],
-          "type": "Point"
-        }
-      },{
-        "type": "Feature",
-        "properties": {
-            "type": "job",
-            "character": "bentley",
-            "name": "Ride the Iron Horse",
-            "location": {
-                "x": -515,
-                "y": -3276,
-                "z": 2150
-            }
-        },
-        "geometry": {
-          "coordinates": [
-            -0.3276,
-            -0.0515
-          ],
-          "type": "Point"
-        }
-      },{
-        "type": "Feature",
-        "properties": {
-            "type": "job",
-            "character": "murray",
-            "name": "Bear Cub Kidnapping",
-            "location": {
-                "x": 3449,
-                "y": 4991,
-                "z": 2205
-            }
-        },
-        "geometry": {
-          "coordinates": [
-            0.4991,
-            0.3449
-          ],
-          "type": "Point"
-        }
-      },{
-        "type": "Feature",
-        "properties": {
-            "type": "job",
-            "character": "bentley",
-            "name": "Aerial Assault",
-            "location": {
-                "x": 3556,
-                "y": -2365,
-                "z": 2533
-            }
-        },
-        "geometry": {
-          "coordinates": [
-            -0.2365,
-            0.3556
-          ],
-          "type": "Point"
-        }
-      },{
-        "type": "Feature",
-        "properties": {
-            "type": "job",
-            "character": "sly",
-            "name": "Theft on the Rails",
-            "location": {
-                "x": -4134,
-                "y": -12514,
-                "z": 2498
-            }
-        },
-        "geometry": {
-          "coordinates": [
-            -1.2514,
-            -0.4134
-          ],
-          "type": "Point"
-        }
-      },{
-        "type": "Feature",
-        "properties": {
-            "type": "job",
-            "character": "murray",
-            "name": "Operation: Choo-Choo",
-            "location": {
-                "x": -5903,
-                "y": 599,
-                "z": 3
-            }
-        },
-        "geometry": {
-          "coordinates": [
-            0.0599,
-            -0.5903
-          ],
-          "type": "Point"
-        }
+  "type": "FeatureCollection",
+  "features": [{
+      "type": "Feature",
+      "properties": {
+          "type": "job",
+          "character": "bentley",
+          "name": "Eavesdrop on Contessa",
+          "location": {
+              "x": 39,
+              "y": 7146,
+              "z": 2622
+          }
+      },
+      "geometry": {
+        "coordinates": [
+          0.7146,
+          0.0039
+        ],
+        "type": "Point"
       }
-    ]
-  }
+    },{
+      "type": "Feature",
+      "properties": {
+          "type": "job",
+          "character": "bentley",
+          "name": "Train Hack",
+          "location": {
+              "x": -9721,
+              "y": -6729,
+              "z": -222
+          }
+      },
+      "geometry": {
+        "coordinates": [
+          -0.6729,
+          -0.9721
+        ],
+        "type": "Point"
+      }
+    },{
+      "type": "Feature",
+      "properties": {
+          "type": "job",
+          "character": "bentley",
+          "name": "Wall Bombing",
+          "location": {
+              "x": -10742,
+              "y": 7032,
+              "z": 1026
+          }
+      },
+      "geometry": {
+        "coordinates": [
+          0.7032,
+          -1.0742
+        ],
+        "type": "Point"
+      }
+    },{
+      "type": "Feature",
+      "properties": {
+          "type": "job",
+          "character": "sly",
+          "name": "Big House Brawl",
+          "location": {
+              "x": -6846,
+              "y": -1941,
+              "z": -383
+          }
+      },
+      "geometry": {
+        "coordinates": [
+          -0.1941,
+          -0.6846
+        ],
+        "type": "Point"
+      }
+    },{
+      "type": "Feature",
+      "properties": {
+          "type": "job",
+          "character": "sly",
+          "name": "Lightning Action",
+          "location": {
+              "x": 1045,
+              "y": -1387,
+              "z": 3668
+          }
+      },
+      "geometry": {
+        "coordinates": [
+          -0.1387,
+          0.1045
+        ],
+        "type": "Point"
+      }
+    },{
+      "type": "Feature",
+      "properties": {
+          "type": "job",
+          "character": "sly",
+          "name": "Disguise Bridge",
+          "location": {
+              "x": -5828,
+              "y": 7019,
+              "z": -341
+          }
+      },
+      "geometry": {
+        "coordinates": [
+          0.7019,
+          -0.5828
+        ],
+        "type": "Point"
+      }
+    },{
+      "type": "Feature",
+      "properties": {
+          "type": "job",
+          "character": "sly",
+          "name": "Code Capture",
+          "location": {
+              "x": 4,
+              "y": -1782,
+              "z": 2361
+          }
+      },
+      "geometry": {
+        "coordinates": [
+          -0.1782,
+          0.0004
+        ],
+        "type": "Point"
+      }
+    },{
+      "type": "Feature",
+      "properties": {
+          "type": "job",
+          "character": "sly",
+          "name": "Close to Contessa",
+          "location": {
+              "x": -2378,
+              "y": 4683,
+              "z": 878
+          }
+      },
+      "geometry": {
+        "coordinates": [
+          0.4683,
+          -0.2378
+        ],
+        "type": "Point"
+      }
+    },{
+      "type": "Feature",
+      "properties": {
+          "type": "job",
+          "character": "bentley",
+          "name": "Operation: Trojan Tank",
+          "location": {
+              "x": -10052,
+              "y": -6753,
+              "z": -160
+          }
+      },
+      "geometry": {
+        "coordinates": [
+          -0.6753,
+          -1.0052
+        ],
+        "type": "Point"
+      }
+    }
+
+  ]
+}

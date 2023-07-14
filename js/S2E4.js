@@ -60,6 +60,10 @@ const fetchData = async () => {
     let res4 = await fetch(url4)
     data["safehouse"] = await res4.json();
 
+    let url5 = "./geojson/terminals.json";
+    let res5 = await fetch(url5)
+    data["terminals"] = await res5.json();
+
     initMap(data)
 }
 
@@ -89,6 +93,7 @@ const initMap = (data) => {
     let bentley_icon = getIcon("../../assets/bentley.png", [30, 30], [15, 15], [0, -28])
     let murray_icon = getIcon("../../assets/murray.png", [30, 30], [15, 15], [0, -28])
     let safehouse_icon = getIcon("../../assets/safehouse.png", [30, 30], [15, 15], [0, -28])
+    let computer_icon = getIcon("../../assets/computer.png", [20, 20], [10, 10], [0, -28])
 
     // Bottles on the map from GeoJSON data
     let bottles = L.geoJSON(data["bottles"], {
@@ -103,6 +108,15 @@ const initMap = (data) => {
     let treasures = L.geoJSON(data["treasures"], {
         pointToLayer: function(feature,latlng) {
             return L.marker(latlng,{icon: treasure_icon})
+            
+        },
+        onEachFeature: getFeature,
+        weight: 2
+    })
+
+    let terminals = L.geoJSON(data["terminals"], {
+        pointToLayer: function(feature,latlng) {
+            return L.marker(latlng,{icon: computer_icon})
             
         },
         onEachFeature: getFeature,
@@ -131,7 +145,7 @@ const initMap = (data) => {
         },
         onEachFeature: getFeature,
         weight: 2
-    }).addTo(map)
+    })
 
     let layerControl = L.control.layers().addTo(map);
 
@@ -143,6 +157,7 @@ const initMap = (data) => {
     layerControl.addOverlay(treasures, "Treasures");
     layerControl.addOverlay(jobs, "Jobs");
     layerControl.addOverlay(safehouse, "Safe House");
+    layerControl.addOverlay(terminals, "Computer Terminals");
 
     
     // Map on screen

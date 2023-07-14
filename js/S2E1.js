@@ -43,7 +43,9 @@ const getIcon = (url, size, anchor, popup) => {
 }
 
 const fetchData = async () => {
+
     let data = {};
+
     let url1 = "./geojson/bottles.json";
     let res1 = await fetch(url1)
     data["bottles"] = await res1.json();
@@ -59,6 +61,14 @@ const fetchData = async () => {
     let url4 = "./geojson/safehouse.json";
     let res4 = await fetch(url4)
     data["safehouse"] = await res4.json();
+
+    let url5 = "./geojson/satellites.json";
+    let res5 = await fetch(url5)
+    data["satellites"] = await res5.json();
+
+    let url6 = "./geojson/alarms.json";
+    let res6 = await fetch(url6)
+    data["alarms"] = await res6.json();
 
     initMap(data)
 }
@@ -88,6 +98,8 @@ const initMap = (data) => {
     let bentley_icon = getIcon("../../assets/bentley.png", [30, 30], [15, 15], [0, -28])
     let murray_icon = getIcon("../../assets/murray.png", [30, 30], [15, 15], [0, -28])
     let safehouse_icon = getIcon("../../assets/safehouse.png", [30, 30], [15, 15], [0, -28])
+    let satellite_icon = getIcon("../../assets/satellite.png", [30, 30], [15, 15], [0, -28])
+    let alarm_icon = getIcon("../../assets/alarm.png", [30, 30], [15, 15], [0, -28])
 
     // Bottles on the map from GeoJSON data
     let bottles = L.geoJSON(data["bottles"], {
@@ -117,23 +129,34 @@ const initMap = (data) => {
         weight: 2
     })
 
+    let satellites = L.geoJSON(data["satellites"], {
+        pointToLayer: function(feature,latlng) {
+            return L.marker(latlng,{icon: satellite_icon})
+            
+        },
+        onEachFeature: getFeature,
+        weight: 2
+    })
+
+    let alarms = L.geoJSON(data["alarms"], {
+        pointToLayer: function(feature,latlng) {
+            return L.marker(latlng,{icon: alarm_icon})
+            
+        },
+        onEachFeature: getFeature,
+        weight: 2
+    })
+
     let jobs = L.geoJSON(data["jobs"], {
         pointToLayer: function(feature,latlng) {
-            if (feature.properties.type == "job") {
-                const character = feature.properties.character;
-                if (character == "sly") {
-                    return L.marker(latlng,{icon: sly_icon})
-                } else if (character == "bentley") {
-                    return L.marker(latlng,{icon: bentley_icon})
-                } else {
-                    return L.marker(latlng,{icon: murray_icon})
-                }
-            } else if (feature.properties.type == "safehouse") {
-                return L.marker(latlng,{icon: safehouse_icon})
-            }
-            
-            
-            
+            const character = feature.properties.character;
+            if (character == "sly") {
+                return L.marker(latlng,{icon: sly_icon})
+            } else if (character == "bentley") {
+                return L.marker(latlng,{icon: bentley_icon})
+            } else {
+                return L.marker(latlng,{icon: murray_icon})
+            }   
         },
         onEachFeature: getFeature,
         weight: 2
@@ -148,6 +171,8 @@ const initMap = (data) => {
     layerControl.addOverlay(treasures, "Treasures");
     layerControl.addOverlay(jobs, "Jobs");
     layerControl.addOverlay(safehouse, "Safe House");
+    layerControl.addOverlay(satellites, "Satellites");
+    layerControl.addOverlay(alarms, "Alarms");
     
     // Map on screen
     map.fitBounds(paris_hub.getBounds())

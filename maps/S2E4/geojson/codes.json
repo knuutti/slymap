@@ -1,0 +1,78 @@
+{
+    "type": "FeatureCollection",
+    "features": [{
+        "type": "Feature",
+        "properties": {
+            "type": "codes",
+            "name": "Code Panel",
+            "location": {
+                "x": -907,
+                "y": -2851,
+                "z": 1786
+            }
+        },
+        "geometry": {
+          "coordinates": [
+            -0.2851,
+            -0.0907
+          ],
+          "type": "Point"
+        }
+      },{
+        "type": "Feature",
+        "properties": {
+            "type": "codes",
+            "name": "Code Panel",
+            "location": {
+                "x": -320,
+                "y": -9496,
+                "z": 471
+            }
+        },
+        "geometry": {
+          "coordinates": [
+            -0.9496,
+            -0.032
+          ],
+          "type": "Point"
+        }
+      },{
+        "type": "Feature",
+        "properties": {
+            "type": "codes",
+            "name": "Code Panel",
+            "location": {
+                "x": -11194,
+                "y": 2349,
+                "z": 144
+            }
+        },
+        "geometry": {
+          "coordinates": [
+            0.2349,
+            -1.1194
+          ],
+          "type": "Point"
+        }
+      },{
+        "type": "Feature",
+        "properties": {
+            "type": "codes",
+            "name": "Code Panel",
+            "location": {
+                "x": 1038,
+                "y": 6148,
+                "z": -74
+            }
+        },
+        "geometry": {
+          "coordinates": [
+            0.6148,
+            0.1038
+          ],
+          "type": "Point"
+        }
+      }
+
+    ]
+  }

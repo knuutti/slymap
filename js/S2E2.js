@@ -77,7 +77,7 @@ const initMap = (data) => {
     // Base map
     
     let map_color = L.imageOverlay("./maps/map_color.png", [[sw.lat,sw.lng], [ne.lat,ne.lng]]).addTo(map)
-    let map_gray = L.imageOverlay("./maps/map_gray.png", [[sw.lat,sw.lng], [ne.lat,ne.lng]]).addTo(map)
+    let map_gray = L.imageOverlay("./maps/map_gray.png", [[sw.lat,sw.lng], [ne.lat,ne.lng]])
 
     // Bottle icons
     let bottle_icon = getIcon("../../assets/bottle.png", [20, 32], [7, 28], [0, -28])
@@ -95,7 +95,7 @@ const initMap = (data) => {
         },
         onEachFeature: getFeature,
         weight: 2
-    }).addTo(map)
+    })
 
     let treasures = L.geoJSON(data["treasures"], {
         pointToLayer: function(feature,latlng) {
@@ -119,19 +119,19 @@ const initMap = (data) => {
         },
         onEachFeature: getFeature,
         weight: 2
-    })
+    }).addTo(map)
 
     let layerControl = L.control.layers().addTo(map);
 
     layerControl.addBaseLayer(map_color, "Hub")
-    layerControl.addBaseLayer(map_color, "Hub (Gray)")
+    layerControl.addBaseLayer(map_gray, "Hub (Gray)")
 
     layerControl.addOverlay(bottles, "Bottles");
     layerControl.addOverlay(treasures, "Treasures");
     layerControl.addOverlay(jobs, "Jobs");
     
     // Map on screen
-    map.fitBounds(paris_hub.getBounds())
+    map.fitBounds(map_color.getBounds())
 
 }
 

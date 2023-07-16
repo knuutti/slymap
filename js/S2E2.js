@@ -43,7 +43,9 @@ const getIcon = (url, size, anchor, popup) => {
 }
 
 const fetchData = async () => {
+
     let data = {};
+
     let url1 = "./geojson/bottles.json";
     let res1 = await fetch(url1)
     data["bottles"] = await res1.json();
@@ -55,14 +57,6 @@ const fetchData = async () => {
     let url3 = "./geojson/jobs.json";
     let res3 = await fetch(url3)
     data["jobs"] = await res3.json();
-
-    let url4 = "./geojson/safehouse.json";
-    let res4 = await fetch(url4)
-    data["safehouse"] = await res4.json();
-
-    let url5 = "./geojson/terminals.json";
-    let res5 = await fetch(url5)
-    data["terminals"] = await res5.json();
 
     initMap(data)
 }
@@ -76,24 +70,22 @@ const initMap = (data) => {
     })
 
     // Setting the bounds of the map (some arbitary x-offset is needed in this case)
-    const xOffset = .89
-    let sw = map.unproject(L.point(-1.2749273959341,-1.65246853823814133+xOffset));
-    let ne = map.unproject(L.point(1.14520813165537,0.7676669893514036786+xOffset));
+    const xOffset = .32
+    let sw = map.unproject(L.point(-0.93736730360934,-1.4872611464968+xOffset));
+    let ne = map.unproject(L.point(1.7165605095541,1.16666666666+xOffset));
 
     // Base map
-    let base_map = L.imageOverlay("./maps/map.png", [[sw.lat,sw.lng], [ne.lat,ne.lng]]).addTo(map)
-    let base_map_bw = L.imageOverlay("./maps/map_bw.png", [[sw.lat,sw.lng], [ne.lat,ne.lng]])
-
-    let tunnel = L.imageOverlay("./maps/tunnel.png", [[sw.lat,sw.lng], [ne.lat,ne.lng]])
+    
+    let map_color = L.imageOverlay("./maps/map_color.png", [[sw.lat,sw.lng], [ne.lat,ne.lng]]).addTo(map)
+    let map_gray = L.imageOverlay("./maps/map_gray.png", [[sw.lat,sw.lng], [ne.lat,ne.lng]]).addTo(map)
 
     // Bottle icons
-    let bottle_icon = getIcon("../../assets/bottle.png", [20, 32], [10, 16], [0, -28])
+    let bottle_icon = getIcon("../../assets/bottle.png", [20, 32], [7, 28], [0, -28])
     let treasure_icon = getIcon("../../assets/treasure.png", [20, 32], [7, 28], [0, -28])
     let sly_icon = getIcon("../../assets/sly.png", [30, 30], [15, 15], [0, -28])
     let bentley_icon = getIcon("../../assets/bentley.png", [30, 30], [15, 15], [0, -28])
     let murray_icon = getIcon("../../assets/murray.png", [30, 30], [15, 15], [0, -28])
     let safehouse_icon = getIcon("../../assets/safehouse.png", [30, 30], [15, 15], [0, -28])
-    let computer_icon = getIcon("../../assets/computer.png", [30, 30], [15, 15], [0, -28])
 
     // Bottles on the map from GeoJSON data
     let bottles = L.geoJSON(data["bottles"], {
@@ -103,29 +95,11 @@ const initMap = (data) => {
         },
         onEachFeature: getFeature,
         weight: 2
-    })
+    }).addTo(map)
 
     let treasures = L.geoJSON(data["treasures"], {
         pointToLayer: function(feature,latlng) {
             return L.marker(latlng,{icon: treasure_icon})
-            
-        },
-        onEachFeature: getFeature,
-        weight: 2
-    })
-
-    let terminals = L.geoJSON(data["terminals"], {
-        pointToLayer: function(feature,latlng) {
-            return L.marker(latlng,{icon: computer_icon})
-            
-        },
-        onEachFeature: getFeature,
-        weight: 2
-    })
-
-    let safehouse = L.geoJSON(data["safehouse"], {
-        pointToLayer: function(feature,latlng) {
-            return L.marker(latlng,{icon: safehouse_icon})
             
         },
         onEachFeature: getFeature,
@@ -141,7 +115,7 @@ const initMap = (data) => {
                 return L.marker(latlng,{icon: bentley_icon})
             } else {
                 return L.marker(latlng,{icon: murray_icon})
-            }
+            }   
         },
         onEachFeature: getFeature,
         weight: 2
@@ -149,19 +123,15 @@ const initMap = (data) => {
 
     let layerControl = L.control.layers().addTo(map);
 
-    layerControl.addBaseLayer(base_map, "Prague Hub")
-    layerControl.addBaseLayer(base_map_bw, "Prague Hub (Gray)")
+    layerControl.addBaseLayer(map_color, "Hub")
+    layerControl.addBaseLayer(map_color, "Hub (Gray)")
 
-    layerControl.addOverlay(tunnel, "Tunnel");
     layerControl.addOverlay(bottles, "Bottles");
     layerControl.addOverlay(treasures, "Treasures");
     layerControl.addOverlay(jobs, "Jobs");
-    layerControl.addOverlay(safehouse, "Safe House");
-    layerControl.addOverlay(terminals, "Computer Terminals");
-
     
     // Map on screen
-    map.fitBounds(base_map.getBounds())
+    map.fitBounds(paris_hub.getBounds())
 
 }
 

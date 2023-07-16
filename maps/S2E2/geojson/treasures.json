@@ -1,0 +1,66 @@
+{
+  "type": "FeatureCollection",
+  "features": [{
+      "type": "Feature",
+      "properties": {
+        "type": "treasure",
+          "name": "Alabaster Chalice",
+          "value": "654",
+          "time": "45", 
+          "location": {
+              "x": -100,
+              "y": 12693,
+              "z": 1792
+          }
+      },
+      "geometry": {
+        "coordinates": [
+          1.2693,
+          -0.01
+        ],
+        "type": "Point"
+      }
+    },{
+      "type": "Feature",
+      "properties": {
+        "type": "treasure",
+          "name": "Alabaster Chalice",
+          "value": "654",
+          "time": "45", 
+          "location": {
+              "x": -12578,
+              "y": 2540,
+              "z": -580
+          }
+      },
+      "geometry": {
+        "coordinates": [
+          0.254,
+          -1.2578
+        ],
+        "type": "Point"
+      }
+    },{
+      "type": "Feature",
+      "properties": {
+        "type": "treasure",
+          "name": "Alabaster Chalice",
+          "value": "654",
+          "time": "45", 
+          "location": {
+              "x": -187,
+              "y": -150,
+              "z": -831
+          }
+      },
+      "geometry": {
+        "coordinates": [
+          -0.015,
+          -0.0187
+        ],
+        "type": "Point"
+      }
+    }
+
+  ]
+}

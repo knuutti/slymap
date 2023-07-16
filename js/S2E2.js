@@ -78,10 +78,17 @@ const initMap = (data) => {
     let sw = map.unproject(L.point(-0.93736730360934,-1.4872611464968+xOffset));
     let ne = map.unproject(L.point(1.7165605095541,1.16666666666+xOffset));
 
-    // Base map
+    // Base maps (colorized + grayscale)
+    let map_color = L.imageOverlay("./maps/india_1_hub_map_color.png", [[sw.lat,sw.lng], [ne.lat,ne.lng]]).addTo(map)
+    let map_gray = L.imageOverlay("./maps/india_1_hub_map_gray.png", [[sw.lat,sw.lng], [ne.lat,ne.lng]])
+
+    // Additional layers
+    let cave_color = L.imageOverlay("./maps/cave_color.png", [[sw.lat,sw.lng], [ne.lat,ne.lng]])
+    let palace_tunnel_color = L.imageOverlay("./maps/palace_tunnel_color.png", [[sw.lat,sw.lng], [ne.lat,ne.lng]])
+    let small_tunnel_color = L.imageOverlay("./maps/small_tunnel_color.png", [[sw.lat,sw.lng], [ne.lat,ne.lng]])
+    let vines_color = L.imageOverlay("./maps/vines_color.png", [[sw.lat,sw.lng], [ne.lat,ne.lng]])
+    let poles_color = L.imageOverlay("./maps/poles_color.png", [[sw.lat,sw.lng], [ne.lat,ne.lng]]).addTo(map)
     
-    let map_color = L.imageOverlay("./maps/map_color.png", [[sw.lat,sw.lng], [ne.lat,ne.lng]]).addTo(map)
-    let map_gray = L.imageOverlay("./maps/map_gray.png", [[sw.lat,sw.lng], [ne.lat,ne.lng]])
 
     // Bottle icons
     let bottle_icon = getIcon("../../assets/bottle.png", [20, 32], [7, 28], [0, -28])
@@ -135,12 +142,19 @@ const initMap = (data) => {
 
     let layerControl = L.control.layers().addTo(map);
 
-    layerControl.addBaseLayer(map_color, "Hub")
-    layerControl.addBaseLayer(map_gray, "Hub (Gray)")
+    //layerControl.addBaseLayer(map_color, "Hub")
+    //layerControl.addBaseLayer(map_gray, "Hub (Gray)")
 
     layerControl.addOverlay(bottles, "Bottles");
     layerControl.addOverlay(treasures, "Treasures");
     layerControl.addOverlay(jobs, "Jobs");
+    layerControl.addOverlay(safehouse, "Safe House");
+
+    layerControl.addOverlay(palace_tunnel_color, "Palace Tunnel");
+    layerControl.addOverlay(small_tunnel_color, "Small Tunnel");
+    layerControl.addOverlay(cave_color, "Cave");    
+    layerControl.addOverlay(vines_color, "Vines");    
+    layerControl.addOverlay(poles_color, "Poles");    
     
     // Map on screen
     map.fitBounds(map_color.getBounds())

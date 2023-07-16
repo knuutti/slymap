@@ -6,15 +6,15 @@
             "type": "safehouse",
             "name": "Safe House",
             "location": {
-                "x": -11006,
-                "y": -958,
-                "z": 21
+                "x": -2334,
+                "y": -5427,
+                "z": 875
             }
         },
         "geometry": {
           "coordinates": [
-            -0.0958,
-            -1.1006
+            -0.5427,
+            0.2334
           ],
           "type": "Point"
         }

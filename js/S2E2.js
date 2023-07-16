@@ -58,6 +58,10 @@ const fetchData = async () => {
     let res3 = await fetch(url3)
     data["jobs"] = await res3.json();
 
+    let url4 = "./geojson/safehouse.json";
+    let res4 = await fetch(url4)
+    data["safehouse"] = await res4.json();
+
     initMap(data)
 }
 
@@ -105,6 +109,14 @@ const initMap = (data) => {
         onEachFeature: getFeature,
         weight: 2
     })
+    let safehouse = L.geoJSON(data["safehouse"], {
+        pointToLayer: function(feature,latlng) {
+            return L.marker(latlng,{icon: safehouse_icon})
+            
+        },
+        onEachFeature: getFeature,
+        weight: 2
+    })
 
     let jobs = L.geoJSON(data["jobs"], {
         pointToLayer: function(feature,latlng) {
@@ -119,7 +131,7 @@ const initMap = (data) => {
         },
         onEachFeature: getFeature,
         weight: 2
-    }).addTo(map)
+    })
 
     let layerControl = L.control.layers().addTo(map);
 

@@ -4,9 +4,8 @@
       "type": "Feature",
       "properties": {
         "type": "treasure",
-          "name": "Alabaster Chalice",
-          "value": "654",
-          "time": "45", 
+          "name": "Ancestral Kite",
+          "value": "307",
           "location": {
               "x": -100,
               "y": 12693,
@@ -24,9 +23,8 @@
       "type": "Feature",
       "properties": {
         "type": "treasure",
-          "name": "Alabaster Chalice",
-          "value": "654",
-          "time": "45", 
+          "name": "Ming Vase",
+          "value": "249",
           "location": {
               "x": -12578,
               "y": 2540,
@@ -44,9 +42,9 @@
       "type": "Feature",
       "properties": {
         "type": "treasure",
-          "name": "Alabaster Chalice",
-          "value": "654",
-          "time": "45", 
+          "name": "Burial Urn",
+          "value": "354",
+          "time": "40", 
           "location": {
               "x": -187,
               "y": -150,

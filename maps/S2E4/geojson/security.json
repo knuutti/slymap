@@ -6,7 +6,7 @@
           "type": "camera",
           "name": "Security Station",
             "location": {
-                "x": -9516,
+                "x": -928,
                 "y": -2792,
                 "z": 1786
             }
@@ -14,7 +14,7 @@
         "geometry": {
           "coordinates": [
             -0.2792,
-            -0.9516
+            -0.0928
           ],
           "type": "Point"
         }

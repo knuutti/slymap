@@ -64,6 +64,14 @@ const fetchData = async () => {
     let res5 = await fetch(url5)
     data["terminals"] = await res5.json();
 
+    let url6 = "./geojson/rods.json";
+    let res6 = await fetch(url6)
+    data["rods"] = await res6.json();
+
+    let url7 = "./geojson/security.json";
+    let res7 = await fetch(url7)
+    data["security"] = await res7.json();
+
     initMap(data)
 }
 
@@ -93,7 +101,9 @@ const initMap = (data) => {
     let bentley_icon = getIcon("../../assets/bentley.png", [30, 30], [15, 15], [0, -28])
     let murray_icon = getIcon("../../assets/murray.png", [30, 30], [15, 15], [0, -28])
     let safehouse_icon = getIcon("../../assets/safehouse.png", [30, 30], [15, 15], [0, -28])
-    let computer_icon = getIcon("../../assets/computer.png", [30, 30], [15, 15], [0, -28])
+    let computer_icon = getIcon("../../assets/computer.png", [50, 50], [25, 35], [0, -28])
+    let rod_icon = getIcon("../../assets/lightning_rod.png", [50, 50], [25, 40], [0, -28])
+    let camera_icon = getIcon("../../assets/camera.png", [50, 50], [25, 40], [0, -28])
 
     // Bottles on the map from GeoJSON data
     let bottles = L.geoJSON(data["bottles"], {
@@ -123,9 +133,27 @@ const initMap = (data) => {
         weight: 2
     })
 
+    let security = L.geoJSON(data["security"], {
+        pointToLayer: function(feature,latlng) {
+            return L.marker(latlng,{icon: camera_icon})
+            
+        },
+        onEachFeature: getFeature,
+        weight: 2
+    })
+
     let safehouse = L.geoJSON(data["safehouse"], {
         pointToLayer: function(feature,latlng) {
             return L.marker(latlng,{icon: safehouse_icon})
+            
+        },
+        onEachFeature: getFeature,
+        weight: 2
+    })
+
+    let lightning_rods = L.geoJSON(data["rods"], {
+        pointToLayer: function(feature,latlng) {
+            return L.marker(latlng,{icon: rod_icon})
             
         },
         onEachFeature: getFeature,
@@ -158,6 +186,8 @@ const initMap = (data) => {
     layerControl.addOverlay(jobs, "Jobs");
     layerControl.addOverlay(safehouse, "Safe House");
     layerControl.addOverlay(terminals, "Computer Terminals");
+    layerControl.addOverlay(lightning_rods, "Ligthning Rods");
+    layerControl.addOverlay(security, "Security Terminals");
 
     
     // Map on screen

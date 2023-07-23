@@ -1,0 +1,1079 @@
+{
+    "data": [
+        {
+            "type": "FeatureCollection",
+            "name": "Bottles",
+            "features": [{
+                "type": "Feature",
+                "properties": {
+                    "type": "bottle",
+                    "location": {
+                        "x": -11498,
+                        "y": -5679,
+                        "z": 918
+                    }
+                },
+                "geometry": {
+                  "coordinates": [
+                    -0.5679,
+                    -1.1498
+                  ],
+                  "type": "Point"
+                }
+              },{
+                "type": "Feature",
+                "properties": {
+                    "type": "bottle",
+                    "location": {
+                        "x": -12668,
+                        "y": -608,
+                        "z": 732
+                    }
+                },
+                "geometry": {
+                  "coordinates": [
+                    -0.0608,
+                    -1.2668
+                  ],
+                  "type": "Point"
+                }
+              },{
+                "type": "Feature",
+                "properties": {
+                    "type": "bottle",
+                    "location": {
+                        "x": -10709,
+                        "y": 1035,
+                        "z": 1516
+                    }
+                },
+                "geometry": {
+                  "coordinates": [
+                    0.1035,
+                    -1.0709
+                  ],
+                  "type": "Point"
+                }
+              },{
+                "type": "Feature",
+                "properties": {
+                    "type": "bottle",
+                    "location": {
+                        "x": -12749,
+                        "y": 6270,
+                        "z": 1042
+                    }
+                },
+                "geometry": {
+                  "coordinates": [
+                    0.627,
+                    -1.2749
+                  ],
+                  "type": "Point"
+                }
+              },{
+                "type": "Feature",
+                "properties": {
+                    "type": "bottle",
+                    "location": {
+                        "x": -10287,
+                        "y": 7063,
+                        "z": 283
+                    }
+                },
+                "geometry": {
+                  "coordinates": [
+                    0.7063,
+                    -1.0287
+                  ],
+                  "type": "Point"
+                }
+              },{
+                "type": "Feature",
+                "properties": {
+                    "type": "bottle",
+                    "location": {
+                        "x": -5214,
+                        "y": 6090,
+                        "z": -94
+                    }
+                },
+                "geometry": {
+                  "coordinates": [
+                    0.609,
+                    -0.5214
+                  ],
+                  "type": "Point"
+                }
+              },{
+                "type": "Feature",
+                "properties": {
+                    "type": "bottle",
+                    "location": {
+                        "x": -5183,
+                        "y": 3323,
+                        "z": -417
+                    }
+                },
+                "geometry": {
+                  "coordinates": [
+                    0.3323,
+                    -0.5183
+                  ],
+                  "type": "Point"
+                }
+              },{
+                "type": "Feature",
+                "properties": {
+                    "type": "bottle",
+                    "location": {
+                        "x": -2476,
+                        "y": 7172,
+                        "z": 1565
+                    }
+                },
+                "geometry": {
+                  "coordinates": [
+                    0.7172,
+                    -0.2476
+                  ],
+                  "type": "Point"
+                }
+              },{
+                "type": "Feature",
+                "properties": {
+                    "type": "bottle",
+                    "location": {
+                        "x": -1745,
+                        "y": 4518,
+                        "z": 1775
+                    }
+                },
+                "geometry": {
+                  "coordinates": [
+                    0.4518,
+                    -0.1745
+                  ],
+                  "type": "Point"
+                }
+              },{
+                "type": "Feature",
+                "properties": {
+                    "type": "bottle",
+                    "location": {
+                        "x": 2386,
+                        "y": 7000,
+                        "z": 755
+                    }
+                },
+                "geometry": {
+                  "coordinates": [
+                    0.7,
+                    0.2386
+                  ],
+                  "type": "Point"
+                }
+              },{
+                "type": "Feature",
+                "properties": {
+                    "type": "bottle",
+                    "location": {
+                        "x": 1600,
+                        "y": 4625,
+                        "z": 1777
+                    }
+                },
+                "geometry": {
+                  "coordinates": [
+                    0.4625,
+                    0.16
+                  ],
+                  "type": "Point"
+                }
+              },{
+                "type": "Feature",
+                "properties": {
+                    "type": "bottle",
+                    "location": {
+                        "x": 4337,
+                        "y": 2330,
+                        "z": 1672
+                    }
+                },
+                "geometry": {
+                  "coordinates": [
+                    0.233,
+                    0.4337
+                  ],
+                  "type": "Point"
+                }
+              },{
+                "type": "Feature",
+                "properties": {
+                    "type": "bottle",
+                    "location": {
+                        "x": 5483,
+                        "y": -1037,
+                        "z": 1028
+                    }
+                },
+                "geometry": {
+                  "coordinates": [
+                    -0.1037,
+                    0.5483
+                  ],
+                  "type": "Point"
+                }
+              },{
+                "type": "Feature",
+                "properties": {
+                    "type": "bottle",
+                    "location": {
+                        "x": 3933,
+                        "y": -2887,
+                        "z": 4266
+                    }
+                },
+                "geometry": {
+                  "coordinates": [
+                    -0.2887,
+                    0.3933
+                  ],
+                  "type": "Point"
+                }
+              },{
+                "type": "Feature",
+                "properties": {
+                    "type": "bottle",
+                    "location": {
+                        "x": 2420,
+                        "y": -1388,
+                        "z": 3050
+                    }
+                },
+                "geometry": {
+                  "coordinates": [
+                    -0.1388,
+                    0.242
+                  ],
+                  "type": "Point"
+                }
+              },{
+                "type": "Feature",
+                "properties": {
+                    "type": "bottle",
+                    "location": {
+                        "x": 501,
+                        "y": -3644,
+                        "z": 2467
+                    }
+                },
+                "geometry": {
+                  "coordinates": [
+                    -0.3644,
+                    0.0501
+                  ],
+                  "type": "Point"
+                }
+              },{
+                "type": "Feature",
+                "properties": {
+                    "type": "bottle",
+                    "location": {
+                        "x": -2561,
+                        "y": -1557,
+                        "z": 2938
+                    }
+                },
+                "geometry": {
+                  "coordinates": [
+                    -0.1557,
+                    -0.2561
+                  ],
+                  "type": "Point"
+                }
+              },{
+                "type": "Feature",
+                "properties": {
+                    "type": "bottle",
+                    "location": {
+                        "x": -3985,
+                        "y": -39,
+                        "z": 4377
+                    }
+                },
+                "geometry": {
+                  "coordinates": [
+                    -0.0039,
+                    -0.3985
+                  ],
+                  "type": "Point"
+                }
+              },{
+                "type": "Feature",
+                "properties": {
+                    "type": "bottle",
+                    "location": {
+                        "x": -2474,
+                        "y": 2112,
+                        "z": 2437
+                    }
+                },
+                "geometry": {
+                  "coordinates": [
+                    0.2112,
+                    -0.2474
+                  ],
+                  "type": "Point"
+                }
+              },{
+                "type": "Feature",
+                "properties": {
+                    "type": "bottle",
+                    "location": {
+                        "x": -1190,
+                        "y": 2456,
+                        "z": 1678
+                    }
+                },
+                "geometry": {
+                  "coordinates": [
+                    0.2456,
+                    -0.119
+                  ],
+                  "type": "Point"
+                }
+              },{
+                "type": "Feature",
+                "properties": {
+                    "type": "bottle",
+                    "location": {
+                        "x": 1592,
+                        "y": 3255,
+                        "z": 3060
+                    }
+                },
+                "geometry": {
+                  "coordinates": [
+                    0.3255,
+                    0.1592
+                  ],
+                  "type": "Point"
+                }
+              },{
+                "type": "Feature",
+                "properties": {
+                    "type": "bottle",
+                    "location": {
+                        "x": 2055,
+                        "y": 1564,
+                        "z": 3468
+                    }
+                },
+                "geometry": {
+                  "coordinates": [
+                    0.1564,
+                    0.2055
+                  ],
+                  "type": "Point"
+                }
+              },{
+                "type": "Feature",
+                "properties": {
+                    "type": "bottle",
+                    "location": {
+                        "x": -7803,
+                        "y": -1957,
+                        "z": 965
+                    }
+                },
+                "geometry": {
+                  "coordinates": [
+                    -0.1957,
+                    -0.7803
+                  ],
+                  "type": "Point"
+                }
+              },{
+                "type": "Feature",
+                "properties": {
+                    "type": "bottle",
+                    "location": {
+                        "x": -5977,
+                        "y": -9178,
+                        "z": 1054
+                    }
+                },
+                "geometry": {
+                  "coordinates": [
+                    -0.9178,
+                    -0.5977
+                  ],
+                  "type": "Point"
+                }
+              },{
+                "type": "Feature",
+                "properties": {
+                    "type": "bottle",
+                    "location": {
+                        "x": -2369,
+                        "y": -8094,
+                        "z": 1962
+                    }
+                },
+                "geometry": {
+                  "coordinates": [
+                    -0.8094,
+                    -0.2369
+                  ],
+                  "type": "Point"
+                }
+              },{
+                "type": "Feature",
+                "properties": {
+                    "type": "bottle",
+                    "location": {
+                        "x": -142,
+                        "y": -10122,
+                        "z": 1634
+                    }
+                },
+                "geometry": {
+                  "coordinates": [
+                    -1.0122,
+                    -0.0142
+                  ],
+                  "type": "Point"
+                }
+              },{
+                "type": "Feature",
+                "properties": {
+                    "type": "bottle",
+                    "location": {
+                        "x": 816,
+                        "y": -8256,
+                        "z": 2899
+                    }
+                },
+                "geometry": {
+                  "coordinates": [
+                    -0.8256,
+                    0.0816
+                  ],
+                  "type": "Point"
+                }
+              },{
+                "type": "Feature",
+                "properties": {
+                    "type": "bottle",
+                    "location": {
+                        "x": 1712,
+                        "y": -6771,
+                        "z": 1790
+                    }
+                },
+                "geometry": {
+                  "coordinates": [
+                    -0.6771,
+                    0.1712
+                  ],
+                  "type": "Point"
+                }
+              },{
+                "type": "Feature",
+                "properties": {
+                    "type": "bottle",
+                    "location": {
+                        "x": -2834,
+                        "y": -4262,
+                        "z": 1784
+                    }
+                },
+                "geometry": {
+                  "coordinates": [
+                    -0.4262,
+                    -0.2834
+                  ],
+                  "type": "Point"
+                }
+              },{
+                "type": "Feature",
+                "properties": {
+                    "type": "bottle",
+                    "location": {
+                        "x": -7208,
+                        "y": 1963,
+                        "z": 1999
+                    }
+                },
+                "geometry": {
+                  "coordinates": [
+                    0.1963,
+                    -0.7208
+                  ],
+                  "type": "Point"
+                }
+              }
+          
+            ]
+          },
+          {
+            "type": "FeatureCollection",
+            "name": "Security Station",
+            "features": [{
+                "type": "Feature",
+                "properties": {
+                  "type": "security",
+                  "name": "Security Station",
+                    "location": {
+                        "x": -928,
+                        "y": -2792,
+                        "z": 1786
+                    }
+                },
+                "geometry": {
+                  "coordinates": [
+                    -0.2792,
+                    -0.0928
+                  ],
+                  "type": "Point"
+                }
+              },{
+                "type": "Feature",
+                "properties": {
+                  "type": "security",
+                  "name": "Security Station",
+                    "location": {
+                        "x": -301,
+                        "y": -9516,
+                        "z": 2317
+                    }
+                },
+                "geometry": {
+                  "coordinates": [
+                    -0.9516,
+                    -0.0301
+                  ],
+                  "type": "Point"
+                }
+              },{
+                "type": "Feature",
+                "properties": {
+                  "type": "security",
+                  "name": "Security Station",
+                    "location": {
+                        "x": -11229,
+                        "y": 2317,
+                        "z": 140
+                    }
+                },
+                "geometry": {
+                  "coordinates": [
+                    0.2317,
+                    -1.1229
+                  ],
+                  "type": "Point"
+                }
+              },{
+                "type": "Feature",
+                "properties": {
+                  "type": "security",
+                  "name": "Security Station",
+                    "location": {
+                        "x": 1044,
+                        "y": 6153,
+                        "z": -73
+                    }
+                },
+                "geometry": {
+                  "coordinates": [
+                    0.6153,
+                    0.1044
+                  ],
+                  "type": "Point"
+                }
+              }
+        
+            ]
+          },
+          {
+            "type": "FeatureCollection",
+            "name": "Jobs",
+            "features": [{
+                "type": "Feature",
+                "properties": {
+                    "type": "bentley_job",
+                    "name": "Eavesdrop on Contessa",
+                    "location": {
+                        "x": 39,
+                        "y": 7146,
+                        "z": 2622
+                    }
+                },
+                "geometry": {
+                  "coordinates": [
+                    0.7146,
+                    0.0039
+                  ],
+                  "type": "Point"
+                }
+              },{
+                "type": "Feature",
+                "properties": {
+                    "type": "bentley_job",
+                    "name": "Train Hack",
+                    "location": {
+                        "x": -9721,
+                        "y": -6729,
+                        "z": -222
+                    }
+                },
+                "geometry": {
+                  "coordinates": [
+                    -0.6729,
+                    -0.9721
+                  ],
+                  "type": "Point"
+                }
+              },{
+                "type": "Feature",
+                "properties": {
+                    "type": "bentley_job",
+                    "name": "Wall Bombing",
+                    "location": {
+                        "x": -10742,
+                        "y": 7032,
+                        "z": 1026
+                    }
+                },
+                "geometry": {
+                  "coordinates": [
+                    0.7032,
+                    -1.0742
+                  ],
+                  "type": "Point"
+                }
+              },{
+                "type": "Feature",
+                "properties": {
+                    "type": "sly_job",
+                    "name": "Big House Brawl",
+                    "location": {
+                        "x": -6846,
+                        "y": -1941,
+                        "z": -383
+                    }
+                },
+                "geometry": {
+                  "coordinates": [
+                    -0.1941,
+                    -0.6846
+                  ],
+                  "type": "Point"
+                }
+              },{
+                "type": "Feature",
+                "properties": {
+                    "type": "sly_job",
+                    "name": "Lightning Action",
+                    "location": {
+                        "x": 1045,
+                        "y": -1387,
+                        "z": 3668
+                    }
+                },
+                "geometry": {
+                  "coordinates": [
+                    -0.1387,
+                    0.1045
+                  ],
+                  "type": "Point"
+                }
+              },{
+                "type": "Feature",
+                "properties": {
+                    "type": "sly_job",
+                    "name": "Disguise Bridge",
+                    "location": {
+                        "x": -5828,
+                        "y": 7019,
+                        "z": -341
+                    }
+                },
+                "geometry": {
+                  "coordinates": [
+                    0.7019,
+                    -0.5828
+                  ],
+                  "type": "Point"
+                }
+              },{
+                "type": "Feature",
+                "properties": {
+                    "type": "sly_job",
+                    "name": "Code Capture",
+                    "location": {
+                        "x": 4,
+                        "y": -1782,
+                        "z": 2361
+                    }
+                },
+                "geometry": {
+                  "coordinates": [
+                    -0.1782,
+                    0.0004
+                  ],
+                  "type": "Point"
+                }
+              },{
+                "type": "Feature",
+                "properties": {
+                    "type": "sly_job",
+                    "name": "Close to Contessa",
+                    "location": {
+                        "x": -2378,
+                        "y": 4683,
+                        "z": 878
+                    }
+                },
+                "geometry": {
+                  "coordinates": [
+                    0.4683,
+                    -0.2378
+                  ],
+                  "type": "Point"
+                }
+              },{
+                "type": "Feature",
+                "properties": {
+                    "type": "bentley_job",
+                    "name": "Operation: Trojan Tank",
+                    "location": {
+                        "x": -10052,
+                        "y": -6753,
+                        "z": -160
+                    }
+                },
+                "geometry": {
+                  "coordinates": [
+                    -0.6753,
+                    -1.0052
+                  ],
+                  "type": "Point"
+                }
+              }
+          
+            ]
+          },
+          {
+            "type": "FeatureCollection",
+            "name": "Lightning Rods",
+            "features": [{
+                "type": "Feature",
+                "properties": {
+                    "type": "rod",
+                    "name": "Lightning Rod",
+                    "location": {
+                        "x": -798,
+                        "y": -10933,
+                        "z": 1127
+                    }
+                },
+                "geometry": {
+                  "coordinates": [
+                    -1.0933,
+                    -0.0798
+                  ],
+                  "type": "Point"
+                }
+              },{
+                "type": "Feature",
+                "properties": {
+                    "type": "rod",
+                    "name": "Lightning Rod",
+                    "location": {
+                        "x": 1580,
+                        "y": -1386,
+                        "z": 3878
+                    }
+                },
+                "geometry": {
+                  "coordinates": [
+                    -0.1386,
+                    0.158
+                  ],
+                  "type": "Point"
+                }
+              },{
+                "type": "Feature",
+                "properties": {
+                    "type": "rod",
+                    "name": "Lightning Rod",
+                    "location": {
+                        "x": -1744,
+                        "y": -4137,
+                        "z": 3841
+                    }
+                },
+                "geometry": {
+                  "coordinates": [
+                    -0.4137,
+                    -0.1744
+                  ],
+                  "type": "Point"
+                }
+              },{
+                "type": "Feature",
+                "properties": {
+                    "type": "rod",
+                    "name": "Lightning Rod",
+                    "location": {
+                        "x": -9934,
+                        "y": 2260,
+                        "z": 924
+                    }
+                },
+                "geometry": {
+                  "coordinates": [
+                    0.226,
+                    -0.9934
+                  ],
+                  "type": "Point"
+                }
+              },{
+                "type": "Feature",
+                "properties": {
+                    "type": "rod",
+                    "name": "Lightning Rod",
+                    "location": {
+                        "x": 6,
+                        "y": 4772,
+                        "z": 3829
+                    }
+                },
+                "geometry": {
+                  "coordinates": [
+                    0.4772,
+                    0.0006
+                  ],
+                  "type": "Point"
+                }
+              }
+        
+            ]
+          },
+          {
+            "type": "FeatureCollection",
+            "name": "Safe House",
+            "features": [{
+                "type": "Feature",
+                "properties": {
+                    "type": "safehouse",
+                    "name": "Safe House",
+                    "location": {
+                        "x": -10567,
+                        "y": -7428,
+                        "z": 100
+                    }
+                },
+                "geometry": {
+                  "coordinates": [
+                    -0.7428,
+                    -1.0567
+                  ],
+                  "type": "Point"
+                }
+              }
+          
+            ]
+          },
+          {
+            "type": "FeatureCollection",
+            "name": "Computer Terminals",
+            "features": [{
+                "type": "Feature",
+                "properties": {
+                    "type": "terminal",
+                    "name": "Computer",
+                    "info": "Computer terminal used in the job 'Train Hack'",
+                    "location": {
+                        "x": 2828,
+                        "y": 4696,
+                        "z": -16
+                    }
+                },
+                "geometry": {
+                  "coordinates": [
+                    0.4696,
+                    0.2828
+                  ],
+                  "type": "Point"
+                }
+              },{
+                "type": "Feature",
+                "properties": {
+                    "type": "terminal",
+                    "name": "Computer",
+                    "info": "Computer terminal used in the job 'Train Hack'",
+                    "location": {
+                        "x": 1383,
+                        "y": 8377,
+                        "z": -84
+                    }
+                },
+                "geometry": {
+                  "coordinates": [
+                    0.8377,
+                    0.1383
+                  ],
+                  "type": "Point"
+                }
+              },{
+                "type": "Feature",
+                "properties": {
+                    "type": "terminal",
+                    "name": "Computer",
+                    "info": "Computer terminal used in the job 'Train Hack'",
+                    "location": {
+                        "x": 5358,
+                        "y": -1958,
+                        "z": 233
+                    }
+                },
+                "geometry": {
+                  "coordinates": [
+                    -0.1958,
+                    0.5358
+                  ],
+                  "type": "Point"
+                }
+              },{
+                "type": "Feature",
+                "properties": {
+                    "type": "terminal",
+                    "name": "Computer",
+                    "info": "Computer terminal used in the job 'Train Hack'",
+                    "location": {
+                        "x": 1743,
+                        "y": -7076,
+                        "z": 629
+                    }
+                },
+                "geometry": {
+                  "coordinates": [
+                    -0.7076,
+                    0.1743
+                  ],
+                  "type": "Point"
+                }
+              },{
+                "type": "Feature",
+                "properties": {
+                    "type": "terminal",
+                    "name": "Computer",
+                    "info": "Computer terminal used in the job 'Train Hack'",
+                    "location": {
+                        "x": -4840,
+                        "y": -10125,
+                        "z": 373
+                    }
+                },
+                "geometry": {
+                  "coordinates": [
+                    -1.0125,
+                    -0.484
+                  ],
+                  "type": "Point"
+                }
+              },{
+                "type": "Feature",
+                "properties": {
+                    "type": "terminal",
+                    "name": "Computer",
+                    "info": "Computer terminal used in the job 'Train Hack'",
+                    "location": {
+                        "x": -7881,
+                        "y": -6355,
+                        "z": -93
+                    }
+                },
+                "geometry": {
+                  "coordinates": [
+                    -0.6355,
+                    -0.7881
+                  ],
+                  "type": "Point"
+                }
+              }
+        
+            ]
+          },
+          {
+            "type": "FeatureCollection",
+            "name": "Treasures",
+            "features": [{
+                "type": "Feature",
+                "properties": {
+                    "type": "treasure",
+                    "name": "Ceremonial Lantern",
+                    "value": "451",
+                    "time": "", 
+                    "location": {
+                        "x": 1847,
+                        "y": -1953,
+                        "z": 3456
+                    }
+                },
+                "geometry": {
+                  "coordinates": [
+                    -0.1953,
+                    0.1847
+                  ],
+                  "type": "Point"
+                }
+              },{
+                "type": "Feature",
+                "properties": {
+                    "type": "treasure",
+                    "name": "Crystal Ball",
+                    "value": "504",
+                    "time": "90", 
+                    "location": {
+                        "x": -700,
+                        "y": 1197,
+                        "z": 1765
+                    }
+                },
+                "geometry": {
+                  "coordinates": [
+                    0.1197,
+                    -0.07
+                  ],
+                  "type": "Point"
+                }
+              },{
+                "type": "Feature",
+                "properties": {
+                    "type": "treasure",
+                    "name": "Golden Orb",
+                    "value": "553",
+                    "time": "100", 
+                    "location": {
+                        "x": -795,
+                        "y": -6488,
+                        "z": 1873
+                    }
+                },
+                "geometry": {
+                  "coordinates": [
+                    -0.6488,
+                    -0.0795
+                  ],
+                  "type": "Point"
+                }
+              }
+          
+            ]
+          }
+    ]
+}

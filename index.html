@@ -18,7 +18,7 @@
             <p class="description">Explore detailed interactive maps from the Sly Cooper series with precise coordinate tracking and location markers.</p>
         </header>
 
-        <main class="game-sections">
+        <!-- <main class="game-sections">
             <section class="game-section" data-game="sly1">
                 <div class="game-header">
                     <h2 class="game-title">Sly Cooper and the Thievius Raccoonus</h2>
@@ -57,63 +57,9 @@
                         </div>
                     </div>
 
-                    <div class="map-card" data-map="S2E2">
-                        <div class="map-preview">
-                            <img src="./assets/previews/S2E2-preview.jpg" alt="India Hub Preview" class="preview-image" onerror="this.style.display='none'; this.parentElement.classList.add('no-image')">
-                            <div class="map-overlay">
-                                <span class="map-type">Hub World</span>
-                            </div>
-                        </div>
-                        <div class="map-info">
-                            <h3>India Hub</h3>
-                            <p>Episode 2 - A Tangled Web</p>
-                            <button class="open-map-btn" onclick="event.preventDefault(); openMap('./maps/S2E2/index.html')">Open Map</button>
-                        </div>
-                    </div>
-
-                    <div class="map-card" data-map="S2E4">
-                        <div class="map-preview">
-                            <img src="./assets/previews/S2E4-preview.jpg" alt="Prague Hub Preview" class="preview-image" onerror="this.style.display='none'; this.parentElement.classList.add('no-image')">
-                            <div class="map-overlay">
-                                <span class="map-type">Hub World</span>
-                            </div>
-                        </div>
-                        <div class="map-info">
-                            <h3>Prague Hub</h3>
-                            <p>Episode 4 - Jailbreak</p>
-                            <button class="open-map-btn" onclick="event.preventDefault(); openMap('./maps/S2E4/index.html')">Open Map</button>
-                        </div>
-                    </div>
-
-                    <div class="map-card" data-map="S2E6">
-                        <div class="map-preview">
-                            <img src="./assets/previews/S2E6-preview.jpg" alt="Canada Hub Preview" class="preview-image" onerror="this.style.display='none'; this.parentElement.classList.add('no-image')">
-                            <div class="map-overlay">
-                                <span class="map-type">Hub World</span>
-                            </div>
-                        </div>
-                        <div class="map-info">
-                            <h3>Canada Hub</h3>
-                            <p>Episode 6 - Menace from the North, Eh!</p>
-                            <button class="open-map-btn" onclick="event.preventDefault(); openMap('./maps/S2E6/index.html')">Open Map</button>
-                        </div>
-                    </div>
-
-                    <div class="map-card" data-map="sailing">
-                        <div class="map-preview">
-                            <img src="./assets/previews/sailing-preview.jpg" alt="Sailing Map Preview" class="preview-image" onerror="this.style.display='none'; this.parentElement.classList.add('no-image')">
-                            <div class="map-overlay">
-                                <span class="map-type">Mini-Game</span>
-                            </div>
-                        </div>
-                        <div class="map-info">
-                            <h3>Sailing Map</h3>
-                            <p>Cooper Gang Sailing Adventure</p>
-                            <button class="open-map-btn" onclick="event.preventDefault(); openMap('./maps/sailing/index.html')">Open Map</button>
-                        </div>
-                    </div>
+                    
                 </div>
-            </section>
+            </section> -->
 
             <section class="game-section" data-game="sly3">
                 <div class="game-header">
@@ -121,15 +67,107 @@
                     <span class="game-year">2005</span>
                 </div>
                 <div class="maps-grid">
-                    <div class="map-card coming-soon">
+                    
+                    <div class="map-card" data-map="venice">
                         <div class="map-preview">
-                            <div class="coming-soon-text">Coming Soon</div>
+                            <img src="./assets/previews/venice-preview.jpg" alt="Venice Preview" class="preview-image" onerror="this.style.display='none'; this.parentElement.classList.add('no-image')">
+                            <div class="map-overlay">
+                                <span class="map-type">Hub World</span>
+                            </div>
                         </div>
                         <div class="map-info">
-                            <h3>Maps Coming Soon</h3>
-                            <p>Interactive maps for Sly 3 will be added in future updates</p>
+                            <h3>Venice</h3>
+                            <p>Episode 1 - An Opera of Fear</p>
+                            <button class="open-map-btn" onclick="event.preventDefault(); openMap('./maps/venice/index.html')">Open Map</button>
                         </div>
                     </div>
+
+                    <div class="map-card" data-map="outback">
+                        <div class="map-preview">
+                            <img src="./assets/previews/outback-preview.jpg" alt="Outback Preview" class="preview-image" onerror="this.style.display='none'; this.parentElement.classList.add('no-image')">
+                            <div class="map-overlay">
+                                <span class="map-type">Hub World</span>
+                            </div>
+                        </div>
+                        <div class="map-info">
+                            <h3>Yuendumu</h3>
+                            <p>Episode 2 - Rumble Down Under</p>
+                            <button class="open-map-btn" onclick="event.preventDefault(); openMap('./maps/outback/index.html')">Open Map</button>
+                        </div>
+                    </div>
+
+                    <div class="map-card" data-map="holland">
+                        <div class="map-preview">
+                            <img src="./assets/previews/holland-preview.jpg" alt="Holland Preview" class="preview-image" onerror="this.style.display='none'; this.parentElement.classList.add('no-image')">
+                            <div class="map-overlay">
+                                <span class="map-type">Hub World</span>
+                            </div>
+                        </div>
+                        <div class="map-info">
+                            <h3>Kinderdijk</h3>
+                            <p>Episode 3 - Flight of Fancy</p>
+                            <button class="open-map-btn" onclick="event.preventDefault(); openMap('./maps/holland/index.html')">Open Map</button>
+                        </div>
+                    </div>
+
+                    <div class="map-card" data-map="china">
+                        <div class="map-preview">
+                            <img src="./assets/previews/china-preview.jpg" alt="China Preview" class="preview-image" onerror="this.style.display='none'; this.parentElement.classList.add('no-image')">
+                            <div class="map-overlay">
+                                <span class="map-type">Hub World</span>
+                            </div>
+                        </div>
+                        <div class="map-info">
+                            <h3>Kunlun Mountains</h3>
+                            <p>Episode 4 - A Cold Alliance</p>
+                            <button class="open-map-btn" onclick="event.preventDefault(); openMap('./maps/china/index.html')">Open Map</button>
+                        </div>
+                    </div>
+
+                    <div class="map-card" data-map="pirates">
+                        <div class="map-preview">
+                            <img src="./assets/previews/pirates-preview.jpg" alt="Pirates Preview" class="preview-image" onerror="this.style.display='none'; this.parentElement.classList.add('no-image')">
+                            <div class="map-overlay">
+                                <span class="map-type">Hub World</span>
+                            </div>
+                        </div>
+                        <div class="map-info">
+                            <h3>Blood-Bath Bay</h3>
+                            <p>Episode 5 - Dead Men Tell No Tales</p>
+                            <button class="open-map-btn" onclick="event.preventDefault(); openMap('./maps/pirates/index.html')">Open Map</button>
+                        </div>
+                    </div>
+
+                    
+
+                    <div class="map-card" data-map="kaine">
+                        <div class="map-preview">
+                            <img src="./assets/previews/kaine-preview.jpg" alt="Kaine Island Preview" class="preview-image" onerror="this.style.display='none'; this.parentElement.classList.add('no-image')">
+                            <div class="map-overlay">
+                                <span class="map-type">Hub World</span>
+                            </div>
+                        </div>
+                        <div class="map-info">
+                            <h3>Kaine Island</h3>
+                            <p>Episode 6 - Honor Among Thieves</p>
+                            <button class="open-map-btn" onclick="event.preventDefault(); openMap('./maps/kaine/index.html')">Open Map</button>
+                        </div>
+                    </div>
+
+                    <div class="map-card" data-map="sailing">
+                        <div class="map-preview">
+                            <img src="./assets/previews/sailing-preview.jpg" alt="Sailing Map Preview" class="preview-image" onerror="this.style.display='none'; this.parentElement.classList.add('no-image')">
+                            <div class="map-overlay">
+                                <span class="map-type">Hub World</span>
+                            </div>
+                        </div>
+                        <div class="map-info">
+                            <h3>Sailing Map</h3>
+                            <p>Episode 5 - Dead Men Tell No Tales</p>
+                            <button class="open-map-btn" onclick="event.preventDefault(); openMap('./maps/sailing/index.html')">Open Map</button>
+                        </div>
+                    </div>
+
                 </div>
             </section>
         </main>

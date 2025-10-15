@@ -1,17 +1,13 @@
 const map_min_zoom = 8;
 const map_max_zoom = 11;
 
-// Game coordinate calibration for sailing map
-// Each pixel = 332 game units, top-left = (-468884, -392522)
 const game_units_per_pixel = 332;
 const game_top_left_x = -468884;
 const game_top_left_y = -392522;
 
-// Map image dimensions in pixels (actual image dimensions)
-const map_image_width_pixels = 2590;  // Actual image width
-const map_image_height_pixels = 2960; // Actual image height
+const map_image_width_pixels = 2590;
+const map_image_height_pixels = 2960;
 
-// Use original offsets for map bounds (don't double-offset)
 const x_offset = 0.073865179437439379243452958292919;
 const y_offset = 0;
 

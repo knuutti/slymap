@@ -1,24 +1,80 @@
-// Main page functionality for SlyMap
+async function setModalAspectRatio(modalContainer, mapUrl) {
+    try {
+        const urlParts = mapUrl.split('/');
+        const mapDir = urlParts[urlParts.length - 2];
+        
+        const detailsUrl = `./maps/${mapDir}/details.js`;
+        
+        const response = await fetch(detailsUrl);
+        if (!response.ok) {
+            throw new Error(`Failed to fetch details.js: ${response.status}`);
+        }
+        const detailsText = await response.text();
+        
+        const widthMatch = detailsText.match(/map_image_width_pixels\s*=\s*(\d+)/);
+        const heightMatch = detailsText.match(/map_image_height_pixels\s*=\s*(\d+)/);
+        
+        if (!widthMatch || !heightMatch) {
+            console.warn(`Could not find image dimensions for map: ${mapDir}`);
+            return;
+        }
+        
+        const imageWidth = parseInt(widthMatch[1]);
+        const imageHeight = parseInt(heightMatch[1]);
+        const aspectRatio = imageWidth / imageHeight;
+        
+        const viewportWidth = document.documentElement.clientWidth;
+        const viewportHeight = document.documentElement.clientHeight;
+        
+        const header = modalContainer.querySelector('.map-modal-header');
+        const headerHeight = header ? header.offsetHeight : 60;
+        
+        const maxModalHeight = viewportHeight * 0.85;
+        const maxContentHeight = maxModalHeight - headerHeight;
+        
+        let contentHeight = maxContentHeight;
+        let contentWidth = contentHeight * aspectRatio;
+        
+        const maxContentWidth = viewportWidth * 0.9;
+        if (contentWidth > maxContentWidth) {
+            contentWidth = maxContentWidth;
+            contentHeight = contentWidth / aspectRatio;
+        }
+        
+        const modalWidth = contentWidth;
+        const modalHeight = contentHeight + headerHeight;
+        
+        modalContainer.style.width = `${modalWidth}px`;
+        modalContainer.style.height = `${modalHeight}px`;
+        modalContainer.style.maxWidth = 'none';
+        modalContainer.style.maxHeight = 'none';
+        
+        const contentArea = modalContainer.querySelector('.map-modal-content');
+        if (contentArea) {
+            contentArea.style.width = `${contentWidth}px`;
+            contentArea.style.height = `${contentHeight}px`;
+            contentArea.style.flex = 'none';
+        }
+        
+    } catch (error) {
+        console.error('Error setting modal aspect ratio:', error);
+    }
+}
 
-// Function to open a map in modal overlay
-function openMap(mapUrl) {
-    // Add a loading effect
+async function openMap(mapUrl) {
     const button = event.target;
     const originalText = button.textContent;
     
     button.textContent = 'Loading...';
     button.disabled = true;
     
-    // Create modal overlay
-    createMapModal(mapUrl, () => {
+    await createMapModal(mapUrl, () => {
         button.textContent = originalText;
         button.disabled = false;
     });
 }
 
-// Function to create and show map modal
-function createMapModal(mapUrl, onClose) {
-    // Create modal overlay
+async function createMapModal(mapUrl, onClose) {
     const modalOverlay = document.createElement('div');
     modalOverlay.className = 'map-modal-overlay';
     modalOverlay.innerHTML = `
@@ -44,13 +100,14 @@ function createMapModal(mapUrl, onClose) {
     
     document.body.appendChild(modalOverlay);
     
-    // Add event listeners
+    const modalContainer = modalOverlay.querySelector('.map-modal-container');
+    await setModalAspectRatio(modalContainer, mapUrl);
+    
     const closeBtn = modalOverlay.querySelector('.map-modal-close');
     const iframe = modalOverlay.querySelector('.map-iframe');
     const loadingDiv = modalOverlay.querySelector('.map-loading');
     const titleElement = modalOverlay.querySelector('.map-modal-title');
     
-    // Close modal function
     const closeModal = () => {
         modalOverlay.classList.add('closing');
         setTimeout(() => {
@@ -60,17 +117,14 @@ function createMapModal(mapUrl, onClose) {
         }, 300);
     };
     
-    // Close button event
     closeBtn.addEventListener('click', closeModal);
     
-    // Close on overlay click (but not on modal content)
     modalOverlay.addEventListener('click', (e) => {
         if (e.target === modalOverlay) {
             closeModal();
         }
     });
     
-    // Close on Escape key
     const handleEscape = (e) => {
         if (e.key === 'Escape') {
             closeModal();
@@ -79,30 +133,25 @@ function createMapModal(mapUrl, onClose) {
     };
     document.addEventListener('keydown', handleEscape);
     
-    // Handle iframe load
     iframe.addEventListener('load', () => {
         loadingDiv.style.display = 'none';
         iframe.style.display = 'block';
         
-        // Try to get map title from the iframe (if same origin)
         try {
             const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
             const iframeTitle = iframeDoc.title;
             if (iframeTitle && iframeTitle !== 'Document') {
                 titleElement.textContent = iframeTitle;
             } else {
-                // Fallback to parsing URL for map name
                 const mapName = getMapNameFromUrl(mapUrl);
                 titleElement.textContent = mapName;
             }
         } catch (e) {
-            // Cross-origin restrictions, use URL parsing
             const mapName = getMapNameFromUrl(mapUrl);
             titleElement.textContent = mapName;
         }
     });
     
-    // Handle iframe error
     iframe.addEventListener('error', () => {
         loadingDiv.innerHTML = `
             <div class="loading-error">
@@ -112,23 +161,27 @@ function createMapModal(mapUrl, onClose) {
         `;
     });
     
-    // Add modal open class to body
     document.body.classList.add('modal-open');
     
-    // Animate in
     setTimeout(() => {
         modalOverlay.classList.add('show');
     }, 10);
 }
 
-// Helper function to extract map name from URL
 function getMapNameFromUrl(url) {
     const mapNames = {
         'S2E1': 'Paris Hub - Episode 1',
         'S2E2': 'India Hub - Episode 2',
         'S2E4': 'Prague Hub - Episode 4',
         'S2E6': 'Canada Hub - Episode 6',
-        'sailing': 'Sailing Map'
+        'sailing': 'Sailing Map',
+        'china': 'China Hub - Episode 1',
+        'india': 'India Hub - Episode 2', 
+        'outback': 'Outback Hub - Episode 3',
+        'kaine': 'Kaine Island - Episode 4',
+        'venice': 'Venice Hub - Episode 5',
+        'holland': 'Holland Hub - Episode 6',
+        'pirates': 'Pirate Ship - Episode 8'
     };
     
     for (const [key, name] of Object.entries(mapNames)) {
@@ -140,7 +193,6 @@ function getMapNameFromUrl(url) {
     return 'Interactive Map';
 }
 
-// Add click handlers for map cards
 document.addEventListener('DOMContentLoaded', function() {
     // Add click functionality to map cards (excluding coming soon ones)
     const mapCards = document.querySelectorAll('.map-card:not(.coming-soon)');
@@ -164,7 +216,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     const buttonEvent = { target: button };
                     // Temporarily set the global event for the openMap function
                     window.event = buttonEvent;
-                    openMap(mapUrl);
+                    openMap(mapUrl).catch(console.error);
                 }
             }
         });
@@ -248,7 +300,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         const mapUrl = urlMatch[1];
                         const buttonEvent = { target: button };
                         window.event = buttonEvent;
-                        openMap(mapUrl);
+                        openMap(mapUrl).catch(console.error);
                     }
                 }
             }

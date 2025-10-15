@@ -8,7 +8,3 @@ const map_sw_x = -1.4917555771096023278370514064 + x_offset;
 const map_sw_y = -1.5809893307468477206595538312318 + y_offset;
 const map_ne_x = 1.418040737148399612027158098933 + x_offset;
 const map_ne_y = 1.3288069835111542192046556741028 + y_offset;
-
-const map_layers = {
-    "Cave": "./maps/cave.png"
-}

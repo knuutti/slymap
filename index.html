@@ -3,16 +3,142 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>SlyMap - Interactive Game Maps</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/main-page.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
-<body>
-    <h1>SlyMap</h1>
-    Maps available:<br>
-    <ul>
-        <li><a href="./maps/S2E1/index.html">Sly 2 Paris Hub</a></li>
-        <li><a href="./maps/S2E2/index.html">Sly 2 India 1 Hub</a></li>
-        <li><a href="./maps/S2E4/index.html">Sly 2 Prague 1 Hub</a></li>
-        <li><a href="./maps/S2E6/index.html">Sly 2 Canada 1 Hub</a></li>
-    </ul>
+<body class="main-page">
+    <div class="container">
+        <header class="header">
+            <h1 class="title">
+                <span class="title-main">SlyMap</span>
+                <span class="title-subtitle">Interactive Game Maps</span>
+            </h1>
+            <p class="description">Explore detailed interactive maps from the Sly Cooper series with precise coordinate tracking and location markers.</p>
+        </header>
+
+        <main class="game-sections">
+            <section class="game-section" data-game="sly1">
+                <div class="game-header">
+                    <h2 class="game-title">Sly Cooper and the Thievius Raccoonus</h2>
+                    <span class="game-year">2002</span>
+                </div>
+                <div class="maps-grid">
+                    <div class="map-card coming-soon">
+                        <div class="map-preview">
+                            <div class="coming-soon-text">Coming Soon</div>
+                        </div>
+                        <div class="map-info">
+                            <h3>Maps Coming Soon</h3>
+                            <p>Interactive maps for Sly 1 will be added in future updates</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="game-section" data-game="sly2">
+                <div class="game-header">
+                    <h2 class="game-title">Sly 2: Band of Thieves</h2>
+                    <span class="game-year">2004</span>
+                </div>
+                <div class="maps-grid">
+                    <div class="map-card" data-map="S2E1">
+                        <div class="map-preview">
+                            <img src="./assets/previews/S2E1-preview.png" alt="Paris Hub Preview" class="preview-image" onerror="this.style.display='none'; this.parentElement.classList.add('no-image')">
+                            <div class="map-overlay">
+                                <span class="map-type">Hub World</span>
+                            </div>
+                        </div>
+                        <div class="map-info">
+                            <h3>Paris Hub</h3>
+                            <p>Episode 1 - The Black Chateau</p>
+                            <button class="open-map-btn" onclick="event.preventDefault(); openMap('./maps/S2E1/index.html')">Open Map</button>
+                        </div>
+                    </div>
+
+                    <div class="map-card" data-map="S2E2">
+                        <div class="map-preview">
+                            <img src="./assets/previews/S2E2-preview.jpg" alt="India Hub Preview" class="preview-image" onerror="this.style.display='none'; this.parentElement.classList.add('no-image')">
+                            <div class="map-overlay">
+                                <span class="map-type">Hub World</span>
+                            </div>
+                        </div>
+                        <div class="map-info">
+                            <h3>India Hub</h3>
+                            <p>Episode 2 - A Tangled Web</p>
+                            <button class="open-map-btn" onclick="event.preventDefault(); openMap('./maps/S2E2/index.html')">Open Map</button>
+                        </div>
+                    </div>
+
+                    <div class="map-card" data-map="S2E4">
+                        <div class="map-preview">
+                            <img src="./assets/previews/S2E4-preview.jpg" alt="Prague Hub Preview" class="preview-image" onerror="this.style.display='none'; this.parentElement.classList.add('no-image')">
+                            <div class="map-overlay">
+                                <span class="map-type">Hub World</span>
+                            </div>
+                        </div>
+                        <div class="map-info">
+                            <h3>Prague Hub</h3>
+                            <p>Episode 4 - Jailbreak</p>
+                            <button class="open-map-btn" onclick="event.preventDefault(); openMap('./maps/S2E4/index.html')">Open Map</button>
+                        </div>
+                    </div>
+
+                    <div class="map-card" data-map="S2E6">
+                        <div class="map-preview">
+                            <img src="./assets/previews/S2E6-preview.jpg" alt="Canada Hub Preview" class="preview-image" onerror="this.style.display='none'; this.parentElement.classList.add('no-image')">
+                            <div class="map-overlay">
+                                <span class="map-type">Hub World</span>
+                            </div>
+                        </div>
+                        <div class="map-info">
+                            <h3>Canada Hub</h3>
+                            <p>Episode 6 - Menace from the North, Eh!</p>
+                            <button class="open-map-btn" onclick="event.preventDefault(); openMap('./maps/S2E6/index.html')">Open Map</button>
+                        </div>
+                    </div>
+
+                    <div class="map-card" data-map="sailing">
+                        <div class="map-preview">
+                            <img src="./assets/previews/sailing-preview.jpg" alt="Sailing Map Preview" class="preview-image" onerror="this.style.display='none'; this.parentElement.classList.add('no-image')">
+                            <div class="map-overlay">
+                                <span class="map-type">Mini-Game</span>
+                            </div>
+                        </div>
+                        <div class="map-info">
+                            <h3>Sailing Map</h3>
+                            <p>Cooper Gang Sailing Adventure</p>
+                            <button class="open-map-btn" onclick="event.preventDefault(); openMap('./maps/sailing/index.html')">Open Map</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="game-section" data-game="sly3">
+                <div class="game-header">
+                    <h2 class="game-title">Sly 3: Honor Among Thieves</h2>
+                    <span class="game-year">2005</span>
+                </div>
+                <div class="maps-grid">
+                    <div class="map-card coming-soon">
+                        <div class="map-preview">
+                            <div class="coming-soon-text">Coming Soon</div>
+                        </div>
+                        <div class="map-info">
+                            <h3>Maps Coming Soon</h3>
+                            <p>Interactive maps for Sly 3 will be added in future updates</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; 2025 SlyMap. Fan-made interactive maps for the Sly Cooper series.</p>
+        </footer>
+    </div>
+
+    <script src="./js/main-page.js"></script>
 </body>
 </html>

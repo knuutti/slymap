@@ -62,16 +62,19 @@ async function setModalAspectRatio(modalContainer, mapUrl) {
 }
 
 async function openMap(mapUrl) {
-    const button = event.target;
-    const originalText = button.textContent;
+    // Move to map page
+    window.location.href = mapUrl;
+    return;
+    // const button = event.target;
+    // const originalText = button.textContent;
     
-    button.textContent = 'Loading...';
-    button.disabled = true;
+    // button.textContent = 'Loading...';
+    // button.disabled = true;
     
-    await createMapModal(mapUrl, () => {
-        button.textContent = originalText;
-        button.disabled = false;
-    });
+    // await createMapModal(mapUrl, () => {
+    //     button.textContent = originalText;
+    //     button.disabled = false;
+    // });
 }
 
 async function createMapModal(mapUrl, onClose) {

@@ -1,12 +1,12 @@
 const map_min_zoom = 8;
 const map_max_zoom = 20;
 
-const game_units_per_pixel = 332;
-const game_top_left_x = -468884;
-const game_top_left_y = -392522;
+const game_units_per_pixel = 5.48;
+const game_top_left_x = -17209;
+const game_top_left_y = -16324;
 
-const map_image_width_pixels = 5550;
-const map_image_height_pixels = 5735; 
+const map_image_width_pixels = 5735;
+const map_image_height_pixels = 5550; 
 const x_offset = 0.073865179437439379243452958292919;
 const y_offset = 0;
 

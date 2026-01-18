@@ -1,0 +1,270 @@
+{
+  "objects": [
+    {
+      "type": "Bottle",
+      "position": [-11428, -4239, 788],
+      "parameters": {
+        "purposeOfUse": "Normal"
+      }
+    },
+    {
+      "type": "Bottle",
+      "position": [-9768, -3428, 781],
+      "parameters": {
+        "purposeOfUse": "Normal"
+      }
+    },
+    {
+      "type": "Bottle",
+      "position": [-11005, -1808, 786],
+      "parameters": {
+        "purposeOfUse": "Normal"
+      }
+    },
+    {
+      "type": "Bottle",
+      "position": [-10505, 701, 1504],
+      "parameters": {
+        "purposeOfUse": "Normal"
+      }
+    },
+    {
+      "type": "Bottle",
+      "position": [-11624, 1158, 137],
+      "parameters": {
+        "purposeOfUse": "Normal"
+      }
+    },
+    {
+      "type": "Bottle",
+      "position": [-10297, 3302, 804],
+      "parameters": {
+        "purposeOfUse": "Normal"
+      }
+    },
+    {
+      "type": "Bottle",
+      "position": [-6767, 3876, 900],
+      "parameters": {
+        "purposeOfUse": "Normal"
+      }
+    },
+    {
+      "type": "Bottle",
+      "position": [-1629, 8224, 2194],
+      "parameters": {
+        "purposeOfUse": "Normal"
+      }
+    },
+    {
+      "type": "Bottle",
+      "position": [9193, 7182, 1354],
+      "parameters": {
+        "purposeOfUse": "Normal"
+      }
+    },
+    {
+      "type": "Bottle",
+      "position": [3774, 2953, 2573],
+      "parameters": {
+        "purposeOfUse": "Normal"
+      }
+    },
+    {
+      "type": "Bottle",
+      "position": [9068, -3913, 2556],
+      "parameters": {
+        "purposeOfUse": "Normal"
+      }
+    },
+    {
+      "type": "Bottle",
+      "position": [10703, -4153, 1481],
+      "parameters": {
+        "purposeOfUse": "Normal"
+      }
+    },
+    {
+      "type": "Bottle",
+      "position": [10130, -1135, 961],
+      "parameters": {
+        "purposeOfUse": "Normal"
+      }
+    },
+    {
+      "type": "Bottle",
+      "position": [7523, -2278, 2137],
+      "parameters": {
+        "purposeOfUse": "Normal"
+      }
+    },
+    {
+      "type": "Bottle",
+      "position": [651, -8254, 1160],
+      "parameters": {
+        "purposeOfUse": "Normal"
+      }
+    },
+    {
+      "type": "Bottle",
+      "position": [-3735, -11654, 669],
+      "parameters": {
+        "purposeOfUse": "Normal"
+      }
+    },
+    {
+      "type": "Bottle",
+      "position": [770, -10323, 1665],
+      "parameters": {
+        "purposeOfUse": "Normal"
+      }
+    },
+    {
+      "type": "Bottle",
+      "position": [-1808, -13036, 2221],
+      "parameters": {
+        "purposeOfUse": "Normal"
+      }
+    },
+    {
+      "type": "Bottle",
+      "position": [-4733, -9153, 1157],
+      "parameters": {
+        "purposeOfUse": "Normal"
+      }
+    },
+    {
+      "type": "Bottle",
+      "position": [-1806, -7478, 165],
+      "parameters": {
+        "purposeOfUse": "Normal"
+      }
+    },
+    {
+      "type": "Bottle",
+      "position": [-2691, -2647, 1132],
+      "parameters": {
+        "purposeOfUse": "Normal"
+      }
+    },
+    {
+      "type": "Bottle",
+      "position": [-4145, -1427, 946],
+      "parameters": {
+        "purposeOfUse": "Normal"
+      }
+    },
+    {
+      "type": "Bottle",
+      "position": [-5410, -4030, 1290],
+      "parameters": {
+        "purposeOfUse": "Normal"
+      }
+    },
+    {
+      "type": "Bottle",
+      "position": [-5894, -2367, 2239],
+      "parameters": {
+        "purposeOfUse": "Normal"
+      }
+    },
+    {
+      "type": "Bottle",
+      "position": [-545, -121, 1275],
+      "parameters": {
+        "purposeOfUse": "Normal"
+      }
+    },
+    {
+      "type": "Bottle",
+      "position": [3283, -413, 140],
+      "parameters": {
+        "purposeOfUse": "Normal"
+      }
+    },
+    {
+      "type": "Bottle",
+      "position": [4357, 1224, 214],
+      "parameters": {
+        "purposeOfUse": "Normal"
+      }
+    },
+    {
+      "type": "Bottle",
+      "position": [4730, -1704, -178],
+      "parameters": {
+        "purposeOfUse": "Normal"
+      }
+    },
+    {
+      "type": "Bottle",
+      "position": [-262, -4664, 54],
+      "parameters": {
+        "purposeOfUse": "Normal"
+      }
+    },
+    {
+      "type": "Bottle",
+      "position": [1034, 7745, 621],
+      "parameters": {
+        "purposeOfUse": "Normal"
+      }
+    },
+    {
+      "type": "Job Triggers",
+      "position": [5450,-6380,1062],
+      "parameters": {
+        "purposeOfUse": "Normal"
+      }
+    },
+    {
+      "type": "Job Triggers",
+      "position": [9781,-3711,1008],
+      "parameters": {
+        "purposeOfUse": "Normal"
+      }
+    },
+    {
+      "type": "Job Triggers",
+      "position": [-1548,-11053,2037],
+      "parameters": {
+        "purposeOfUse": "Normal"
+      }
+    },
+    {
+      "type": "Job Triggers",
+      "position": [-515,-3276,2150],
+      "parameters": {
+        "purposeOfUse": "Normal"
+      }
+    },
+    {
+      "type": "Job Triggers",
+      "position": [3449,4991,2205],
+      "parameters": {
+        "purposeOfUse": "Normal"
+      }
+    },
+    {
+      "type": "Job Triggers",
+      "position": [3556,-2365,2533],
+      "parameters": {
+        "purposeOfUse": "Normal"
+      }
+    },
+    {
+      "type": "Job Triggers",
+      "position": [-4134,-12514,2498],
+      "parameters": {
+        "purposeOfUse": "Normal"
+      }
+    },
+    {
+      "type": "Job Triggers",
+      "position": [-5903,599,3],
+      "parameters": {
+        "purposeOfUse": "Normal"
+      }
+    }
+  ]
+}

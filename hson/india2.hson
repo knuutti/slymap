@@ -1,0 +1,214 @@
+{
+  "objects": [
+    {
+      "type": "Bottle",
+      "position": [-113.5494, -2902.279, 641.5563],
+      "parameters": {
+        "purposeOfUse": "Normal"
+      }
+    },
+    {
+      "type": "Bottle",
+      "position": [5925.467, -3471.49, 2115.397],
+      "parameters": {
+        "purposeOfUse": "Normal"
+      }
+    },
+    {
+      "type": "Bottle",
+      "position": [5818.991, -5620.032, 2232.062],
+      "parameters": {
+        "purposeOfUse": "Normal"
+      }
+    },
+    {
+      "type": "Bottle",
+      "position": [3302.772, -10136.92, 1831.493],
+      "parameters": {
+        "purposeOfUse": "Normal"
+      }
+    },
+    {
+      "type": "Bottle",
+      "position": [5102.705, -7222.604, -324.8874],
+      "parameters": {
+        "purposeOfUse": "Normal"
+      }
+    },
+    {
+      "type": "Bottle",
+      "position": [2107.548, -8396.575, 2295.02],
+      "parameters": {
+        "purposeOfUse": "Normal"
+      }
+    },
+    {
+      "type": "Bottle",
+      "position": [-356.8581, 2585.868, -482.144],
+      "parameters": {
+        "purposeOfUse": "Normal"
+      }
+    },
+    {
+      "type": "Bottle",
+      "position": [-3104.354, 7400.385, 1446.877],
+      "parameters": {
+        "purposeOfUse": "Normal"
+      }
+    },
+    {
+      "type": "Bottle",
+      "position": [775.9706, -10337.45, 505.8952],
+      "parameters": {
+        "purposeOfUse": "Normal"
+      }
+    },
+    {
+      "type": "Bottle",
+      "position": [3606.774, 152.6564, 2045.219],
+      "parameters": {
+        "purposeOfUse": "Normal"
+      }
+    },
+    {
+      "type": "Bottle",
+      "position": [2981.856, -474.5869, 439.0946],
+      "parameters": {
+        "purposeOfUse": "Normal"
+      }
+    },
+    {
+      "type": "Bottle",
+      "position": [1628.748, 4285.16, 1062.112],
+      "parameters": {
+        "purposeOfUse": "Normal"
+      }
+    },
+    {
+      "type": "Bottle",
+      "position": [-5607.905, 7131.718, 818.3537],
+      "parameters": {
+        "purposeOfUse": "Normal"
+      }
+    },
+    {
+      "type": "Bottle",
+      "position": [-2394.935, 2574.332, -109.1395],
+      "parameters": {
+        "purposeOfUse": "Normal"
+      }
+    },
+    {
+      "type": "Bottle",
+      "position": [1118.032, 10086.44, 2123.925],
+      "parameters": {
+        "purposeOfUse": "Normal"
+      }
+    },
+    {
+      "type": "Bottle",
+      "position": [-6802.067, 1828.344, 2692.444],
+      "parameters": {
+        "purposeOfUse": "Normal"
+      }
+    },
+    {
+      "type": "Bottle",
+      "position": [-31.27275, -11283.46, 185.6969],
+      "parameters": {
+        "purposeOfUse": "Normal"
+      }
+    },
+    {
+      "type": "Bottle",
+      "position": [-494.8358, -8309.426, 977.1938],
+      "parameters": {
+        "purposeOfUse": "Normal"
+      }
+    },
+    {
+      "type": "Bottle",
+      "position": [-3112.613, -12.76103, -470.937],
+      "parameters": {
+        "purposeOfUse": "Normal"
+      }
+    },
+    {
+      "type": "Bottle",
+      "position": [1578.232, -5176.316, 2563.864],
+      "parameters": {
+        "purposeOfUse": "Normal"
+      }
+    },
+    {
+      "type": "Bottle",
+      "position": [-1344.233, -6643.721, -502.513],
+      "parameters": {
+        "purposeOfUse": "Normal"
+      }
+    },
+    {
+      "type": "Bottle",
+      "position": [-5676.029, -7889.951, 980.1332],
+      "parameters": {
+        "purposeOfUse": "Normal"
+      }
+    },
+    {
+      "type": "Bottle",
+      "position": [4015.6, 2302.46, 1654.621],
+      "parameters": {
+        "purposeOfUse": "Normal"
+      }
+    },
+    {
+      "type": "Bottle",
+      "position": [5381.784, 7145.968, 2315.082],
+      "parameters": {
+        "purposeOfUse": "Normal"
+      }
+    },
+    {
+      "type": "Bottle",
+      "position": [3981.642, 3605.051, 1537.808],
+      "parameters": {
+        "purposeOfUse": "Normal"
+      }
+    },
+    {
+      "type": "Bottle",
+      "position": [6851.942, -4041.374, 2753.874],
+      "parameters": {
+        "purposeOfUse": "Normal"
+      }
+    },
+    {
+      "type": "Bottle",
+      "position": [-2831.65, -5380.588, 2395.838],
+      "parameters": {
+        "purposeOfUse": "Normal"
+      }
+    },
+    {
+      "type": "Bottle",
+      "position": [-6603.983, -3053.253, 3402.311],
+      "parameters": {
+        "purposeOfUse": "Normal"
+      }
+    },
+    {
+      "type": "Bottle",
+      "position": [4340.204, 7857.052, 3058.959],
+      "parameters": {
+        "purposeOfUse": "Normal"
+      }
+    },
+    {
+      "type": "Bottle",
+      "position": [4170.068, -2639.858, 1598.639],
+      "parameters": {
+        "purposeOfUse": "Normal"
+      }
+    }
+  ]
+}

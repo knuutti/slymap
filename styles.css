@@ -1,0 +1,242 @@
+@font-face {
+	/* font-family: 'axis';
+	src: url('AxisCondProN-B.otf');
+	*/
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+* { font-family: 'axis', sans-serif; }
+body { margin: 0; }
+#map {
+	height: 100vh;
+}
+.markers_invert {
+	filter: invert(1);
+}
+.menu ul {
+	list-style-type: none;
+	padding: 0px;
+}
+.menu li {
+	background-color: rgba(255, 255, 255, 0.8);
+	border-radius: 5px;
+	padding: 5px;
+	text-align: center;
+	user-select: none;
+	cursor: pointer;
+	margin: 5px 0;
+	box-shadow: rgba(0, 0, 0, .2) 2px 2px 4px;
+}
+.menu li:hover {
+	background-color: rgba(220, 220, 220, 0.8);
+}
+
+.map-selector-container {
+	background-color: rgba(255, 255, 255, 0.9);
+	padding: 10px;
+	border-radius: 5px;
+	box-shadow: rgba(0, 0, 0, .3) 2px 2px 6px;
+}
+
+.map-selector-container label {
+	display: block;
+	margin-bottom: 5px;
+	font-weight: bold;
+	color: #333;
+}
+
+.map-selector-container select {
+	width: 100%;
+	padding: 6px 8px;
+	font-size: 14px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	background-color: white;
+	cursor: pointer;
+}
+
+.map-selector-container select:hover {
+	border-color: #999;
+}
+
+.map-selector-container select:focus {
+	outline: none;
+	border-color: #4a90e2;
+	box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.2);
+}
+
+.mouseposition {
+	background-color: rgba(255, 255, 255, .8);
+	padding: 2px 5px;
+	border-radius: 5px;
+	box-shadow: rgba(0, 0, 0, .2) 2px 2px 4px;
+}
+
+.leaflet-popup h1 {
+margin: 4px 0;
+text-align: center;
+}
+.leaflet-popup p {
+	font-family: monospace;
+	font-size: 1.2em;
+	margin: 6px 0;
+}
+.emphasize {
+	font-weight: bold;
+}
+.leaflet-popup-content{
+	width: 400px;
+	overflow-y: auto;
+	max-height: 80vh;
+}
+
+#title {
+	z-index: 2200;
+	border: 2px solid rgba(0, 0, 0, .2);
+	text-align: center;
+	margin-left: 60px;
+	padding: 5px;
+	border-radius: 10px;
+	background-color: rgba(255, 255, 255, .8);
+	position: absolute;
+	width: 220px;
+}
+#title:hover {
+	width: 440px;
+}
+#title h1 {
+	padding: 0px 10px;
+	margin: 0;
+}
+#title>h2, #title>p {
+	display: none;
+	text-align: left;
+	padding: 0px 20px;
+	margin: 0;
+}
+#title>h2 {
+	margin: 4px 0 0 0;
+}
+#title:hover>h2, #title:hover>p {
+	display: block;
+}
+#title p:last-child {
+	padding-bottom: 10px;
+}
+#title p {
+	font-family: sans-serif;
+}
+
+.menu .selected {
+	background-color: rgba(180, 200, 250, .7);
+}
+
+.leaflet-control-layers h2 {
+	font-size: 2em;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+.leaflet-control-layers label {
+	border-radius: 6px;
+}
+
+div#layerinfo {
+	position: absolute;
+	right: 250px;
+	background-color: rgba(255, 255, 255, .8);
+	border-radius: 10px;
+	border: 2px solid rgba(0,0,0, .2);
+	width: 180px;
+}
+
+#layerinfo ul {
+	list-style-type: none;
+	margin: 0px;
+	padding: 5px;
+}
+#layerinfo li {
+	border-radius: 6px;
+	padding: 2px 4px;
+	color: #333;
+}
+#layerinfo #clear_markers {
+	text-align: center;
+	padding: 2px;
+	background-color: #b4c8fab3;
+	cursor: pointer;
+	border-radius: 8px;
+	margin: 0px 10% 4px 10%;
+}
+
+.leaflet-draw-actions a {
+	color: white;
+}
+
+.distance {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+.distance li:first-child {
+	padding: 0;
+}
+.distance li {
+	padding-left: 20px;
+}
+#objectFilter {
+	width: 100%;
+	margin-bottom: 2px;
+	display:block;
+}
+
+.leaflet-control-layers.leaflet-control {
+	width: 220px;
+}
+ul.rectangle_tooltip { list-style-type: none; margin: 0; padding: 0; }
+
+input[type=color] {
+	margin: 0px 2px;
+	width: 30px;
+}
+pre {
+	font-family: monospace;
+}
+
+
+#coordinates {
+	width: 80px;
+	height: 100px;
+	position: absolute;
+	margin-left: 80px;
+	top: 60px
+}
+#coordinates textarea {
+	height: 100%;
+}
+#coordinates form {
+	height: 500px;
+	display: flex;
+	flex-direction: column;
+	display: none;
+
+}
+#coordinates form div {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+#coordinates div>* {
+	width: 50%;
+}
+
+#coordinates>div {
+	background-color: rgba(255,255,255,.8);
+	border-radius: 5px;
+	padding: 3px 0px;
+	text-align: center;
+	cursor: pointer;
+	box-shadow: rgba(0,0,0,.2) 2px 2px 4px;
+}
+#coordinates>div:hover {
+	background-color: rgba(95, 95, 95, 0.8);
+}

@@ -1,0 +1,44 @@
+/* Loads data/games.json + data/marker-types.json and indexes every map
+ * by its key ("<game>/<map>", e.g. "sly2/paris"). */
+
+async function fetchJson(url) {
+  const response = await fetch(url);
+  if (!response.ok) {
+    throw new Error(`Failed to load ${url}: ${response.status}`);
+  }
+  return response.json();
+}
+
+export async function loadManifest() {
+  const [catalog, markerTypes] = await Promise.all([
+    fetchJson('./data/games.json'),
+    fetchJson('./data/marker-types.json'),
+  ]);
+
+  const maps = new Map();
+  catalog.games.forEach((game) => {
+    game.episodes.forEach((episode) => {
+      episode.maps.forEach((map) => {
+        const key = `${game.id}/${map.id}`;
+        if (maps.has(key)) {
+          console.error(`Duplicate map key in games.json: ${key}`);
+        }
+        if (!map.calib?.origin || !map.calib?.scale) {
+          console.error(`Map ${key} is missing calib.origin / calib.scale`);
+        }
+        maps.set(key, { ...map, key, data: map.data ?? [], game, episode });
+      });
+    });
+  });
+
+  return {
+    games: catalog.games,
+    maps,
+    markerTypes,
+    // map images live under assetBase (the site itself, or a CDN bucket)
+    assetBase: catalog.assetBase ?? './',
+    defaultKey: maps.has(catalog.default) ? catalog.default : maps.keys().next().value,
+    // old ?map=paris links used bare map ids
+    findByMapId: (id) => [...maps.values()].find((map) => map.id === id),
+  };
+}

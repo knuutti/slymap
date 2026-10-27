@@ -1,0 +1,16 @@
+{
+  "Bottle":         { "icon": "icons/bottle.png" },
+  "Job Triggers":   { "color": "#e6194b", "iconBy": "jobType",
+                      "icons": { "sly": "icons/sly_sq.png", "murray": "icons/murray_sq.png", "bentley": "icons/bentley_sq.png" } },
+  "Treasures":      { "color": "#ffd700" },
+  "Safe House":     { "color": "#3cb44b" },
+  "Vault Entrance": { "color": "#911eb4" },
+  "Computers":      { "color": "#4363d8" },
+  "Code Displays":  { "color": "#42d4f4" },
+  "Satellites":     { "color": "#f58231" },
+  "Alarms":         { "color": "#ff0000" },
+  "Ligthning Rod":  { "color": "#ffe119", "label": "Lightning Rod" },
+  "CS Trigger":     { "color": "#f032e6" },
+  "Custom Polygon": { "color": "#469990" },
+  "Path Line":      { "color": "#0a6edc" }
+}

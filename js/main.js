@@ -1,10 +1,10 @@
 import { loadManifest } from './manifest.js';
 import { createProjection, imageBounds, DEFAULT_IMAGE_SIZE } from './coords.js';
-import { parseRoute, replaceRoute, migrateLegacyUrl } from './router.js';
+import { parseRoute, navigate, replaceRoute, migrateLegacyUrl } from './router.js';
 import { loadMapLayers } from './markers.js';
 import { MousePosition, ColorPicker, LayerPanel, LayerInfo } from './controls.js';
 import { setupDrawing } from './draw.js';
-import { createBrowse, createSidebar } from './nav.js';
+import { createBrowse, createSidebar, isPlainClick } from './nav.js';
 
 const manifest = await loadManifest();
 migrateLegacyUrl(manifest);
@@ -19,7 +19,7 @@ const map = L.map('map', {
   maxZoom: 2,
 });
 
-let current = null;   // { def, projection, base, layers, enabled, carried }
+let current = null;   // { def, projection, base, links, layers, enabled, carried }
 let loadToken = 0;    // ignores data that arrives after the user moved on
 let savedView = null; // the map's view while the browse page is shown
 
@@ -29,12 +29,23 @@ new ColorPicker((color) => drawing.setColor(color)).addTo(map);
 const layerPanel = new LayerPanel(toggleLayer).addTo(map);
 const layerInfo = new LayerInfo(() => setEnabledLayers([])).addTo(map);
 
+// layers this map lacks stay selected for the next map that has them
+const currentLayers = () => current ? [...current.enabled, ...current.carried] : [];
+
 const sidebar = createSidebar(document.getElementById('sidebar'), manifest, {
-  // layers this map lacks stay selected for the next map that has them
-  getLayers: () => current ? [...current.enabled, ...current.carried] : [],
+  getLayers: currentLayers,
   onResize: () => map.invalidateSize(),
 });
 const browse = createBrowse(document.getElementById('browse'), manifest);
+
+// "Open map" links in object popups keep the layers that are on
+document.getElementById('map').addEventListener('click', (event) => {
+  const link = event.target.closest('a[data-key]');
+  if (link && isPlainClick(event)) {
+    event.preventDefault();
+    navigate(link.dataset.key, currentLayers());
+  }
+}, true);
 
 map.on('mousemove', (event) => {
   if (current) {
@@ -92,8 +103,25 @@ function createBaseLayer(def, bounds) {
   });
 }
 
+/* Labelled markers that open the maps this one links to. */
+function createLinkLayer(def, projection) {
+  const group = L.layerGroup();
+  def.links.filter((link) => Array.isArray(link.at)).forEach((link) => {
+    const label = document.createElement('span');
+    label.textContent = link.label ?? link.target.name;
+    L.marker(projection.toLatLng(link.at), {
+      icon: L.divIcon({ className: 'map-link-marker', html: label, iconSize: null }),
+      title: `Open map: ${link.target.name}`,
+      riseOnHover: true,
+      zIndexOffset: 1000,
+    }).on('click', () => navigate(link.target.key, currentLayers())).addTo(group);
+  });
+  return group;
+}
+
 function unloadCurrentMap() {
   current.base.remove();
+  current.links.remove();
   Object.values(current.layers ?? {}).forEach((layer) => layer.group.remove());
   drawing.clear();
 }
@@ -148,17 +176,20 @@ async function showMap(def, layers) {
     def,
     projection: createProjection(def.calib),
     base: createBaseLayer(def, bounds).addTo(map),
+    links: null,
     layers: null,
     enabled: new Set(layers),
     carried: [],
   };
+  current.links = createLinkLayer(def, current.projection).addTo(map);
   map.setView(bounds.getCenter(), -1.5);
   sidebar.setMap(def);
   document.title = `${def.name} - SlyMap`;
   layerPanel.setLayers({}, current.enabled, 'Loading objects…');
   layerInfo.setEntries([]);
 
-  const mapLayers = await loadMapLayers(def, current.projection, manifest.markerTypes);
+  const mapLayers = await loadMapLayers(def, current.projection, manifest.markerTypes,
+    (key) => manifest.maps.get(key));
   if (token !== loadToken) {
     return;
   }

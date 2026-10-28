@@ -446,6 +446,120 @@ body.browsing #browse {
 	color: inherit;
 }
 
+.connected h2 {
+	margin: 0 0 4px;
+	font-size: 0.85rem;
+	font-weight: normal;
+	color: var(--nav-muted);
+	text-transform: uppercase;
+	letter-spacing: 0.04em;
+}
+
+.connected ul {
+	list-style: none;
+	margin: 0 0 12px;
+	padding: 0;
+}
+
+.connected a {
+	display: block;
+	padding: 6px 10px;
+	border-radius: 6px;
+	text-decoration: none;
+}
+
+.connected a:hover {
+	background: var(--nav-raised);
+}
+
+/* --- object search results (browse page) ------------------------------- */
+
+.object-results:empty {
+	display: none;
+}
+
+.object-results > h2 {
+	margin: 24px 0 0;
+	font-size: 1.6rem;
+}
+
+.object-result h3 {
+	margin: 16px 0 8px;
+	font-size: 1.1rem;
+}
+
+.object-result h3 span {
+	margin-left: 6px;
+	color: var(--nav-muted);
+	font-weight: normal;
+	font-size: 0.95rem;
+}
+
+.object-maps {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 6px;
+}
+
+.object-maps a {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	padding: 6px 6px 6px 12px;
+	border: 1px solid var(--nav-border);
+	border-radius: 999px;
+	background: var(--nav-panel);
+	text-decoration: none;
+}
+
+.object-maps a:hover {
+	border-color: var(--nav-accent);
+}
+
+.object-maps .count {
+	min-width: 24px;
+	padding: 1px 7px;
+	border-radius: 999px;
+	background: var(--nav-raised);
+	text-align: center;
+	font-size: 0.85rem;
+}
+
+/* --- links to other maps (on the map) ----------------------------------- */
+
+.map-link-marker {
+	width: auto !important;
+	height: auto !important;
+}
+
+.map-link-marker span {
+	display: inline-block;
+	transform: translate(-50%, -50%);
+	padding: 4px 10px;
+	border: 2px solid #1b1606;
+	border-radius: 999px;
+	background: var(--nav-accent);
+	color: var(--nav-accent-text);
+	font-family: var(--nav-font);
+	font-weight: bold;
+	font-size: 13px;
+	white-space: nowrap;
+	cursor: pointer;
+	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+.map-link-marker span::after {
+	content: ' \2192';
+}
+
+.map-link-marker:hover span, .map-link-marker:focus span {
+	background: #fff;
+}
+
+.popup-map-link {
+	font-weight: bold;
+}
+
 /* Phones: the panel opens over the map instead of beside it. */
 @media (max-width: 700px) {
 	.sidebar-panel {

@@ -13,7 +13,8 @@ python3 -m http.server
 
 and open `http://localhost:8000/`. Pages are addressed as:
 
-* `#/` – all games, `#/sly2` – one game's maps (search and filter by type)
+* `#/` – all games, `#/sly2` – one game's maps (search and filter by type;
+  searching for an object type, e.g. `treasure`, lists the maps that have it)
 * `#/sly2/paris?layers=Bottle,Job%20Triggers` – a map with object layers on
 
 Old `?map=paris` links are redirected.
@@ -32,7 +33,7 @@ Old `?map=paris` links are redirected.
 * `base_img/` – source map images (not in git; kept locally and on R2).
 * `tools/` – `build-tiles.mjs` and `upload.mjs` (see below).
 * `js/` – the app (ES modules): `main.js` (page and map state), `nav.js`
-  (browse page and sidebar), `router.js`, `manifest.js`, `coords.js`,
+  (browse page and sidebar), `objects.js` (object search), `router.js`, `manifest.js`, `coords.js`,
   `markers.js`, `controls.js`, `draw.js`. Styles: `styles.css` (map) and
   `nav.css` (browse page, sidebar).
 
@@ -56,7 +57,19 @@ Old `?map=paris` links are redirected.
    an image editor) of the game origin and `calib.scale` is pixels per game
    unit.
 3. New object types can be given an icon or colour in `data/marker-types.json`.
-4. Build and upload the tiles, then commit (see below).
+4. Optionally connect it to other maps. On the map entry, `links` adds
+   labelled markers that open another map; `at` is the in-game X/Y shown in
+   the bottom-left corner (leave it out to list the link only in the
+   sidebar). Links show up under "Connected maps" on both maps:
+
+   ```json
+   "links": [{ "to": "sly2/paris-job1", "at": [2717, -3297], "label": "Bottle room" }]
+   ```
+
+   An object in the `.hson` data can also lead to a map, e.g. a job trigger
+   to the job's own map, with `"parameters": { "link": "sly2/paris-job1" }`;
+   its popup then has an "Open map" link.
+5. Build and upload the tiles, then commit (see below).
 
 ## Map tiles
 

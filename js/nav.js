@@ -2,6 +2,7 @@
  * and the sidebar next to the map. Both are built from the manifest. */
 
 import { navigate, routeHash } from './router.js';
+import { findObjects } from './objects.js';
 
 const KIND_LABELS = { hub: 'Hub world', level: 'Level', mission: 'Mission', boss: 'Boss' };
 const NARROW_SCREEN = window.matchMedia('(max-width: 700px)');
@@ -37,7 +38,7 @@ function matches(entry, query) {
 }
 
 /* Plain clicks on map links keep the object layers that are switched on. */
-function isPlainClick(event) {
+export function isPlainClick(event) {
   return event.button === 0 && !event.metaKey && !event.ctrlKey && !event.shiftKey && !event.altKey;
 }
 
@@ -70,20 +71,25 @@ export function createBrowse(root, manifest) {
     <div class="browse-toolbar">
       <nav class="game-tabs" aria-label="Games"></nav>
       <div class="browse-filters">
-        <input class="search" type="search" placeholder="Search maps, episodes, places" aria-label="Search maps">
+        <input class="search" type="search" placeholder="Search maps, places or objects (e.g. treasure)" aria-label="Search maps and objects">
         <select class="kind-filter" aria-label="Map type">
           <option value="">All map types</option>
           ${kinds.map((kind) => `<option value="${escapeHtml(kind)}">${escapeHtml(kindLabel(kind))}</option>`).join('')}
         </select>
       </div>
     </div>
-    <main class="browse-content"></main>`;
+    <main class="browse-content">
+      <section class="object-results" aria-live="polite"></section>
+      <div class="game-sections"></div>
+    </main>`;
 
   const tabs = root.querySelector('.game-tabs');
   const search = root.querySelector('.search');
   const kindFilter = root.querySelector('.kind-filter');
-  const content = root.querySelector('.browse-content');
+  const objectResults = root.querySelector('.object-results');
+  const content = root.querySelector('.game-sections');
   let gameId = null;
+  let objectSearch = 0; // ignores results of searches that were replaced
 
   tabs.innerHTML = [{ id: '', short: 'All games' }, ...manifest.games]
     .map((game) => `<a href="${routeHash(game.id)}" data-game="${escapeHtml(game.id)}">${escapeHtml(game.short)}</a>`)
@@ -126,7 +132,31 @@ export function createBrowse(root, manifest) {
         </section>`;
     }).join('');
 
-    content.innerHTML = sections || '<p class="empty">No maps match your search.</p>';
+    content.innerHTML = sections || `<p class="empty">No map names match “${escapeHtml(search.value.trim())}”.</p>`;
+    renderObjects(query, games, kind);
+  }
+
+  async function renderObjects(query, games, kind) {
+    const token = ++objectSearch;
+    if (query.length < 2) {
+      objectResults.innerHTML = '';
+      return;
+    }
+    const entries = games.flatMap((game) => game.entries).filter((entry) => !kind || entry.kind === kind);
+    const results = await findObjects(entries, manifest.markerTypes, query);
+    if (token !== objectSearch) {
+      return;
+    }
+    objectResults.innerHTML = results.length ? `
+      <h2>Objects</h2>
+      ${results.slice(0, 8).map((result) => `
+        <div class="object-result">
+          <h3>${escapeHtml(result.label)}
+            <span>${result.total} on ${result.maps.length} map${result.maps.length == 1 ? '' : 's'}</span></h3>
+          <div class="object-maps">${result.maps.map(({ entry, count }) => `
+            <a href="${routeHash(entry.key, [result.type])}">${escapeHtml(entry.name)}
+              <span class="count">${count}</span></a>`).join('')}</div>
+        </div>`).join('')}` : '';
   }
 
   search.addEventListener('input', render);
@@ -166,6 +196,7 @@ export function createSidebar(root, manifest, { getLayers, onResize }) {
       <h1 class="current-name"></h1>
       <p class="current-location"></p>
       <div class="prev-next"></div>
+      <div class="connected"></div>
       <div class="sidebar-games" role="group" aria-label="Show maps from"></div>
       <input class="search" type="search" placeholder="Find a map" aria-label="Find a map">
       <div class="map-list"></div>
@@ -176,6 +207,7 @@ export function createSidebar(root, manifest, { getLayers, onResize }) {
   const name = root.querySelector('.current-name');
   const location = root.querySelector('.current-location');
   const prevNext = root.querySelector('.prev-next');
+  const connected = root.querySelector('.connected');
   const gameButtons = root.querySelector('.sidebar-games');
   const search = root.querySelector('.search');
   const list = root.querySelector('.map-list');
@@ -241,6 +273,13 @@ export function createSidebar(root, manifest, { getLayers, onResize }) {
            ${direction == 'prev' ? ICONS.prev : ''}<span>${escapeHtml(entry.name)}</span>${direction == 'next' ? ICONS.next : ''}</a>`
       : '<span></span>';
     prevNext.innerHTML = step(game.entries[index - 1], 'prev') + step(game.entries[index + 1], 'next');
+
+    const linked = [...new Set([...current.links.map((link) => link.target), ...current.linkedFrom])]
+      .filter((entry) => entry !== current);
+    connected.innerHTML = linked.length
+      ? `<h2>Connected maps</h2><ul>${linked.map((entry) => mapLink(entry,
+        entry.game === game ? '' : entry.game.short)).join('')}</ul>`
+      : '';
   }
 
   root.addEventListener('click', (event) => {

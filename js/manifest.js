@@ -19,7 +19,11 @@ export async function loadManifest() {
 
   const maps = new Map();
   catalog.games.forEach((game) => {
+    game.short ??= game.title;
+    game.entries = [];  // the game's maps in play order
     game.episodes.forEach((episode) => {
+      episode.label ??= episode.number ? `Episode ${episode.number}` : '';
+      episode.entries = [];
       episode.maps.forEach((map) => {
         const key = `${game.id}/${map.id}`;
         if (maps.has(key)) {
@@ -28,7 +32,10 @@ export async function loadManifest() {
         if (!map.calib?.origin || !map.calib?.scale) {
           console.error(`Map ${key} is missing calib.origin / calib.scale`);
         }
-        maps.set(key, { ...map, key, data: map.data ?? [], assets: assets[key] ?? null, game, episode });
+        const entry = { ...map, key, data: map.data ?? [], assets: assets[key] ?? null, game, episode };
+        maps.set(key, entry);
+        episode.entries.push(entry);
+        game.entries.push(entry);
       });
     });
   });
@@ -40,6 +47,8 @@ export async function loadManifest() {
     // map images live under assetBase (the site itself, or a CDN bucket)
     assetBase: catalog.assetBase ?? './',
     defaultKey: maps.has(catalog.default) ? catalog.default : maps.keys().next().value,
+    findGame: (id) => catalog.games.find((game) => game.id === id),
+    previewUrl: (entry) => entry.assets?.preview ? (catalog.assetBase ?? './') + entry.assets.preview : null,
     // old ?map=paris links used bare map ids
     findByMapId: (id) => [...maps.values()].find((map) => map.id === id),
   };

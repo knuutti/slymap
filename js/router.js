@@ -1,6 +1,9 @@
-/* Hash routes: #/<game>/<map>?layers=Bottle,Job%20Triggers
- * Map changes push a history entry (back/forward switch maps),
- * layer toggles replace the current one. */
+/* Hash routes:
+ *   #/                                    all games
+ *   #/<game>                              one game's maps
+ *   #/<game>/<map>?layers=Bottle,Alarms   a map
+ * Page changes push a history entry (back/forward work), layer toggles
+ * replace the current one. */
 
 export function parseRoute() {
   const hash = window.location.hash.replace(/^#\/?/, '');
@@ -9,20 +12,22 @@ export function parseRoute() {
   const layers = layersParam
     ? layersParam.slice('layers='.length).split(',').filter(Boolean).map(safeDecode)
     : [];
-  return { mapKey: path.replace(/\/+$/, ''), layers };
+  const [gameId = '', mapId = ''] = path.split('/').filter(Boolean);
+  return { gameId, mapId, mapKey: `${gameId}/${mapId}`, layers };
 }
 
-export function routeHash(mapKey, layers = []) {
+export function routeHash(path, layers = []) {
   const query = layers.length ? '?layers=' + layers.map(encodeURIComponent).join(',') : '';
-  return `#/${mapKey}${query}`;
+  return `#/${path}${query}`;
 }
 
-export function navigate(mapKey, layers) {
-  window.location.hash = routeHash(mapKey, layers);
+/* path is '', a game id or a map key */
+export function navigate(path, layers) {
+  window.location.hash = routeHash(path, layers);
 }
 
-export function replaceRoute(mapKey, layers) {
-  history.replaceState(null, '', window.location.pathname + routeHash(mapKey, layers));
+export function replaceRoute(path, layers) {
+  history.replaceState(null, '', window.location.pathname + routeHash(path, layers));
 }
 
 /* Rewrites old ?map=paris&markers=Bottle links to the hash route. */

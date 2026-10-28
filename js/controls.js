@@ -6,43 +6,6 @@ function stopMapEvents(element) {
   L.DomEvent.disableScrollPropagation(element);
 }
 
-export const MapSwitcher = L.Control.extend({
-  options: { position: 'bottomleft' },
-
-  initialize(games, onSelect, options) {
-    L.setOptions(this, options);
-    this._games = games;
-    this._onSelect = onSelect;
-  },
-
-  onAdd() {
-    const container = L.DomUtil.create('div', 'menu');
-    const wrapper = L.DomUtil.create('div', 'map-selector-container', container);
-    wrapper.innerHTML = '<label for="map-selector">Select Map:</label>';
-    this._select = L.DomUtil.create('select', '', wrapper);
-    this._select.id = 'map-selector';
-
-    this._games.forEach((game) => {
-      const group = document.createElement('optgroup');
-      group.label = game.title;
-      game.episodes.forEach((episode) => {
-        episode.maps.forEach((map) => {
-          group.append(new Option(map.name, `${game.id}/${map.id}`));
-        });
-      });
-      this._select.append(group);
-    });
-
-    this._select.addEventListener('change', () => this._onSelect(this._select.value));
-    stopMapEvents(container);
-    return container;
-  },
-
-  setValue(mapKey) {
-    this._select.value = mapKey;
-  },
-});
-
 export const MousePosition = L.Control.extend({
   options: { position: 'bottomleft' },
 
@@ -87,25 +50,38 @@ export const LayerPanel = L.Control.extend({
   onAdd() {
     const container = L.DomUtil.create('div',
       'leaflet-control-layers leaflet-control-layers-expanded');
-    container.innerHTML = '<h2>Object Filters</h2>';
-    this._filter = L.DomUtil.create('input', '', container);
+    container.innerHTML = '<h2><button type="button" class="layer-panel-toggle">Object Filters</button></h2>';
+    const toggle = container.querySelector('button');
+    const body = L.DomUtil.create('div', 'layer-panel-body', container);
+    const setOpen = (open) => {
+      container.classList.toggle('layer-panel-collapsed', !open);
+      toggle.setAttribute('aria-expanded', String(open));
+    };
+    toggle.addEventListener('click', () => setOpen(container.classList.contains('layer-panel-collapsed')));
+    // on phones the panel would cover most of the map
+    setOpen(!window.matchMedia('(max-width: 700px)').matches);
+
+    this._filter = L.DomUtil.create('input', '', body);
     this._filter.id = 'objectFilter';
     this._filter.type = 'search';
     this._filter.autocomplete = 'off';
     this._filter.addEventListener('input', () => this._applyFilter());
 
-    const list = L.DomUtil.create('section', 'leaflet-control-layers-list', container);
-    list.style.height = 'calc(100vh - 100px)';
+    const list = L.DomUtil.create('section', 'leaflet-control-layers-list', body);
+    list.style.maxHeight = 'calc(100vh - 140px)';
     list.style.overflowY = 'auto';
     this._overlays = L.DomUtil.create('div', 'leaflet-control-layers-overlays', list);
+    this._empty = L.DomUtil.create('p', 'layer-panel-empty', list);
 
     stopMapEvents(container);
     return container;
   },
 
-  /* layers: { [type]: { label, highlight } }, enabled: Set of types */
-  setLayers(layers, enabled) {
+  /* layers: { [type]: { label, highlight } }, enabled: Set of types,
+   * emptyText: shown when there are no layers */
+  setLayers(layers, enabled, emptyText = 'No objects mapped yet.') {
     this._overlays.replaceChildren();
+    this._empty.textContent = Object.keys(layers).length ? '' : emptyText;
     this._rows = Object.entries(layers)
       .sort(([, a], [, b]) => a.label.localeCompare(b.label))
       .map(([type, layer]) => {

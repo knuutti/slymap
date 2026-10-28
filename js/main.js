@@ -1,9 +1,10 @@
 import { loadManifest } from './manifest.js';
 import { createProjection, imageBounds, DEFAULT_IMAGE_SIZE } from './coords.js';
-import { parseRoute, navigate, replaceRoute, migrateLegacyUrl } from './router.js';
+import { parseRoute, replaceRoute, migrateLegacyUrl } from './router.js';
 import { loadMapLayers } from './markers.js';
-import { MapSwitcher, MousePosition, ColorPicker, LayerPanel, LayerInfo } from './controls.js';
+import { MousePosition, ColorPicker, LayerPanel, LayerInfo } from './controls.js';
 import { setupDrawing } from './draw.js';
+import { createBrowse, createSidebar } from './nav.js';
 
 const manifest = await loadManifest();
 migrateLegacyUrl(manifest);
@@ -18,15 +19,22 @@ const map = L.map('map', {
   maxZoom: 2,
 });
 
-let current = null;   // { def, projection, base, layers, enabled }
+let current = null;   // { def, projection, base, layers, enabled, carried }
 let loadToken = 0;    // ignores data that arrives after the user moved on
+let savedView = null; // the map's view while the browse page is shown
 
 const mousePosition = new MousePosition().addTo(map);
-const switcher = new MapSwitcher(manifest.games, (mapKey) => navigate(mapKey, [...current.enabled])).addTo(map);
 const drawing = setupDrawing(map, () => current.projection);
 new ColorPicker((color) => drawing.setColor(color)).addTo(map);
 const layerPanel = new LayerPanel(toggleLayer).addTo(map);
 const layerInfo = new LayerInfo(() => setEnabledLayers([])).addTo(map);
+
+const sidebar = createSidebar(document.getElementById('sidebar'), manifest, {
+  // layers this map lacks stay selected for the next map that has them
+  getLayers: () => current ? [...current.enabled, ...current.carried] : [],
+  onResize: () => map.invalidateSize(),
+});
+const browse = createBrowse(document.getElementById('browse'), manifest);
 
 map.on('mousemove', (event) => {
   if (current) {
@@ -36,6 +44,7 @@ map.on('mousemove', (event) => {
 
 function setEnabledLayers(types) {
   current.enabled = new Set(types.filter((type) => current.layers?.[type]));
+  current.carried = current.layers ? types.filter((type) => !current.layers[type]) : [];
   Object.entries(current.layers ?? {}).forEach(([type, layer]) => {
     if (current.enabled.has(type)) {
       layer.group.addTo(map);
@@ -49,7 +58,9 @@ function setEnabledLayers(types) {
     count: current.layers[type].group.getLayers().length,
     highlight: current.layers[type].highlight,
   })));
-  replaceRoute(current.def.key, [...current.enabled]);
+  if (!document.body.classList.contains('browsing')) {
+    replaceRoute(current.def.key, [...current.enabled]);
+  }
 }
 
 function toggleLayer(type, on) {
@@ -59,7 +70,7 @@ function toggleLayer(type, on) {
   } else {
     types.delete(type);
   }
-  setEnabledLayers([...types]);
+  setEnabledLayers([...types, ...current.carried]);
 }
 
 /* Tiles when `npm run tiles` has built them, otherwise the whole image. */
@@ -87,17 +98,42 @@ function unloadCurrentMap() {
   drawing.clear();
 }
 
-async function showRoute() {
+function showBrowse(gameId) {
+  if (!document.body.classList.contains('browsing') && current) {
+    savedView = { center: map.getCenter(), zoom: map.getZoom() };
+  }
+  document.body.classList.add('browsing');
+  browse.show(gameId);
+}
+
+function showRoute() {
   const route = parseRoute();
-  const def = manifest.maps.get(route.mapKey);
-  if (!def) {
-    replaceRoute(manifest.defaultKey, route.layers);
-    return showRoute();
+  const def = route.mapId && manifest.maps.get(route.mapKey);
+  if (def) {
+    return showMap(def, route.layers);
+  }
+  const game = manifest.findGame(route.gameId);
+  if (route.gameId && (!game || route.mapId)) {
+    // unknown game or map: show the closest page that exists
+    replaceRoute(game?.id ?? '');
+  }
+  showBrowse(game?.id ?? null);
+}
+
+async function showMap(def, layers) {
+  if (document.body.classList.contains('browsing')) {
+    document.body.classList.remove('browsing');
+    map.invalidateSize();
+    if (savedView && current?.def === def) {
+      map.setView(savedView.center, savedView.zoom, { animate: false });
+    }
+    savedView = null;
   }
 
   if (current?.def === def) {
+    document.title = `${def.name} - SlyMap`;
     if (current.layers) {
-      setEnabledLayers(route.layers);
+      setEnabledLayers(layers);
     }
     return;
   }
@@ -113,21 +149,22 @@ async function showRoute() {
     projection: createProjection(def.calib),
     base: createBaseLayer(def, bounds).addTo(map),
     layers: null,
-    enabled: new Set(route.layers),
+    enabled: new Set(layers),
+    carried: [],
   };
   map.setView(bounds.getCenter(), -1.5);
-  switcher.setValue(def.key);
+  sidebar.setMap(def);
   document.title = `${def.name} - SlyMap`;
-  layerPanel.setLayers({}, current.enabled);
+  layerPanel.setLayers({}, current.enabled, 'Loading objects…');
   layerInfo.setEntries([]);
 
-  const layers = await loadMapLayers(def, current.projection, manifest.markerTypes);
+  const mapLayers = await loadMapLayers(def, current.projection, manifest.markerTypes);
   if (token !== loadToken) {
     return;
   }
-  current.layers = layers;
-  layerPanel.setLayers(layers, current.enabled);
-  setEnabledLayers(route.layers);
+  current.layers = mapLayers;
+  layerPanel.setLayers(mapLayers, current.enabled);
+  setEnabledLayers(layers);
 }
 
 window.addEventListener('hashchange', showRoute);

@@ -11,9 +11,12 @@ The page loads its data with `fetch`, so serve the folder over HTTP:
 python3 -m http.server
 ```
 
-and open `http://localhost:8000/`. Maps are addressed as
-`#/<game>/<map>?layers=Bottle,Job%20Triggers`; old `?map=paris` links are
-redirected.
+and open `http://localhost:8000/`. Pages are addressed as:
+
+* `#/` – all games, `#/sly2` – one game's maps (search and filter by type)
+* `#/sly2/paris?layers=Bottle,Job%20Triggers` – a map with object layers on
+
+Old `?map=paris` links are redirected.
 
 ## Project layout
 
@@ -28,14 +31,20 @@ redirected.
 * `hson/` – object data per map (`{"objects": [{type, position, parameters}]}`).
 * `base_img/` – source map images (not in git; kept locally and on R2).
 * `tools/` – `build-tiles.mjs` and `upload.mjs` (see below).
-* `js/` – the app (ES modules): `main.js` (map state), `router.js`,
-  `manifest.js`, `coords.js`, `markers.js`, `controls.js`, `draw.js`.
+* `js/` – the app (ES modules): `main.js` (page and map state), `nav.js`
+  (browse page and sidebar), `router.js`, `manifest.js`, `coords.js`,
+  `markers.js`, `controls.js`, `draw.js`. Styles: `styles.css` (map) and
+  `nav.css` (browse page, sidebar).
 
 ## Adding a map
 
 1. Put the image in `base_img/` (it is not committed) and the object data
    in `hson/`.
-2. Add an entry under the right game and episode in `data/games.json`:
+2. Add an entry under the right game and episode in `data/games.json`
+   (an episode is `{ "id": "e1", "number": 1, "title": "...", "maps": [] }`;
+   use `"label"` instead of `"number"` for e.g. a prologue). Maps appear in
+   the browse page, sidebar and previous/next buttons in the order listed;
+   `kind` (`hub`, `level`, `mission`, `boss`, ...) drives the type filter:
 
    ```json
    { "id": "paris", "name": "Paris", "location": "Dimitri's nightclub, Paris", "kind": "hub",

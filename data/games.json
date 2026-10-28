@@ -3,12 +3,20 @@
   "assetBase": "https://pub-d0c64ff3069a442bba11b080612b1582.r2.dev/",
   "games": [
     {
+      "id": "sly1",
+      "title": "Sly Cooper and the Thievius Raccoonus",
+      "short": "Sly 1",
+      "year": 2002,
+      "episodes": []
+    },
+    {
       "id": "sly2",
       "title": "Sly 2: Band of Thieves",
+      "short": "Sly 2",
       "year": 2004,
       "episodes": [
         {
-          "id": "prologue",
+          "id": "prologue", "label": "Prologue",
           "title": "A Shadow from the Past",
           "maps": [
             { "id": "cairo", "name": "Cairo", "location": "Cairo, Egypt", "kind": "level",
@@ -93,6 +101,7 @@
     {
       "id": "sly3",
       "title": "Sly 3: Honor Among Thieves",
+      "short": "Sly 3",
       "year": 2005,
       "episodes": [
         {
@@ -153,6 +162,20 @@
           ]
         }
       ]
+    },
+    {
+      "id": "sly4",
+      "title": "Sly Cooper: Thieves in Time",
+      "short": "Sly 4",
+      "year": 2013,
+      "episodes": []
+    },
+    {
+      "id": "hackpack",
+      "title": "Bentley's Hackpack",
+      "short": "Hackpack",
+      "year": 2013,
+      "episodes": []
     }
   ]
 }

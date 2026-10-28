@@ -40,6 +40,23 @@ export async function loadManifest() {
     });
   });
 
+  // links between maps ({ to: "<game>/<map>", at: [x, y] }), both directions
+  maps.forEach((entry) => {
+    entry.links = (entry.links ?? []).filter((link) => {
+      if (!maps.has(link.to)) {
+        console.error(`Map ${entry.key} links to unknown map ${link.to}`);
+        return false;
+      }
+      return true;
+    }).map((link) => ({ ...link, target: maps.get(link.to) }));
+    entry.linkedFrom = [];
+  });
+  maps.forEach((entry) => entry.links.forEach((link) => {
+    if (!link.target.linkedFrom.includes(entry)) {
+      link.target.linkedFrom.push(entry);
+    }
+  }));
+
   return {
     games: catalog.games,
     maps,

@@ -104,14 +104,20 @@ function getShape(item, style, projection) {
   return L.polygon(corners.map((corner) => projection.toLatLng(corner)), { color, weight: 1 });
 }
 
-function getPopup(item, label, filename) {
+function getPopup(item, label, filename, findMap) {
   const params = item.parameters ?? {};
+  // an object can lead to another map, e.g. a job trigger to the job's map
+  const target = params.link && findMap(params.link);
+  const link = target
+    ? `<p><a class="popup-map-link" href="#/${target.key}" data-key="${target.key}">Open map: ${target.name} →</a></p>`
+    : '';
   const model = params.name ? '<p><span class="emphasize">model: </span>' + params.name + '</p>' : '';
   const dimensions = Array.isArray(params.size)
     ? '<p><span class="emphasize">dimensions: </span>' + params.size.join(', ') + '</p>'
     : '';
   return (
     '<h1>' + (item.name ?? params.jobName ?? label) + '</h1>' +
+    link +
     '<p><span class="emphasize">position:</span> ' + item.position.map(Math.round).join(', ') + '</p>' +
     '<p><span class="emphasize">file:</span> ' + filename + '</p>' +
     model +
@@ -120,7 +126,12 @@ function getPopup(item, label, filename) {
   );
 }
 
-async function fetchObjects(file) {
+/* Object type as used for layers, e.g. "Job Triggers" */
+export function objectType(item) {
+  return item.parameters?.type ? `${item.type} ${item.parameters.type}` : item.type;
+}
+
+export async function fetchObjects(file) {
   try {
     const response = await fetch('./' + file);
     if (!response.ok) {
@@ -134,7 +145,7 @@ async function fetchObjects(file) {
 }
 
 /* Returns { [type]: { group, label, highlight } } */
-export async function loadMapLayers(mapDef, projection, markerTypes) {
+export async function loadMapLayers(mapDef, projection, markerTypes, findMap) {
   const layers = {};
   const files = await Promise.all(mapDef.data.map(async (file) => [file, await fetchObjects(file)]));
 
@@ -144,7 +155,7 @@ export async function loadMapLayers(mapDef, projection, markerTypes) {
       if (!Array.isArray(item.position)) {
         return;
       }
-      const type = item.parameters?.type ? `${item.type} ${item.parameters.type}` : item.type;
+      const type = objectType(item);
       const style = getTypeStyle(markerTypes, type);
       const marker = getMarker(item, style, projection);
       const shape = getShape(item, style, projection);
@@ -154,7 +165,7 @@ export async function loadMapLayers(mapDef, projection, markerTypes) {
       if (!layer.options.img) {
         layers[type].highlight = style.color;
       }
-      layer.bindPopup(getPopup(item, style.label, filename), { maxWidth: 550 })
+      layer.bindPopup(getPopup(item, style.label, filename, findMap), { maxWidth: 550 })
         .addTo(layers[type].group);
     });
   });

@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Calibration helper - SlyMap</title>
+		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+			integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+			crossorigin=""/>
+		<script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+			integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+			crossorigin=""></script>
+		<link rel="stylesheet" href="nav.css">
+		<link rel="stylesheet" href="calibrate.css">
+	</head>
+	<body>
+		<div id="calibrate">
+			<aside class="calib-panel">
+				<header>
+					<a class="brand" href="./">SlyMap</a>
+					<h1>Calibration helper</h1>
+					<p class="hint">Works out a map's <code>calib</code> for <code>data/games.json</code> from a few spots whose in-game position you know.</p>
+				</header>
+
+				<section>
+					<h2>1. Image</h2>
+					<select id="map-select" aria-label="Map">
+						<option value="">Choose a map…</option>
+					</select>
+					<p class="or">or</p>
+					<label class="file-button">Open an image file…
+						<input id="image-file" type="file" accept="image/*">
+					</label>
+					<p id="image-info" class="hint"></p>
+				</section>
+
+				<section>
+					<h2>2. Objects <span class="optional">(optional)</span></h2>
+					<p class="hint">A map's own objects load with it. For a new map, load its <code>.hson</code> file(s) to see them on the image once there is a fit.</p>
+					<label class="file-button">Load .hson files…
+						<input id="hson-file" type="file" accept=".hson,.json,application/json" multiple>
+					</label>
+					<label class="check"><input id="show-objects" type="checkbox" checked> Show objects on the image</label>
+					<p id="objects-info" class="hint"></p>
+				</section>
+
+				<section>
+					<h2>3. Reference points</h2>
+					<p class="hint">Click a spot on the image whose in-game position you know, then type that position as <em>X, Y</em>. Drag a point to fine-tune it. Once objects are shown, click one and choose <em>Use as reference point</em>, then click where it really is.</p>
+					<p id="placing" class="placing" hidden></p>
+					<table id="points">
+						<thead><tr><th>#</th><th>In-game X, Y</th><th>Off by</th><th><span class="visually-hidden">Remove</span></th></tr></thead>
+						<tbody></tbody>
+					</table>
+					<p id="no-points" class="hint">No points yet.</p>
+					<button id="clear-points" type="button" class="secondary">Clear all points</button>
+				</section>
+
+				<section>
+					<h2>4. Result</h2>
+					<div id="result"><p class="hint">Add at least two points with in-game positions.</p></div>
+				</section>
+			</aside>
+			<div id="calib-map"></div>
+		</div>
+		<script type="module" src="./js/calibrate.js"></script>
+	</body>
+</html>

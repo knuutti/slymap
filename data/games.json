@@ -12,7 +12,7 @@
           "title": "A Shadow from the Past",
           "maps": [
             { "id": "cairo", "name": "Cairo", "location": "Cairo, Egypt", "kind": "level",
-              "image": "base_img/cairo.png", "calib": { "origin": [2177, 1887], "scale": 0.0603 },
+              "image": "base_img/cairo.png", "calib": { "origin": [2177, 2209], "scale": 0.0603 },
               "data": ["hson/cairo.hson"] }
           ]
         },
@@ -21,7 +21,7 @@
           "title": "The Black Chateau",
           "maps": [
             { "id": "paris", "name": "Paris", "location": "Dimitri's nightclub, Paris", "kind": "hub",
-              "image": "base_img/paris.png", "calib": { "origin": [1973, 2130], "scale": 0.1406 },
+              "image": "base_img/paris.png", "calib": { "origin": [1973, 1966], "scale": 0.1406 },
               "data": ["hson/paris.hson"] }
           ]
         },
@@ -30,7 +30,7 @@
           "title": "A Starry Eyed Encounter",
           "maps": [
             { "id": "india1", "name": "Rajan's Palace", "location": "Rajan's palace, India", "kind": "hub",
-              "image": "base_img/india1.png", "calib": { "origin": [1973, 2568], "scale": 0.1269 },
+              "image": "base_img/india1.png", "calib": { "origin": [1973, 1528], "scale": 0.1269 },
               "data": ["hson/india1.hson"] }
           ]
         },
@@ -39,7 +39,7 @@
           "title": "The Predator Awakes",
           "maps": [
             { "id": "india2", "name": "Spice Temple", "location": "Spice temple, India", "kind": "hub",
-              "image": "base_img/india2.png", "calib": { "origin": [2283, 1898], "scale": 0.146 },
+              "image": "base_img/india2.png", "calib": { "origin": [2283, 2198], "scale": 0.146 },
               "data": ["hson/india2.hson"] }
           ]
         },
@@ -48,7 +48,7 @@
           "title": "Jail Break",
           "maps": [
             { "id": "prague1", "name": "Contessa's Jail", "location": "The Contessa's prison, Prague", "kind": "hub",
-              "image": "base_img/prague1.png", "calib": { "origin": [2675, 1967], "scale": 0.151 },
+              "image": "base_img/prague1.png", "calib": { "origin": [2675, 2129], "scale": 0.151 },
               "data": ["hson/prague1.hson"] }
           ]
         },
@@ -57,7 +57,7 @@
           "title": "A Tangled Web",
           "maps": [
             { "id": "prague2", "name": "Contessa's Castle", "location": "Contessa's castle, Prague", "kind": "hub",
-              "image": "base_img/prague2.png", "calib": { "origin": [1972, 2354], "scale": 0.136 },
+              "image": "base_img/prague2.png", "calib": { "origin": [1972, 1742], "scale": 0.136 },
               "data": ["hson/prague2.hson"] }
           ]
         },
@@ -66,7 +66,7 @@
           "title": "He Who Tames the Iron Horse",
           "maps": [
             { "id": "canada1", "name": "Nunavut Bay", "location": "Nunavut Bay, Canada", "kind": "hub",
-              "image": "base_img/canada1.png", "calib": { "origin": [2197, 1912], "scale": 0.1418 },
+              "image": "base_img/canada1.png", "calib": { "origin": [2197, 2184], "scale": 0.1418 },
               "data": ["hson/canada1.hson"] }
           ]
         },
@@ -75,7 +75,7 @@
           "title": "Menace from the North, eh!",
           "maps": [
             { "id": "canada2", "name": "Lumber Camp", "location": "Lumber camp, Canada", "kind": "hub",
-              "image": "base_img/canada2.png", "calib": { "origin": [2132, 1784], "scale": 0.131 },
+              "image": "base_img/canada2.png", "calib": { "origin": [2132, 2312], "scale": 0.131 },
               "data": ["hson/canada2.hson"] }
           ]
         },
@@ -84,7 +84,7 @@
           "title": "Anatomy for Disaster",
           "maps": [
             { "id": "blimp", "name": "Arpeggio's Blimp", "location": "Arpeggio's blimp", "kind": "hub",
-              "image": "base_img/blimp.png", "calib": { "origin": [2038, 2067], "scale": 0.136 },
+              "image": "base_img/blimp.png", "calib": { "origin": [2038, 2029], "scale": 0.136 },
               "data": ["hson/blimp.hson"] }
           ]
         }
@@ -100,7 +100,7 @@
           "title": "An Opera of Fear",
           "maps": [
             { "id": "venice", "name": "Venice", "location": "Venice, Italy", "kind": "hub",
-              "image": "base_img/venice.png", "calib": { "origin": [1487, 2052], "scale": 0.144 },
+              "image": "base_img/venice.png", "calib": { "origin": [1487, 2044], "scale": 0.144 },
               "data": [] }
           ]
         },
@@ -109,7 +109,7 @@
           "title": "Rumble Down Under",
           "maps": [
             { "id": "outback", "name": "Outback", "location": "Yuendumu, Australia", "kind": "hub",
-              "image": "base_img/outback.png", "calib": { "origin": [2159, 2303], "scale": 0.162 },
+              "image": "base_img/outback.png", "calib": { "origin": [2159, 1793], "scale": 0.162 },
               "data": [] }
           ]
         },
@@ -118,7 +118,7 @@
           "title": "Flight of Fancy",
           "maps": [
             { "id": "holland", "name": "Holland", "location": "Kinderdijk, Netherlands", "kind": "hub",
-              "image": "base_img/holland.png", "calib": { "origin": [2309, 2371], "scale": 0.156 },
+              "image": "base_img/holland.png", "calib": { "origin": [2309, 1725], "scale": 0.156 },
               "data": [] }
           ]
         },
@@ -127,7 +127,7 @@
           "title": "A Cold Alliance",
           "maps": [
             { "id": "china", "name": "China", "location": "Kunlun Mountains, China", "kind": "hub",
-              "image": "base_img/china.png", "calib": { "origin": [1924, 2281], "scale": 0.1447 },
+              "image": "base_img/china.png", "calib": { "origin": [1924, 1815], "scale": 0.1447 },
               "data": [] }
           ]
         },
@@ -136,10 +136,10 @@
           "title": "Dead Men Tell No Tales",
           "maps": [
             { "id": "pirates", "name": "Blood-Bath Bay", "location": "Blood-Bath Bay, Caribbean Sea", "kind": "hub",
-              "image": "base_img/pirates.png", "calib": { "origin": [1630, 1750], "scale": 0.123 },
+              "image": "base_img/pirates.png", "calib": { "origin": [1630, 2346], "scale": 0.123 },
               "data": [] },
             { "id": "sailing", "name": "Sailing Map", "location": "Caribbean Sea", "kind": "hub",
-              "image": "base_img/sailing.png", "calib": { "origin": [1889, 2146], "scale": 0.00413 },
+              "image": "base_img/sailing.png", "calib": { "origin": [1889, 1950], "scale": 0.00413 },
               "data": [] }
           ]
         },
@@ -148,7 +148,7 @@
           "title": "Honor Among Thieves",
           "maps": [
             { "id": "kaine", "name": "Kaine Island", "location": "Kaine Island, South Pacific", "kind": "hub",
-              "image": "base_img/kaine.png", "calib": { "origin": [2093, 2261], "scale": 0.0663 },
+              "image": "base_img/kaine.png", "calib": { "origin": [2093, 1835], "scale": 0.0663 },
               "data": [] }
           ]
         }

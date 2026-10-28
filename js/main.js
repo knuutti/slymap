@@ -1,5 +1,5 @@
 import { loadManifest } from './manifest.js';
-import { createProjection, DEFAULT_IMAGE_SIZE } from './coords.js';
+import { createProjection, imageBounds, DEFAULT_IMAGE_SIZE } from './coords.js';
 import { parseRoute, navigate, replaceRoute, migrateLegacyUrl } from './router.js';
 import { loadMapLayers } from './markers.js';
 import { MapSwitcher, MousePosition, ColorPicker, LayerPanel, LayerInfo } from './controls.js';
@@ -18,7 +18,7 @@ const map = L.map('map', {
   maxZoom: 2,
 });
 
-let current = null;   // { def, projection, image, layers, enabled }
+let current = null;   // { def, projection, base, layers, enabled }
 let loadToken = 0;    // ignores data that arrives after the user moved on
 
 const mousePosition = new MousePosition().addTo(map);
@@ -62,8 +62,27 @@ function toggleLayer(type, on) {
   setEnabledLayers([...types]);
 }
 
+/* Tiles when `npm run tiles` has built them, otherwise the whole image. */
+function createBaseLayer(def, bounds) {
+  const tiles = def.assets;
+  if (!tiles) {
+    return L.imageOverlay(manifest.assetBase + def.image, bounds);
+  }
+  // the pyramid's last level is full size, which is map zoom 0
+  return L.tileLayer(manifest.assetBase + tiles.tiles, {
+    tileSize: tiles.tileSize,
+    zoomOffset: tiles.levels,
+    minNativeZoom: -tiles.levels,
+    maxNativeZoom: 0,
+    minZoom: map.getMinZoom(),
+    maxZoom: map.getMaxZoom(),
+    bounds,
+    noWrap: true,
+  });
+}
+
 function unloadCurrentMap() {
-  current.image.remove();
+  current.base.remove();
   Object.values(current.layers ?? {}).forEach((layer) => layer.group.remove());
   drawing.clear();
 }
@@ -88,16 +107,15 @@ async function showRoute() {
   }
 
   const token = ++loadToken;
-  const [height, width] = def.size ?? DEFAULT_IMAGE_SIZE;
-  const bounds = [[0, 0], [height, width]];
+  const bounds = imageBounds(def.assets?.size ?? def.size ?? DEFAULT_IMAGE_SIZE);
   current = {
     def,
     projection: createProjection(def.calib),
-    image: L.imageOverlay(manifest.assetBase + def.image, bounds).addTo(map),
+    base: createBaseLayer(def, bounds).addTo(map),
     layers: null,
     enabled: new Set(route.layers),
   };
-  map.setView(L.latLngBounds(bounds).getCenter(), -1.5);
+  map.setView(bounds.getCenter(), -1.5);
   switcher.setValue(def.key);
   document.title = `${def.name} - SlyMap`;
   layerPanel.setLayers({}, current.enabled);

@@ -1,0 +1,5 @@
+node_modules/
+.env
+# map source images (hosted on R2) and generated tiles
+base_img/
+dist-assets/

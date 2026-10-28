@@ -1,5 +1,5 @@
 import { loadManifest } from './manifest.js';
-import { createProjection, imageBounds, DEFAULT_IMAGE_SIZE } from './coords.js';
+import { createBaseLayer, createProjection, imageBounds, DEFAULT_IMAGE_SIZE } from './coords.js';
 import { parseRoute, navigate, replaceRoute, migrateLegacyUrl } from './router.js';
 import { loadMapLayers } from './markers.js';
 import { MousePosition, ColorPicker, LayerPanel, LayerInfo } from './controls.js';
@@ -84,25 +84,6 @@ function toggleLayer(type, on) {
   setEnabledLayers([...types, ...current.carried]);
 }
 
-/* Tiles when `npm run tiles` has built them, otherwise the whole image. */
-function createBaseLayer(def, bounds) {
-  const tiles = def.assets;
-  if (!tiles) {
-    return L.imageOverlay(manifest.assetBase + def.image, bounds);
-  }
-  // the pyramid's last level is full size, which is map zoom 0
-  return L.tileLayer(manifest.assetBase + tiles.tiles, {
-    tileSize: tiles.tileSize,
-    zoomOffset: tiles.levels,
-    minNativeZoom: -tiles.levels,
-    maxNativeZoom: 0,
-    minZoom: map.getMinZoom(),
-    maxZoom: map.getMaxZoom(),
-    bounds,
-    noWrap: true,
-  });
-}
-
 /* Labelled markers that open the maps this one links to. */
 function createLinkLayer(def, projection) {
   const group = L.layerGroup();
@@ -175,7 +156,7 @@ async function showMap(def, layers) {
   current = {
     def,
     projection: createProjection(def.calib),
-    base: createBaseLayer(def, bounds).addTo(map),
+    base: createBaseLayer(def, bounds, manifest.assetBase, map).addTo(map),
     links: null,
     layers: null,
     enabled: new Set(layers),

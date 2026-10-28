@@ -32,6 +32,8 @@ Old `?map=paris` links are redirected.
 * `hson/` – object data per map (`{"objects": [{type, position, parameters}]}`).
 * `base_img/` – source map images (not in git; kept locally and on R2).
 * `tools/` – `build-tiles.mjs` and `upload.mjs` (see below).
+* `calibrate.html` – the calibration helper (`js/calibrate.js`,
+  `js/calibration.js`, `calibrate.css`).
 * `js/` – the app (ES modules): `main.js` (page and map state), `nav.js`
   (browse page and sidebar), `objects.js` (object search), `router.js`, `manifest.js`, `coords.js`,
   `markers.js`, `controls.js`, `draw.js`. Styles: `styles.css` (map) and
@@ -55,7 +57,7 @@ Old `?map=paris` links are redirected.
 
    `calib.origin` is the image pixel (from the top-left corner, as shown in
    an image editor) of the game origin and `calib.scale` is pixels per game
-   unit.
+   unit. Use the calibration helper (below) to work these out.
 3. New object types can be given an icon or colour in `data/marker-types.json`.
 4. Optionally connect it to other maps. On the map entry, `links` adds
    labelled markers that open another map; `at` is the in-game X/Y shown in
@@ -70,6 +72,25 @@ Old `?map=paris` links are redirected.
    to the job's own map, with `"parameters": { "link": "sly2/paris-job1" }`;
    its popup then has an "Open map" link.
 5. Build and upload the tiles, then commit (see below).
+
+## Calibration helper
+
+`calibrate.html` (e.g. `http://localhost:8000/calibrate.html`, or the same
+page on the live site) works out a map's `calib`:
+
+1. Choose an existing map, or open a new image file (also by dropping it on
+   the page). For a new map, load its `.hson` file(s) too.
+2. Click a spot on the image whose in-game position you know and type it as
+   `X, Y` (a pasted `X, Y, Z` works too). Add at least three points, spread
+   over the map.
+3. Once there is a fit, the objects are drawn where it puts them. Click one
+   that is off, choose *Use as reference point* and click where it really
+   is. Each point shows how many pixels the fit misses it by; drag a point
+   to fine-tune it, remove points that are clearly wrong.
+4. Copy the `calib` snippet into the map's entry in `data/games.json`.
+
+Points are remembered in the browser per image. The helper warns when the
+points suggest a mirrored or stretched image, which the site can't show.
 
 ## Map tiles
 

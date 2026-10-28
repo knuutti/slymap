@@ -24,3 +24,23 @@ export function createProjection({ origin: [originX, originY], scale }) {
     toGameLength: (length) => length / scale,
   };
 }
+
+/* The map image: tiles when `npm run tiles` has built them, otherwise the
+ * whole image. */
+export function createBaseLayer(def, bounds, assetBase, map) {
+  const tiles = def.assets;
+  if (!tiles) {
+    return L.imageOverlay(assetBase + def.image, bounds);
+  }
+  // the pyramid's last level is full size, which is map zoom 0
+  return L.tileLayer(assetBase + tiles.tiles, {
+    tileSize: tiles.tileSize,
+    zoomOffset: tiles.levels,
+    minNativeZoom: -tiles.levels,
+    maxNativeZoom: 0,
+    minZoom: map.getMinZoom(),
+    maxZoom: map.getMaxZoom(),
+    bounds,
+    noWrap: true,
+  });
+}

@@ -30,40 +30,6 @@ body { margin: 0; }
 	background-color: rgba(220, 220, 220, 0.8);
 }
 
-.map-selector-container {
-	background-color: rgba(255, 255, 255, 0.9);
-	padding: 10px;
-	border-radius: 5px;
-	box-shadow: rgba(0, 0, 0, .3) 2px 2px 6px;
-}
-
-.map-selector-container label {
-	display: block;
-	margin-bottom: 5px;
-	font-weight: bold;
-	color: #333;
-}
-
-.map-selector-container select {
-	width: 100%;
-	padding: 6px 8px;
-	font-size: 14px;
-	border: 1px solid #ccc;
-	border-radius: 4px;
-	background-color: white;
-	cursor: pointer;
-}
-
-.map-selector-container select:hover {
-	border-color: #999;
-}
-
-.map-selector-container select:focus {
-	outline: none;
-	border-color: #4a90e2;
-	box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.2);
-}
-
 .mouseposition {
 	background-color: rgba(255, 255, 255, .8);
 	padding: 2px 5px;
@@ -135,6 +101,40 @@ text-align: center;
 	margin: 0;
 	padding: 0;
 	text-align: center;
+}
+.layer-panel-toggle {
+	width: 100%;
+	padding: 0;
+	border: 0;
+	background: none;
+	font: inherit;
+	font-weight: bold;
+	cursor: pointer;
+}
+.layer-panel-toggle::after {
+	content: ' \25BE';
+	font-size: 0.6em;
+	vertical-align: middle;
+}
+.layer-panel-collapsed .layer-panel-toggle::after {
+	content: ' \25B8';
+}
+.layer-panel-collapsed .layer-panel-body {
+	display: none;
+}
+.layer-panel-collapsed.leaflet-control-layers.leaflet-control {
+	width: auto;
+}
+.layer-panel-collapsed h2 {
+	font-size: 1.2em;
+	padding: 0 6px;
+}
+.layer-panel-empty:empty {
+	display: none;
+}
+.layer-panel-empty {
+	margin: 6px 4px;
+	color: #555;
 }
 .leaflet-control-layers label {
 	border-radius: 6px;

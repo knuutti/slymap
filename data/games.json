@@ -1,6 +1,6 @@
 {
   "default": "sly2/paris",
-  "assetBase": "./",
+  "assetBase": "https://pub-d0c64ff3069a442bba11b080612b1582.r2.dev/",
   "games": [
     {
       "id": "sly2",

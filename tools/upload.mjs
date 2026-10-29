@@ -46,10 +46,54 @@ if (missing.length) {
   process.exit(1);
 }
 
+/* The account's S3 endpoint. Takes the 32-character account ID, or the
+ * bucket's "S3 API" URL from the dashboard (https://<account>.r2.cloudflarestorage.com/<bucket>,
+ * with .eu. for EU buckets) in R2_ENDPOINT or R2_ACCOUNT_ID. */
+function resolveEndpoint() {
+  const value = (process.env.R2_ENDPOINT || R2_ACCOUNT_ID).trim();
+  if (/^[0-9a-f]{32}$/i.test(value)) {
+    return `https://${value}.r2.cloudflarestorage.com`;
+  }
+  try {
+    const url = new URL(/^[a-z]+:\/\//i.test(value) ? value : `https://${value}`);
+    if (url.hostname.includes('.') || url.hostname == 'localhost') {
+      return `${url.protocol}//${url.host}`;
+    }
+  } catch {
+    // reported below
+  }
+  console.error(`R2_ACCOUNT_ID "${value}" doesn't look right. Use the 32-character Account ID from ` +
+    'the R2 overview page, or the bucket\'s S3 API URL from its Settings tab.');
+  process.exit(1);
+}
+
+/* Plain-language hint for the first request failing. */
+function explainError(error, endpoint) {
+  const code = error.code ?? error.name ?? '';
+  if (['EPROTO', 'ENOTFOUND', 'ECONNREFUSED', 'ECONNRESET', 'ETIMEDOUT', 'EAI_AGAIN'].includes(code) ||
+      /certificate|handshake|SSL|XML parse/i.test(error.message)) {
+    return `Could not connect to ${endpoint}. Check R2_ACCOUNT_ID in .env (the Account ID, ` +
+      'or paste the bucket\'s S3 API URL from its Settings tab, which is also right for EU buckets). ' +
+      'A VPN, proxy or antivirus that inspects HTTPS can cause this too.';
+  }
+  if (['InvalidAccessKeyId', 'SignatureDoesNotMatch', 'AccessDenied', 'Unauthorized'].includes(code) ||
+      [401, 403].includes(error.$metadata?.httpStatusCode)) {
+    return 'R2 refused the key. Check R2_ACCESS_KEY_ID and R2_SECRET_ACCESS_KEY in .env, and that the ' +
+      `token has Object Read & Write access to the bucket "${R2_BUCKET}".`;
+  }
+  if (code === 'NoSuchBucket') {
+    return `There is no bucket "${R2_BUCKET}" in this account. Check R2_BUCKET in .env; for an EU bucket, ` +
+      'use its S3 API URL from the Settings tab as R2_ACCOUNT_ID.';
+  }
+  return null;
+}
+
+const endpoint = resolveEndpoint();
 const client = new S3Client({
   region: 'auto',
-  endpoint: process.env.R2_ENDPOINT ?? `https://${R2_ACCOUNT_ID}.r2.cloudflarestorage.com`,
-  forcePathStyle: !!process.env.R2_ENDPOINT,
+  endpoint,
+  // the bucket goes in the path, not in front of the host name
+  forcePathStyle: true,
   credentials: { accessKeyId: R2_ACCESS_KEY_ID, secretAccessKey: R2_SECRET_ACCESS_KEY },
 });
 
@@ -95,10 +139,19 @@ if (!local.length) {
   process.exit(1);
 }
 
-console.log(`Comparing ${local.length} local files with bucket "${R2_BUCKET}"...`);
+console.log(`Comparing ${local.length} local files with bucket "${R2_BUCKET}" at ${endpoint}...`);
 const remote = new Map();
-for (const prefix of PREFIXES) {
-  (await listRemoteFiles(prefix)).forEach((etag, key) => remote.set(key, etag));
+try {
+  for (const prefix of PREFIXES) {
+    (await listRemoteFiles(prefix)).forEach((etag, key) => remote.set(key, etag));
+  }
+} catch (error) {
+  const hint = explainError(error, endpoint);
+  if (!hint) {
+    throw error;
+  }
+  console.error(`\n${hint}\n\n(${error.code ?? error.name}: ${error.message})`);
+  process.exit(1);
 }
 
 const uploads = [];

@@ -1,0 +1,178 @@
+{
+  "sly2/blimp": {
+    "hash": "233a89758e",
+    "size": [
+      4096,
+      4096
+    ],
+    "tiles": "tiles/sly2/blimp/233a89758e/{z}/{y}/{x}.webp",
+    "tileSize": 256,
+    "levels": 4,
+    "preview": "previews/sly2/blimp-233a89758e.webp"
+  },
+  "sly2/cairo": {
+    "hash": "be9f3f2f94",
+    "size": [
+      4096,
+      4096
+    ],
+    "tiles": "tiles/sly2/cairo/be9f3f2f94/{z}/{y}/{x}.webp",
+    "tileSize": 256,
+    "levels": 4,
+    "preview": "previews/sly2/cairo-be9f3f2f94.webp"
+  },
+  "sly2/canada1": {
+    "hash": "41e7da1db3",
+    "size": [
+      4096,
+      4096
+    ],
+    "tiles": "tiles/sly2/canada1/41e7da1db3/{z}/{y}/{x}.webp",
+    "tileSize": 256,
+    "levels": 4,
+    "preview": "previews/sly2/canada1-41e7da1db3.webp"
+  },
+  "sly2/canada2": {
+    "hash": "9d6cb1b295",
+    "size": [
+      4096,
+      4096
+    ],
+    "tiles": "tiles/sly2/canada2/9d6cb1b295/{z}/{y}/{x}.webp",
+    "tileSize": 256,
+    "levels": 4,
+    "preview": "previews/sly2/canada2-9d6cb1b295.webp"
+  },
+  "sly2/india1": {
+    "hash": "7567091f19",
+    "size": [
+      4096,
+      4096
+    ],
+    "tiles": "tiles/sly2/india1/7567091f19/{z}/{y}/{x}.webp",
+    "tileSize": 256,
+    "levels": 4,
+    "preview": "previews/sly2/india1-7567091f19.webp"
+  },
+  "sly2/india2": {
+    "hash": "0edccb2343",
+    "size": [
+      4096,
+      4096
+    ],
+    "tiles": "tiles/sly2/india2/0edccb2343/{z}/{y}/{x}.webp",
+    "tileSize": 256,
+    "levels": 4,
+    "preview": "previews/sly2/india2-0edccb2343.webp"
+  },
+  "sly2/paris": {
+    "hash": "76cef6ee73",
+    "size": [
+      4096,
+      4096
+    ],
+    "tiles": "tiles/sly2/paris/76cef6ee73/{z}/{y}/{x}.webp",
+    "tileSize": 256,
+    "levels": 4,
+    "preview": "previews/sly2/paris-76cef6ee73.webp"
+  },
+  "sly2/prague1": {
+    "hash": "1f30958fa5",
+    "size": [
+      4096,
+      4096
+    ],
+    "tiles": "tiles/sly2/prague1/1f30958fa5/{z}/{y}/{x}.webp",
+    "tileSize": 256,
+    "levels": 4,
+    "preview": "previews/sly2/prague1-1f30958fa5.webp"
+  },
+  "sly2/prague2": {
+    "hash": "f55335997d",
+    "size": [
+      4096,
+      4096
+    ],
+    "tiles": "tiles/sly2/prague2/f55335997d/{z}/{y}/{x}.webp",
+    "tileSize": 256,
+    "levels": 4,
+    "preview": "previews/sly2/prague2-f55335997d.webp"
+  },
+  "sly3/china": {
+    "hash": "d797781878",
+    "size": [
+      4096,
+      4096
+    ],
+    "tiles": "tiles/sly3/china/d797781878/{z}/{y}/{x}.webp",
+    "tileSize": 256,
+    "levels": 4,
+    "preview": "previews/sly3/china-d797781878.webp"
+  },
+  "sly3/holland": {
+    "hash": "058b6854b1",
+    "size": [
+      4096,
+      4096
+    ],
+    "tiles": "tiles/sly3/holland/058b6854b1/{z}/{y}/{x}.webp",
+    "tileSize": 256,
+    "levels": 4,
+    "preview": "previews/sly3/holland-058b6854b1.webp"
+  },
+  "sly3/kaine": {
+    "hash": "b54389a49c",
+    "size": [
+      4096,
+      4096
+    ],
+    "tiles": "tiles/sly3/kaine/b54389a49c/{z}/{y}/{x}.webp",
+    "tileSize": 256,
+    "levels": 4,
+    "preview": "previews/sly3/kaine-b54389a49c.webp"
+  },
+  "sly3/outback": {
+    "hash": "d433ba3f9e",
+    "size": [
+      4096,
+      4096
+    ],
+    "tiles": "tiles/sly3/outback/d433ba3f9e/{z}/{y}/{x}.webp",
+    "tileSize": 256,
+    "levels": 4,
+    "preview": "previews/sly3/outback-d433ba3f9e.webp"
+  },
+  "sly3/pirates": {
+    "hash": "ddfc67bad6",
+    "size": [
+      4096,
+      4096
+    ],
+    "tiles": "tiles/sly3/pirates/ddfc67bad6/{z}/{y}/{x}.webp",
+    "tileSize": 256,
+    "levels": 4,
+    "preview": "previews/sly3/pirates-ddfc67bad6.webp"
+  },
+  "sly3/sailing": {
+    "hash": "6027b522b9",
+    "size": [
+      4096,
+      4096
+    ],
+    "tiles": "tiles/sly3/sailing/6027b522b9/{z}/{y}/{x}.webp",
+    "tileSize": 256,
+    "levels": 4,
+    "preview": "previews/sly3/sailing-6027b522b9.webp"
+  },
+  "sly3/venice": {
+    "hash": "f61d075039",
+    "size": [
+      4096,
+      4096
+    ],
+    "tiles": "tiles/sly3/venice/f61d075039/{z}/{y}/{x}.webp",
+    "tileSize": 256,
+    "levels": 4,
+    "preview": "previews/sly3/venice-f61d075039.webp"
+  }
+}

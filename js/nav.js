@@ -12,6 +12,7 @@ const ICONS = {
   menu: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>',
   home: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11l9-7 9 7M5 10v10h14V10"/></svg>',
   prev: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>',
+  download: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg>',
   next: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>',
 };
 
@@ -195,6 +196,7 @@ export function createSidebar(root, manifest, { getLayers, onResize }) {
       <nav class="crumbs" aria-label="Breadcrumb"></nav>
       <h1 class="current-name"></h1>
       <p class="current-location"></p>
+      <a class="download-map" download></a>
       <div class="prev-next"></div>
       <div class="connected"></div>
       <div class="sidebar-games" role="group" aria-label="Show maps from"></div>
@@ -206,6 +208,7 @@ export function createSidebar(root, manifest, { getLayers, onResize }) {
   const crumbs = root.querySelector('.crumbs');
   const name = root.querySelector('.current-name');
   const location = root.querySelector('.current-location');
+  const downloadLink = root.querySelector('.download-map');
   const prevNext = root.querySelector('.prev-next');
   const connected = root.querySelector('.connected');
   const gameButtons = root.querySelector('.sidebar-games');
@@ -265,6 +268,13 @@ export function createSidebar(root, manifest, { getLayers, onResize }) {
         : '');
     name.textContent = current.name;
     location.textContent = [current.location, episode.title].filter(Boolean).join(' — ');
+
+    const download = manifest.download(current);
+    downloadLink.href = download.url;
+    downloadLink.innerHTML = `${ICONS.download}<span>Download map image</span>` +
+      (download.bytes
+        ? `<span class="download-size">${download.url.split('.').pop().toUpperCase()}, ${(download.bytes / 1e6).toFixed(1)} MB</span>`
+        : '');
 
     const index = game.entries.indexOf(current);
     const step = (entry, direction) => entry

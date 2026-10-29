@@ -1,5 +1,6 @@
 /* Cuts every map image listed in data/games.json into 256px WebP tiles
- * plus a preview thumbnail, and records them in data/assets.json.
+ * plus a preview thumbnail and a full-size download copy, and records
+ * them in data/assets.json.
  *
  *   npm run tiles                  build new or changed maps
  *   npm run tiles -- sly2/paris    only these maps
@@ -13,7 +14,7 @@
 
 import { createHash } from 'node:crypto';
 import { existsSync } from 'node:fs';
-import { mkdir, readdir, readFile, rm, writeFile } from 'node:fs/promises';
+import { copyFile, mkdir, readdir, readFile, rm, stat, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { parseArgs } from 'node:util';
 import sharp from 'sharp';
@@ -49,21 +50,40 @@ function listMaps(catalog) {
     episode.maps.map((map) => ({ key: `${game.id}/${map.id}`, image: map.image }))));
 }
 
+/* Removes this map's older <folder>/<game>/<map>-<hash>.* files. */
+async function removeOldFiles(folder, key) {
+  const dir = path.join(OUT_DIR, folder, path.dirname(key));
+  if (!existsSync(dir)) {
+    return;
+  }
+  const own = new RegExp(`^${path.basename(key)}-[0-9a-f]{10}\\.[a-z]+$`, 'i');
+  for (const file of await readdir(dir)) {
+    if (own.test(file)) {
+      await rm(path.join(dir, file));
+    }
+  }
+}
+
+/* The full-size image offered on the site's "Download map image" button:
+ * the source file itself, under downloads/. */
+async function addDownload(key, sourceFile, hash) {
+  const downloadPath = `downloads/${key}-${hash}${path.extname(sourceFile).toLowerCase()}`;
+  const target = path.join(OUT_DIR, downloadPath);
+  if (!existsSync(target)) {
+    await removeOldFiles('downloads', key);
+    await mkdir(path.dirname(target), { recursive: true });
+    await copyFile(sourceFile, target);
+  }
+  return { path: downloadPath, bytes: (await stat(target)).size };
+}
+
 async function buildMap(key, sourceFile, hash) {
   const tilesPrefix = `tiles/${key}/${hash}`;
   const previewPath = `previews/${key}-${hash}.webp`;
 
   // drop this map's older builds so dist-assets mirrors what is in use
   await rm(path.join(OUT_DIR, 'tiles', key), { recursive: true, force: true });
-  const previewDir = path.join(OUT_DIR, 'previews', path.dirname(key));
-  if (existsSync(previewDir)) {
-    const ownPreview = new RegExp(`^${path.basename(key)}-[0-9a-f]{10}\\.webp$`);
-    for (const file of await readdir(previewDir)) {
-      if (ownPreview.test(file)) {
-        await rm(path.join(previewDir, file));
-      }
-    }
-  }
+  await removeOldFiles('previews', key);
 
   const tilesDir = path.join(OUT_DIR, tilesPrefix);
   await mkdir(path.dirname(tilesDir), { recursive: true });
@@ -95,6 +115,7 @@ async function buildMap(key, sourceFile, hash) {
     tileSize: SETTINGS.tileSize,
     levels,
     preview: previewPath,
+    download: await addDownload(key, sourceFile, hash),
   };
 }
 
@@ -122,7 +143,10 @@ for (const { key, image } of maps) {
     .slice(0, 10);
   const builtBefore = existsSync(path.join(OUT_DIR, 'tiles', key, hash));
   if (!options.force && assets[key]?.hash === hash && builtBefore) {
-    console.log(`ok    ${key} (unchanged)`);
+    // builds from before downloads existed only need the download added
+    const hadDownload = assets[key].download && existsSync(path.join(OUT_DIR, assets[key].download.path));
+    assets[key].download = await addDownload(key, sourceFile, hash);
+    console.log(`ok    ${key} (unchanged${hadDownload ? '' : ', download added'})`);
     continue;
   }
   try {

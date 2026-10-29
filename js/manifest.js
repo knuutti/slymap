@@ -66,6 +66,10 @@ export async function loadManifest() {
     defaultKey: maps.has(catalog.default) ? catalog.default : maps.keys().next().value,
     findGame: (id) => catalog.games.find((game) => game.id === id),
     previewUrl: (entry) => entry.assets?.preview ? (catalog.assetBase ?? './') + entry.assets.preview : null,
+    // the full-size image: the copy `npm run tiles` made, else the source image
+    download: (entry) => entry.assets?.download
+      ? { url: (catalog.assetBase ?? './') + entry.assets.download.path, bytes: entry.assets.download.bytes }
+      : { url: (catalog.assetBase ?? './') + entry.image, bytes: null },
     // old ?map=paris links used bare map ids
     findByMapId: (id) => [...maps.values()].find((map) => map.id === id),
   };

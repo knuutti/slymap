@@ -1,6 +1,6 @@
 {
   "default": "sly2/paris",
-  "assetBase": "https://pub-d0c64ff3069a442bba11b080612b1582.r2.dev/",
+  "assetBase": "https://assets.slyspeedruns.com/",
   "games": [
     {
       "id": "sly1",

@@ -198,7 +198,7 @@
               "size": [9920, 9520],
               "data": [] },
             { "id": "sly4-west-town", "name": "West Town", "location": "Cotton Mouth Bluff", "kind": "hub",
-              "image": "base_img/Sly4_West_Precidio.png",
+              "image": "base_img/Sly4_West_Town.png",
               "calib": { "origin": [7143.5, 13017.5], "scale": 23.969 },
               "size": [19840, 17000],
               "data": [] }

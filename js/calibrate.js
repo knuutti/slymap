@@ -6,6 +6,7 @@ import { loadManifest } from './manifest.js';
 import { createBaseLayer, createProjection, imageBounds, DEFAULT_IMAGE_SIZE } from './coords.js';
 import { fetchObjects, getTypeStyle, objectType } from './markers.js';
 import { fitCalibration, parseGamePosition, roundCalibration } from './calibration.js';
+import { SmoothWheelZoom } from './wheelzoom.js';
 
 const STORAGE_PREFIX = 'slymap.calibrate.';
 
@@ -15,9 +16,12 @@ const map = L.map('calib-map', {
   crs: L.CRS.Simple,
   attributionControl: false,
   zoomSnap: 0.25,
+  scrollWheelZoom: false, // replaced by smoothWheelZoom
   minZoom: -4,
   maxZoom: 3,
 });
+map.addHandler('smoothWheelZoom', SmoothWheelZoom);
+map.smoothWheelZoom.enable();
 
 const $ = (selector) => document.querySelector(selector);
 const mapSelect = $('#map-select');

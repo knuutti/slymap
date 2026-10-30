@@ -102,7 +102,9 @@ suggest a stretched image, which the site can't show.
 ## Map tiles
 
 Map images are served from Cloudflare R2 as 256px WebP tiles, so a map
-loads only the parts on screen. Each map also gets a preview for the browse
+loads only the parts on screen. Each tile also holds 2px of its
+neighbours, which the site draws over them so tile edges don't show as
+seams when the browser scales the tiles. Each map also gets a preview for the browse
 page and a full-size copy of its image for the "Download map image" button
 in the sidebar. Needs Node.js 20.12 or newer.
 

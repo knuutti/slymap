@@ -2,9 +2,11 @@ import { loadManifest } from './manifest.js';
 import { createBaseLayer, createProjection, imageBounds, DEFAULT_IMAGE_SIZE } from './coords.js';
 import { parseRoute, navigate, replaceRoute, migrateLegacyUrl } from './router.js';
 import { loadMapLayers } from './markers.js';
-import { MousePosition, ColorPicker, LayerPanel, LayerInfo } from './controls.js';
+import { MousePosition, ColorPicker } from './controls.js';
 import { setupDrawing } from './draw.js';
+import { SmoothWheelZoom } from './wheelzoom.js';
 import { createBrowse, createSidebar, isPlainClick } from './nav.js';
+import { createObjectPanel } from './objectpanel.js';
 
 const manifest = await loadManifest();
 migrateLegacyUrl(manifest);
@@ -15,9 +17,12 @@ const map = L.map('map', {
   preferCanvas: true,
   attributionControl: false,
   zoomSnap: 0.25,
+  scrollWheelZoom: false, // replaced by smoothWheelZoom
   minZoom: -3,
   maxZoom: 2,
 });
+map.addHandler('smoothWheelZoom', SmoothWheelZoom);
+map.smoothWheelZoom.enable();
 
 let current = null;   // { def, projection, base, links, layers, enabled, carried }
 let loadToken = 0;    // ignores data that arrives after the user moved on
@@ -26,8 +31,11 @@ let savedView = null; // the map's view while the browse page is shown
 const mousePosition = new MousePosition().addTo(map);
 const drawing = setupDrawing(map, () => current.projection);
 new ColorPicker((color) => drawing.setColor(color)).addTo(map);
-const layerPanel = new LayerPanel(toggleLayer).addTo(map);
-const layerInfo = new LayerInfo(() => setEnabledLayers([])).addTo(map);
+const objectPanel = createObjectPanel(document.getElementById('object-panel'), {
+  onToggle: toggleLayer,
+  onClear: () => setEnabledLayers([]),
+  onResize: () => map.invalidateSize(),
+});
 
 // layers this map lacks stay selected for the next map that has them
 const currentLayers = () => current ? [...current.enabled, ...current.carried] : [];
@@ -63,12 +71,7 @@ function setEnabledLayers(types) {
       layer.group.remove();
     }
   });
-  layerPanel.setEnabled(current.enabled);
-  layerInfo.setEntries([...current.enabled].map((type) => ({
-    label: current.layers[type].label,
-    count: current.layers[type].group.getLayers().length,
-    highlight: current.layers[type].highlight,
-  })));
+  objectPanel.setEnabled(current.enabled);
   if (!document.body.classList.contains('browsing')) {
     replaceRoute(current.def.key, [...current.enabled]);
   }
@@ -166,8 +169,7 @@ async function showMap(def, layers) {
   map.setView(bounds.getCenter(), -1.5);
   sidebar.setMap(def);
   document.title = `${def.name} - SlyMap`;
-  layerPanel.setLayers({}, current.enabled, 'Loading objects…');
-  layerInfo.setEntries([]);
+  objectPanel.setLayers({}, current.enabled, 'Loading objects…');
 
   const mapLayers = await loadMapLayers(def, current.projection, manifest.markerTypes,
     (key) => manifest.maps.get(key));
@@ -175,7 +177,7 @@ async function showMap(def, layers) {
     return;
   }
   current.layers = mapLayers;
-  layerPanel.setLayers(mapLayers, current.enabled);
+  objectPanel.setLayers(mapLayers, current.enabled);
   setEnabledLayers(layers);
 }
 

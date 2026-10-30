@@ -58,6 +58,23 @@ export function createProjection(calib) {
   };
 }
 
+/* Tiles from build-tiles.mjs hold `overlap` pixels of their neighbours on
+ * every side. Drawn that much larger and shifted back, neighbouring tiles
+ * overlap with the same pixels, so the edges of scaled tiles (which the
+ * browser smooths one image at a time) don't show as seams. */
+const OverlapTileLayer = L.TileLayer.extend({
+  _initTile(tile) {
+    L.TileLayer.prototype._initTile.call(this, tile);
+    const { overlap } = this.options;
+    if (overlap) {
+      const size = this.getTileSize();
+      tile.style.width = `${size.x + 2 * overlap}px`;
+      tile.style.height = `${size.y + 2 * overlap}px`;
+      tile.style.margin = `${-overlap}px 0 0 ${-overlap}px`;
+    }
+  },
+});
+
 /* The map image: tiles when `npm run tiles` has built them, otherwise the
  * whole image. */
 export function createBaseLayer(def, bounds, assetBase, map) {
@@ -66,7 +83,8 @@ export function createBaseLayer(def, bounds, assetBase, map) {
     return L.imageOverlay(assetBase + def.image, bounds);
   }
   // the pyramid's last level is full size, which is map zoom 0
-  return L.tileLayer(assetBase + tiles.tiles, {
+  const tileLayer = new OverlapTileLayer(assetBase + tiles.tiles, {
+    overlap: tiles.overlap ?? 0,
     tileSize: tiles.tileSize,
     zoomOffset: tiles.levels,
     minNativeZoom: -tiles.levels,
@@ -75,5 +93,9 @@ export function createBaseLayer(def, bounds, assetBase, map) {
     maxZoom: map.getMaxZoom(),
     bounds,
     noWrap: true,
+    zIndex: 2, // above the preview
   });
+  // the low-res preview underneath shows while tiles load
+  const preview = L.imageOverlay(assetBase + tiles.preview, bounds, { pane: 'tilePane' });
+  return L.layerGroup([preview, tileLayer]);
 }

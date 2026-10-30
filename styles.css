@@ -8,6 +8,8 @@
 body { margin: 0; }
 #map {
 	height: 100vh;
+	/* dark like the maps, so any gap between tiles doesn't show as a light line */
+	background: var(--nav-bg);
 }
 .markers_invert {
 	filter: invert(1);
@@ -96,78 +98,6 @@ text-align: center;
 	background-color: rgba(180, 200, 250, .7);
 }
 
-.leaflet-control-layers h2 {
-	font-size: 2em;
-	margin: 0;
-	padding: 0;
-	text-align: center;
-}
-.layer-panel-toggle {
-	width: 100%;
-	padding: 0;
-	border: 0;
-	background: none;
-	font: inherit;
-	font-weight: bold;
-	cursor: pointer;
-}
-.layer-panel-toggle::after {
-	content: ' \25BE';
-	font-size: 0.6em;
-	vertical-align: middle;
-}
-.layer-panel-collapsed .layer-panel-toggle::after {
-	content: ' \25B8';
-}
-.layer-panel-collapsed .layer-panel-body {
-	display: none;
-}
-.layer-panel-collapsed.leaflet-control-layers.leaflet-control {
-	width: auto;
-}
-.layer-panel-collapsed h2 {
-	font-size: 1.2em;
-	padding: 0 6px;
-}
-.layer-panel-empty:empty {
-	display: none;
-}
-.layer-panel-empty {
-	margin: 6px 4px;
-	color: #555;
-}
-.leaflet-control-layers label {
-	border-radius: 6px;
-}
-
-div#layerinfo {
-	position: absolute;
-	right: 250px;
-	background-color: rgba(255, 255, 255, .8);
-	border-radius: 10px;
-	border: 2px solid rgba(0,0,0, .2);
-	width: 180px;
-}
-
-#layerinfo ul {
-	list-style-type: none;
-	margin: 0px;
-	padding: 5px;
-}
-#layerinfo li {
-	border-radius: 6px;
-	padding: 2px 4px;
-	color: #333;
-}
-#layerinfo #clear_markers {
-	text-align: center;
-	padding: 2px;
-	background-color: #b4c8fab3;
-	cursor: pointer;
-	border-radius: 8px;
-	margin: 0px 10% 4px 10%;
-}
-
 .leaflet-draw-actions a {
 	color: white;
 }
@@ -182,15 +112,6 @@ div#layerinfo {
 }
 .distance li {
 	padding-left: 20px;
-}
-#objectFilter {
-	width: 100%;
-	margin-bottom: 2px;
-	display:block;
-}
-
-.leaflet-control-layers.leaflet-control {
-	width: 220px;
 }
 ul.rectangle_tooltip { list-style-type: none; margin: 0; padding: 0; }
 

@@ -11,10 +11,11 @@
 	--nav-accent-text: #1b1606;
 	--nav-font: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', system-ui, sans-serif;
 	--sidebar-width: 300px;
+	--object-panel-width: 260px;
 	--rail-width: 48px;
 }
 
-#sidebar, #sidebar *, #browse, #browse * {
+#sidebar, #sidebar *, #browse, #browse *, #object-panel, #object-panel * {
 	font-family: var(--nav-font);
 	box-sizing: border-box;
 }
@@ -23,7 +24,7 @@
 	color: inherit;
 }
 
-#sidebar :focus-visible, #browse :focus-visible {
+#sidebar :focus-visible, #browse :focus-visible, #object-panel :focus-visible {
 	outline: 2px solid var(--nav-accent);
 	outline-offset: 2px;
 }
@@ -57,6 +58,7 @@ input.search::placeholder {
 /* --- page switching --------------------------------------------------- */
 
 #map-view {
+	position: relative;
 	display: flex;
 	height: 100vh;
 	height: 100dvh;
@@ -294,7 +296,7 @@ body.browsing #browse {
 	background: var(--nav-raised);
 }
 
-#sidebar svg {
+#sidebar svg, #object-panel svg {
 	width: 20px;
 	height: 20px;
 	flex: none;
@@ -579,8 +581,197 @@ body.browsing #browse {
 	font-weight: bold;
 }
 
+/* --- object panel ---------------------------------------------------- */
+
+#object-panel {
+	position: relative;
+	z-index: 1100;
+	display: flex;
+	flex: none;
+	color: var(--nav-text);
+}
+
+.object-panel-body {
+	display: flex;
+	flex-direction: column;
+	width: var(--object-panel-width);
+	padding: 12px 14px 0;
+	background: var(--nav-panel);
+	border-left: 1px solid var(--nav-border);
+}
+
+#object-panel.collapsed .object-panel-body {
+	display: none;
+}
+
+.object-panel-open {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	display: none;
+	align-items: center;
+	gap: 8px;
+	padding: 8px 12px;
+	font-size: 0.95rem;
+	color: var(--nav-text);
+	background: var(--nav-panel);
+	border: 1px solid var(--nav-border);
+	border-radius: 8px;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+	cursor: pointer;
+	white-space: nowrap;
+}
+
+.object-panel-open:hover {
+	background: var(--nav-raised);
+}
+
+#object-panel.collapsed .object-panel-open {
+	display: flex;
+}
+
+.object-panel-badge {
+	min-width: 20px;
+	padding: 1px 6px;
+	border-radius: 10px;
+	font-size: 0.8rem;
+	font-weight: bold;
+	text-align: center;
+	color: var(--nav-accent-text);
+	background: var(--nav-accent);
+}
+
+.object-panel-badge:empty {
+	display: none;
+}
+
+.object-panel-header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.object-panel-header h2 {
+	margin: 0;
+	font-size: 1.25rem;
+}
+
+.object-panel-body input.search {
+	margin: 10px 0 6px;
+}
+
+.object-panel-summary {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 4px 0 8px;
+	color: var(--nav-muted);
+	font-size: 0.9rem;
+}
+
+.object-panel-summary[hidden] {
+	display: none;
+}
+
+.object-panel-clear {
+	padding: 0;
+	border: 0;
+	background: none;
+	color: var(--nav-accent);
+	font-size: 0.9rem;
+	cursor: pointer;
+}
+
+.object-panel-clear:hover {
+	text-decoration: underline;
+}
+
+.object-list {
+	flex: 1;
+	overflow-y: auto;
+	margin: 0 -14px;
+	padding: 0 8px 16px;
+}
+
+.object-row {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	padding: 7px 8px;
+	border-radius: 8px;
+	cursor: pointer;
+	user-select: none;
+}
+
+.object-row[hidden] {
+	display: none;
+}
+
+.object-row:hover {
+	background: var(--nav-raised);
+}
+
+.object-row.on {
+	background: var(--nav-raised);
+}
+
+.object-row input {
+	position: absolute;
+	opacity: 0;
+	pointer-events: none;
+}
+
+/* the swatch is the checkbox: an outline when off, filled when on */
+.object-swatch {
+	flex: none;
+	width: 14px;
+	height: 14px;
+	border: 2px solid var(--swatch);
+	border-radius: 4px;
+}
+
+.object-row.on .object-swatch {
+	background: var(--swatch);
+}
+
+.object-row input:focus-visible + .object-swatch {
+	outline: 2px solid var(--nav-accent);
+	outline-offset: 2px;
+}
+
+.object-name {
+	flex: 1;
+	min-width: 0;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.object-count {
+	color: var(--nav-muted);
+	font-size: 0.85rem;
+	font-variant-numeric: tabular-nums;
+}
+
+.object-panel-body .empty {
+	margin: 6px 0;
+}
+
+.object-panel-body .empty:empty {
+	display: none;
+}
+
 /* Phones: the panel opens over the map instead of beside it. */
 @media (max-width: 700px) {
+	.object-panel-body {
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		width: min(var(--object-panel-width), 100vw);
+		box-shadow: -4px 0 16px rgba(0, 0, 0, 0.4);
+	}
+
 	.sidebar-panel {
 		position: absolute;
 		top: 0;

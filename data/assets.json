@@ -108,16 +108,16 @@
     "preview": "previews/sly2/prague2-4049e642db.webp"
   },
   "sly3/china": {
-    "hash": "aee0775543",
+    "hash": "28ee6b9012",
     "size": [
-      4096,
-      4096
+      19040,
+      21080
     ],
-    "tiles": "tiles/sly3/china/aee0775543/{z}/{y}/{x}.webp",
+    "tiles": "tiles/sly3/china/28ee6b9012/{z}/{y}/{x}.webp",
     "tileSize": 256,
     "overlap": 2,
-    "levels": 4,
-    "preview": "previews/sly3/china-aee0775543.webp"
+    "levels": 7,
+    "preview": "previews/sly3/china-28ee6b9012.webp"
   },
   "sly3/holland": {
     "hash": "0047508806",

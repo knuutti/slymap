@@ -108,7 +108,7 @@
           "id": "e1", "number": 1,
           "title": "An Opera of Fear",
           "maps": [
-            { "id": "venice", "name": "Venice", "location": "Venice, Italy", "kind": "hub",
+            { "id": "venice", "name": "Venice Hub", "location": "Venice, Italy", "kind": "hub",
               "image": "base_img/venice.png", "calib": { "origin": [1487, 2044], "scale": 0.144 },
               "data": [] }
           ]
@@ -117,7 +117,7 @@
           "id": "e2", "number": 2,
           "title": "Rumble Down Under",
           "maps": [
-            { "id": "outback", "name": "Outback", "location": "Yuendumu, Australia", "kind": "hub",
+            { "id": "outback", "name": "Outback Hub", "location": "Yuendumu, Australia", "kind": "hub",
               "image": "base_img/outback.png", "calib": { "origin": [2159, 1793], "scale": 0.162 },
               "data": [] }
           ]
@@ -126,7 +126,7 @@
           "id": "e3", "number": 3,
           "title": "Flight of Fancy",
           "maps": [
-            { "id": "holland", "name": "Holland", "location": "Kinderdijk, Netherlands", "kind": "hub",
+            { "id": "holland", "name": "Holland Hub", "location": "Kinderdijk, Netherlands", "kind": "hub",
               "image": "base_img/holland.png", "calib": { "origin": [2309, 1725], "scale": 0.156 },
               "data": [] }
           ]
@@ -135,8 +135,9 @@
           "id": "e4", "number": 4,
           "title": "A Cold Alliance",
           "maps": [
-            { "id": "china", "name": "China", "location": "Kunlun Mountains, China", "kind": "hub",
-              "image": "base_img/china.png", "calib": { "origin": [1924, 1815], "scale": 0.1447 },
+            { "id": "china", "name": "China Hub", "location": "Kunlun Mountains, China", "kind": "hub",
+              "image": "base_img/Sly3_China_Hub.png", "calib": { "origin": [10541.9, 7818.9], "scale": 0.72012, "flip": "y", "rotate": 90 },
+              "size": [19040, 21080],
               "data": [] }
           ]
         },
@@ -144,10 +145,10 @@
           "id": "e5", "number": 5,
           "title": "Dead Men Tell No Tales",
           "maps": [
-            { "id": "pirates", "name": "Blood-Bath Bay", "location": "Blood-Bath Bay, Caribbean Sea", "kind": "hub",
+            { "id": "pirates", "name": "Pirate Hub", "location": "Blood-Bath Bay", "kind": "hub",
               "image": "base_img/pirates.png", "calib": { "origin": [1630, 2346], "scale": 0.123 },
               "data": [] },
-            { "id": "sailing", "name": "Sailing Map", "location": "Caribbean Sea", "kind": "hub",
+            { "id": "sailing", "name": "Sailing Hub", "location": "Caribbean Sea", "kind": "hub",
               "image": "base_img/sailing.png", "calib": { "origin": [1889, 1950], "scale": 0.00413 },
               "data": [] }
           ]
@@ -156,7 +157,7 @@
           "id": "e6", "number": 6,
           "title": "Honor Among Thieves",
           "maps": [
-            { "id": "kaine", "name": "Kaine Island", "location": "Kaine Island, South Pacific", "kind": "hub",
+            { "id": "kaine", "name": "Kaine Island", "location": "South Pacific", "kind": "hub",
               "image": "base_img/kaine.png", "calib": { "origin": [2093, 1835], "scale": 0.0663 },
               "data": [] }
           ]

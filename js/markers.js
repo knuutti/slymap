@@ -126,6 +126,13 @@ function getPopup(item, label, filename, findMap) {
   );
 }
 
+/* The marker or shape an object is drawn as; an icon wins over a shape. */
+export function createObjectLayer(item, style, projection) {
+  const marker = getMarker(item, style, projection);
+  const shape = getShape(item, style, projection);
+  return shape && !marker.options.img ? shape : marker;
+}
+
 /* Object type as used for layers, e.g. "Job Triggers" */
 export function objectType(item) {
   return item.parameters?.type ? `${item.type} ${item.parameters.type}` : item.type;
@@ -157,9 +164,7 @@ export async function loadMapLayers(mapDef, projection, markerTypes, findMap) {
       }
       const type = objectType(item);
       const style = getTypeStyle(markerTypes, type);
-      const marker = getMarker(item, style, projection);
-      const shape = getShape(item, style, projection);
-      const layer = shape && !marker.options.img ? shape : marker;
+      const layer = createObjectLayer(item, style, projection);
 
       layers[type] ??= { group: L.layerGroup(), label: style.label, highlight: ICON_HIGHLIGHT };
       if (!layer.options.img) {

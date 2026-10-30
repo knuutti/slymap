@@ -265,6 +265,124 @@ body {
 	font-size: 12px;
 }
 
+/* calibrating or collecting objects */
+.mode-switch, .kinds {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 4px;
+	margin-top: 12px;
+}
+
+.kinds {
+	margin-top: 10px;
+}
+
+.calib-panel .mode-switch button, .calib-panel .kinds button {
+	flex: 1;
+	padding: 6px 8px;
+	background: transparent;
+	color: var(--nav-text);
+	border-color: var(--nav-border);
+	font-weight: normal;
+}
+
+.calib-panel .mode-switch button[aria-pressed=true], .calib-panel .kinds button[aria-pressed=true] {
+	background: var(--nav-accent);
+	color: var(--nav-accent-text);
+	border-color: var(--nav-accent);
+	font-weight: bold;
+}
+
+.field {
+	display: block;
+	margin-top: 10px;
+	font-size: 0.9rem;
+	color: var(--nav-muted);
+}
+
+.field input, .field textarea {
+	display: block;
+	width: 100%;
+	margin-top: 3px;
+}
+
+.field-row {
+	display: flex;
+	gap: 8px;
+}
+
+.field-row .field {
+	flex: 1;
+	min-width: 0;
+}
+
+.field-row .field-z {
+	flex: 0 0 90px;
+}
+
+.calib-panel input[type=number], .calib-panel textarea {
+	padding: 7px 9px;
+	font-size: 0.95rem;
+	color: var(--nav-text);
+	background: var(--nav-raised);
+	border: 1px solid var(--nav-border);
+	border-radius: 6px;
+}
+
+.calib-panel textarea {
+	resize: vertical;
+	font-family: ui-monospace, monospace;
+	font-size: 0.85rem;
+}
+
+.calib-panel textarea.invalid {
+	border-color: #e5484d;
+}
+
+.calib-panel button:disabled {
+	opacity: 0.5;
+	cursor: default;
+}
+
+#collected {
+	margin: 10px 0 0;
+	padding: 0;
+	list-style: none;
+	font-size: 0.9rem;
+}
+
+#collected li {
+	display: flex;
+	align-items: center;
+	border-bottom: 1px solid var(--nav-border);
+}
+
+.calib-panel button.collected-item {
+	flex: 1;
+	min-width: 0;
+	padding: 5px 4px;
+	text-align: left;
+	background: transparent;
+	color: var(--nav-text);
+	border-color: transparent;
+	font-weight: normal;
+}
+
+#collect-export {
+	margin-top: 10px;
+}
+
+#collect-export .secondary {
+	display: block;
+}
+
+.collect-popup {
+	max-height: 260px;
+	overflow: auto;
+	margin: 0 0 8px;
+	font-size: 11px;
+}
+
 @media (max-width: 800px) {
 	#calibrate {
 		flex-direction: column-reverse;

@@ -7,6 +7,7 @@ import { createBaseLayer, createProjection, imageBounds, zoomRange, DEFAULT_IMAG
 import { fetchObjects, getTypeStyle, objectType } from './markers.js';
 import { fitCalibration, parseGamePosition, roundCalibration } from './calibration.js';
 import { SmoothWheelZoom } from './wheelzoom.js';
+import { setupCollector } from './collect.js';
 
 const STORAGE_PREFIX = 'slymap.calibrate.';
 
@@ -15,6 +16,7 @@ const manifest = await loadManifest();
 const map = L.map('calib-map', {
   crs: L.CRS.Simple,
   attributionControl: false,
+  preferCanvas: true, // the object icons are drawn on a canvas
   zoomSnap: 0.25,
   scrollWheelZoom: false, // replaced by smoothWheelZoom
   minZoom: -4,
@@ -46,6 +48,14 @@ const pointLayer = L.layerGroup().addTo(map);
 const errorLayer = L.layerGroup().addTo(map);
 const objectLayer = L.layerGroup().addTo(map);
 
+const collector = setupCollector({
+  map,
+  markerTypes: manifest.markerTypes,
+  getFit: () => currentFit(),
+  imageId,
+  getDataFiles: () => state.source?.kind == 'map' ? state.source.def.data : [],
+});
+
 const toLatLng = ([x, y]) => L.latLng(-y, x);
 const toPixel = (latlng) => [latlng.lng, -latlng.lat];
 const round1 = (value) => Math.round(value * 10) / 10;
@@ -57,11 +67,16 @@ function escapeHtml(value) {
 
 /* ------------------------------------------------------------ storage */
 
-function storageKey() {
+/* Names the open image for what is remembered about it. */
+function imageId() {
   if (!state.source) {
     return null;
   }
-  return STORAGE_PREFIX + (state.source.kind == 'map' ? state.source.def.key : 'file:' + state.source.name);
+  return state.source.kind == 'map' ? state.source.def.key : 'file:' + state.source.name;
+}
+
+function storageKey() {
+  return STORAGE_PREFIX + imageId();
 }
 
 function savePoints() {
@@ -99,18 +114,52 @@ function setImage(source, size, base) {
   map.fitBounds(imageBounds(size));
   imageInfo.textContent = `${source.kind == 'map' ? source.def.image : source.name} · ${size[1]} × ${size[0]} px`;
   restorePoints();
+  collector.reset();
   render();
 }
 
-function openMap(key) {
+/* Run locally, the page shows tiles from `npm run tiles` before they are
+ * uploaded, or else the source image in base_img/. One big image is slow
+ * to zoom and pan, so building the tiles first pays off for large maps. */
+const isLocal = ['localhost', '127.0.0.1', '[::1]'].includes(window.location.hostname);
+const LOCAL_ASSETS = './dist-assets/';
+
+async function assetBaseFor(def) {
+  if (!isLocal) {
+    return manifest.assetBase;
+  }
+  if (!def.assets) {
+    return './';
+  }
+  try {
+    const response = await fetch(LOCAL_ASSETS + def.assets.preview, { method: 'HEAD' });
+    return response.ok ? LOCAL_ASSETS : manifest.assetBase;
+  } catch {
+    return manifest.assetBase;
+  }
+}
+
+let openingKey = null;
+
+async function openMap(key) {
   const def = manifest.maps.get(key);
   if (!def) {
     return;
   }
   mapSelect.value = key;
   history.replaceState(null, '', `?map=${encodeURIComponent(key)}`);
+  openingKey = key;
+  const assetBase = await assetBaseFor(def);
+  if (openingKey !== key) {
+    return; // another map was chosen meanwhile
+  }
   const size = def.assets?.size ?? def.size ?? DEFAULT_IMAGE_SIZE;
-  setImage({ kind: 'map', def }, size, createBaseLayer(def, imageBounds(size), manifest.assetBase));
+  setImage({ kind: 'map', def }, size, createBaseLayer(def, imageBounds(size), assetBase));
+  if (!def.assets) {
+    imageInfo.textContent += ' · no tiles yet: run `npm run tiles` for smooth zooming';
+  } else if (assetBase == LOCAL_ASSETS) {
+    imageInfo.textContent += ' · local tiles';
+  }
   loadObjects(def.data.map((file) => fetchObjects(file)), `the map's data (${def.data.length} file${def.data.length == 1 ? '' : 's'})`);
 }
 
@@ -124,6 +173,7 @@ function openImageFile(file) {
         URL.revokeObjectURL(state.source.url);
       }
       mapSelect.value = '';
+      openingKey = null;
       history.replaceState(null, '', window.location.pathname);
       const size = [image.naturalHeight, image.naturalWidth];
       setImage({ kind: 'file', name: file.name, url }, size, L.imageOverlay(url, imageBounds(size)));
@@ -147,6 +197,7 @@ async function loadObjects(filePromises, from) {
     return;
   }
   const objects = [];
+  collector.addExamples(files.flat());
   files.flat().forEach((item) => {
     const params = item.parameters ?? {};
     // areas and lines are placed differently; points are enough here
@@ -193,8 +244,15 @@ function startPlacing(object) {
   render();
 }
 
-/* The fit from the points, or the map's current calib to start from. */
+let fitCache = null;
+
+/* The fit as of the last render; the readout asks on every mouse move. */
 function currentFit() {
+  return fitCache;
+}
+
+/* The fit from the points, or the map's current calib to start from. */
+function computeFit() {
   const fit = fitCalibration(state.points.filter((point) => point.game));
   if (fit) {
     return { ...fit, fromPoints: true };
@@ -210,7 +268,7 @@ function errorClass(error) {
 }
 
 function render() {
-  const fit = currentFit();
+  const fit = fitCache = computeFit();
   const usable = state.points.filter((point) => point.game);
   const residualOf = (point) => fit?.fromPoints && point.game ? fit.residuals[usable.indexOf(point)] : null;
 
@@ -267,7 +325,7 @@ function render() {
       const marker = L.circleMarker(projection.toLatLng(object.game), {
         radius: 6, color: '#000', weight: 1, fillColor: object.color, fillOpacity: 0.85,
         bubblingMouseEvents: false, // a click opens the popup, it doesn't add a point
-        interactive: !state.placing, // while placing, every click places
+        interactive: !state.placing && !collector.active, // while placing or collecting, every click places
       }).addTo(objectLayer);
       const popup = document.createElement('div');
       popup.innerHTML = `<strong>${escapeHtml(object.label)}</strong><br>In-game ${object.game.join(', ')}<br>
@@ -290,6 +348,7 @@ function render() {
   }
 
   renderResult(fit);
+  collector.render();
 }
 
 function renderResult(fit) {
@@ -339,6 +398,10 @@ function renderResult(fit) {
 
 map.on('click', (event) => {
   if (!state.source) {
+    return;
+  }
+  if (collector.active) {
+    collector.click(event.latlng);
     return;
   }
   const pixel = toPixel(event.latlng).map(round1);
@@ -420,6 +483,25 @@ $('#hson-file').addEventListener('change', (event) => {
 });
 showObjects.addEventListener('change', () => render());
 
+// calibrating or collecting objects: map clicks do one or the other
+$('#mode').addEventListener('click', (event) => {
+  const mode = event.target.closest('button[data-mode]')?.dataset.mode;
+  if (!mode) {
+    return;
+  }
+  const collecting = mode == 'collect';
+  document.querySelectorAll('#mode button').forEach((button) =>
+    button.setAttribute('aria-pressed', button.dataset.mode == mode));
+  document.querySelectorAll('.calibrate-only').forEach((element) => { element.hidden = collecting; });
+  $('#collect').hidden = !collecting;
+  // a double-click finishes a path or area instead of zooming
+  map.doubleClickZoom[collecting ? 'disable' : 'enable']();
+  map.closePopup();
+  state.placing = null;
+  collector.setActive(collecting);
+  render();
+});
+
 // dropping an image or .hson files onto the map
 const mapElement = $('#calib-map');
 mapElement.addEventListener('dragover', (event) => event.preventDefault());
@@ -453,6 +535,8 @@ const Readout = L.Control.extend({
 });
 const readout = new Readout().addTo(map);
 map.on('mousemove', (event) => readout.update(event.latlng));
+
+collector.addExamples([]);
 
 // map list
 manifest.games.filter((game) => game.entries.length).forEach((game) => {

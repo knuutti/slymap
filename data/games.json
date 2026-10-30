@@ -182,10 +182,55 @@
         {
           "id": "e1", "number": 1, "title": "Turning Japanese",
           "maps": [
-            { "id": "sly4-japan-village", "name": "Japan Village", "location": "Japan", "kind": "hub",
+            { "id": "sly4-japan-village", "name": "Japan Village", "location": "Feudal Japan", "kind": "hub",
               "image": "base_img/Sly4_Japan_Village.png",
               "calib": { "origin": [5778, 6817.2], "scale": 24.01 },
               "size": [3410, 2890],
+              "data": [] }
+          ]
+        },
+        {
+          "id": "e2", "number": 2, "title": "Go West Young Raccoon",
+          "maps": [
+            { "id": "sly4-west-precidio", "name": "West Precidio", "location": "Saddle Sore Correctional Facility", "kind": "level",
+              "image": "base_img/Sly4_West_Precidio.png",
+              "calib": { "origin": [5785.5, 3096.6], "scale": 24.022 },
+              "size": [9920, 9520],
+              "data": [] },
+            { "id": "sly4-west-town", "name": "West Town", "location": "Cotton Mouth Bluff", "kind": "hub",
+              "image": "base_img/Sly4_West_Precidio.png",
+              "calib": { "origin": [7143.5, 13017.5], "scale": 23.969 },
+              "size": [19840, 17000],
+              "data": [] }
+          ]
+        },
+        {
+          "id": "e3", "number": 3, "title": "Clan of the Cave Raccoon",
+          "maps": [
+            { "id": "sly4-ice-age-village", "name": "Ice Age Village", "location": "Gungathal Valley", "kind": "hub",
+              "image": "base_img/Sly4_Ice_Age_Village.png",
+              "calib": { "origin": [11224.6, 9301.2], "scale": 35.99 },
+              "size": [14880, 18360],
+              "data": [] }
+          ]
+        },
+        {
+          "id": "e4", "number": 4, "title": "Of Mice and Mechs",
+          "maps": [
+            { "id": "sly4-england-village", "name": "England Village", "location": "Medieval England", "kind": "hub",
+              "image": "base_img/Sly4_England_Village.png",
+              "calib": { "origin": [7140.8, 8059.9], "scale": 24.01 },
+              "size": [16120, 14280],
+              "data": [] }
+          ]
+        },
+        {
+          "id": "e5", "number": 5, "title": "Fourty Thieves",
+          "maps": [
+            { "id": "sly4-arabia-village", "name": "Arabia Village", "location": "Ancient Arabia", "kind": "hub",
+              "image": "base_img/Sly4_Arabia_Village.png",
+              "calib": { "origin": [7140.1, 6818.8], "scale": 23.998 },
+              "size": [14880, 12920],
               "data": [] }
           ]
         }

@@ -19,7 +19,11 @@
 				<header>
 					<a class="brand" href="./">SlyMap</a>
 					<h1>Calibration helper</h1>
-					<p class="hint">Works out a map's <code>calib</code> for <code>data/games.json</code> from a few spots whose in-game position you know.</p>
+					<p class="hint">Works out a map's <code>calib</code> for <code>data/games.json</code> from a few spots whose in-game position you know, then lets you click objects onto a calibrated map for its <code>.hson</code> data.</p>
+					<div id="mode" class="mode-switch" role="group" aria-label="Clicking on the image">
+						<button type="button" data-mode="calibrate" aria-pressed="true">Calibrate</button>
+						<button type="button" data-mode="collect" aria-pressed="false">Collect objects</button>
+					</div>
 				</header>
 
 				<section>
@@ -44,7 +48,39 @@
 					<p id="objects-info" class="hint"></p>
 				</section>
 
-				<section>
+				<section id="collect" hidden>
+					<h2>3. Collect objects</h2>
+					<p class="hint">Click on the image to add objects. Positions come from the current fit: the points' fit, or the map's own <code>calib</code>. They follow the fit if it changes.</p>
+					<label class="field">Type
+						<input id="collect-type" type="text" list="collect-types" placeholder="e.g. Bottle, Path Line, CS Trigger" autocomplete="off">
+					</label>
+					<datalist id="collect-types"></datalist>
+					<div id="collect-kinds" class="kinds" role="group" aria-label="Shape"></div>
+					<p id="collect-kind-hint" class="hint"></p>
+					<div class="field-row">
+						<label class="field">Name <span class="optional">(optional)</span>
+							<input id="collect-name" type="text" autocomplete="off">
+						</label>
+						<label class="field field-z">Z (height)
+							<input id="collect-z" type="number" value="0" step="any">
+						</label>
+					</div>
+					<label class="field">Parameters <span class="optional">(JSON)</span>
+						<textarea id="collect-params" rows="2" spellcheck="false">{"purposeOfUse":"Normal"}</textarea>
+					</label>
+					<p class="hint">Choosing a type the map already has copies one of its objects' shape and parameters.</p>
+					<p id="collect-drawing" class="placing" hidden></p>
+					<ul id="collected"></ul>
+					<p id="no-collected" class="hint">Nothing collected yet.</p>
+					<div id="collect-export" hidden>
+						<button id="collect-copy" type="button">Copy entries</button>
+						<button id="collect-download" type="button" class="secondary">Download as new .hson</button>
+						<div id="collect-append"></div>
+						<button id="collect-clear" type="button" class="secondary">Clear collected objects</button>
+					</div>
+				</section>
+
+				<section class="calibrate-only">
 					<h2>3. Reference points</h2>
 					<p class="hint">Click a spot on the image whose in-game position you know, then type that position as <em>X, Y</em>. Drag a point to fine-tune it. Once objects are shown, click one and choose <em>Use as reference point</em>, then click where it really is.</p>
 					<p id="placing" class="placing" hidden></p>
@@ -56,13 +92,14 @@
 					<button id="clear-points" type="button" class="secondary">Clear all points</button>
 				</section>
 
-				<section>
+				<section class="calibrate-only">
 					<h2>4. Result</h2>
 					<div id="result"><p class="hint">Add at least two points with in-game positions.</p></div>
 				</section>
 			</aside>
 			<div id="calib-map"></div>
 		</div>
+		<script src="./leaflet-canvas-markers.js"></script>
 		<script type="module" src="./js/calibrate.js"></script>
 	</body>
 </html>

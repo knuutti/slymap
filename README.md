@@ -99,6 +99,34 @@ then includes `"rotate"` / `"flip"`. With only two points it can't tell
 these apart, so always add a third. The helper warns when the points
 suggest a stretched image, which the site can't show.
 
+Large images (Sly 4 maps run to hundreds of megapixels) are slow to zoom
+and pan when opened as one image file. For those, add the map to
+`data/games.json` first (any `calib` will do), build its tiles with
+`npm run tiles -- sly4/<map>` and choose it from the list: run locally,
+the helper uses the tiles in `dist-assets/` before they are uploaded.
+
+### Collecting objects
+
+Once a map has a fit (its own `calib`, or reference points), switch the
+helper to *Collect objects* to build `.hson` data by clicking on the image:
+
+1. Type the object type (e.g. `Bottle`, `Path Line`, `CS Trigger`). A type
+   the map already has fills in its shape and parameters from one of its
+   objects; otherwise pick a shape: *Point*, *Path*, *Area*, *Box* (two
+   opposite corners) or *Circle* (centre, then edge). Paths and areas end
+   with a double-click or Enter.
+2. Set an optional name, the Z (height) and any other parameters as JSON.
+3. *Copy entries* copies them ready to paste into a file's `objects`
+   array; *Download as new .hson* saves them as a file of their own; for a
+   map on the site, *Download <file> with these added* saves its data file
+   with them appended.
+
+Collected objects are remembered in the browser per image, as image
+pixels, so they move with the fit if the calibration changes. Points are
+written as `position: [x, y, z]`; paths, areas, boxes and circles as
+`position: [x, z, y]` with offsets in `parameters`, which is how the site
+draws them.
+
 ## Map tiles
 
 Map images are served from Cloudflare R2 as 256px WebP tiles, so a map

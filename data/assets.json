@@ -174,5 +174,27 @@
     "tileSize": 256,
     "levels": 4,
     "preview": "previews/sly3/venice-f61d075039.webp"
+  },
+  "sly4/sly4-japan-village": {
+    "hash": "a03d51fb14",
+    "size": [
+      3410,
+      2890
+    ],
+    "tiles": "tiles/sly4/sly4-japan-village/a03d51fb14/{z}/{y}/{x}.webp",
+    "tileSize": 256,
+    "levels": 4,
+    "preview": "previews/sly4/sly4-japan-village-a03d51fb14.webp"
+  },
+  "sly4/sly4-paris-streets": {
+    "hash": "9f8f94b19f",
+    "size": [
+      8370,
+      6290
+    ],
+    "tiles": "tiles/sly4/sly4-paris-streets/9f8f94b19f/{z}/{y}/{x}.webp",
+    "tileSize": 256,
+    "levels": 6,
+    "preview": "previews/sly4/sly4-paris-streets-9f8f94b19f.webp"
   }
 }

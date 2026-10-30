@@ -193,7 +193,7 @@ function currentFit() {
     return { ...fit, fromPoints: true };
   }
   const calib = state.source?.kind == 'map' && state.source.def.calib;
-  return calib ? { origin: calib.origin, scale: calib.scale, fromPoints: false } : null;
+  return calib ? { origin: calib.origin, scale: calib.scale, flip: calib.flip, rotate: calib.rotate, fromPoints: false } : null;
 }
 
 /* ------------------------------------------------------------- render */
@@ -244,7 +244,7 @@ function render() {
       render();
     });
     if (fit && point.game) {
-      const predicted = toLatLng([fit.origin[0] + fit.scale * point.game[0], fit.origin[1] + fit.scale * point.game[1]]);
+      const predicted = createProjection(fit).toLatLng(point.game);
       L.polyline([toLatLng(point.pixel), predicted], { color: '#ff6b6b', weight: 2, dashArray: '4 4', interactive: false })
         .addTo(errorLayer);
       L.circleMarker(predicted, { radius: 4, color: '#ff6b6b', weight: 2, fill: false, interactive: false })
@@ -292,12 +292,13 @@ function renderResult(fit) {
   }
   if (!fit.fromPoints) {
     result.innerHTML = `<p class="hint">Showing objects with the map's current calibration
-      (origin ${fit.origin.join(', ')}, scale ${fit.scale}). Add two or more points to fit a new one.</p>`;
+      (origin ${fit.origin.join(', ')}, scale ${fit.scale}${fit.flip ? `, flip ${fit.flip}` : ''}${fit.rotate ? `, rotate ${fit.rotate}` : ''}). Add two or more points to fit a new one.</p>`;
     return;
   }
   const calib = roundCalibration(fit);
   const isDefaultSize = state.size[0] == DEFAULT_IMAGE_SIZE[0] && state.size[1] == DEFAULT_IMAGE_SIZE[1];
-  const snippet = `"calib": { "origin": [${calib.origin.join(', ')}], "scale": ${calib.scale} }` +
+  const snippet = `"calib": { "origin": [${calib.origin.join(', ')}], "scale": ${calib.scale}` +
+    (calib.flip ? `, "flip": "${calib.flip}"` : '') + (calib.rotate ? `, "rotate": ${calib.rotate}` : '') + ' }' +
     (isDefaultSize ? '' : `,\n"size": [${state.size.join(', ')}]`);
   const current = state.source.kind == 'map' ? state.source.def.calib : null;
 
@@ -305,10 +306,12 @@ function renderResult(fit) {
     <dl>
       <dt>Origin</dt><dd>${calib.origin.join(', ')}</dd>
       <dt>Scale</dt><dd>${calib.scale} px per unit</dd>
+      ${calib.flip ? `<dt>Flipped</dt><dd>${calib.flip.toUpperCase()} axis</dd>` : ''}
+      ${calib.rotate ? `<dt>Turned</dt><dd>${calib.rotate}° clockwise</dd>` : ''}
       <dt>Points</dt><dd>${fit.residuals.length}</dd>
       <dt>Off by</dt><dd><span class="${errorClass(fit.meanError)}">${fit.meanError.toFixed(1)} px</span> on average,
         <span class="${errorClass(fit.maxError)}">${fit.maxError.toFixed(1)} px</span> at most</dd>
-      ${current ? `<dt>Now in games.json</dt><dd>${current.origin.join(', ')} · ${current.scale}</dd>` : ''}
+      ${current ? `<dt>Now in games.json</dt><dd>${current.origin.join(', ')} · ${current.scale}${current.flip ? ` · flip ${current.flip}` : ''}${current.rotate ? ` · rotate ${current.rotate}` : ''}</dd>` : ''}
     </dl>
     ${fit.warnings.map((warning) => `<p class="warning">${escapeHtml(warning)}</p>`).join('')}
     <p class="hint">Paste into the map's entry in <code>data/games.json</code>:</p>

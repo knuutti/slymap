@@ -58,7 +58,10 @@ Old `?map=paris` links are redirected.
 
    `calib.origin` is the image pixel (from the top-left corner, as shown in
    an image editor) of the game origin and `calib.scale` is pixels per game
-   unit. Use the calibration helper (below) to work these out.
+   unit. Game +X runs right and +Y down the image; for a map whose game
+   axes are turned compared to that, add `"rotate": 90` (or 180, 270,
+   clockwise), and for a mirrored one `"flip": "x"` or `"flip": "y"`.
+   Use the calibration helper (below) to work these out.
 3. New object types can be given an icon or colour in `data/marker-types.json`.
 4. Optionally connect it to other maps. On the map entry, `links` adds
    labelled markers that open another map; `at` is the in-game X/Y shown in
@@ -90,8 +93,11 @@ page on the live site) works out a map's `calib`:
    to fine-tune it, remove points that are clearly wrong.
 4. Copy the `calib` snippet into the map's entry in `data/games.json`.
 
-Points are remembered in the browser per image. The helper warns when the
-points suggest a mirrored or stretched image, which the site can't show.
+Points are remembered in the browser per image. The fit tries every
+way the map can be turned or mirrored and keeps the closest; the snippet
+then includes `"rotate"` / `"flip"`. With only two points it can't tell
+these apart, so always add a third. The helper warns when the points
+suggest a stretched image, which the site can't show.
 
 ## Map tiles
 

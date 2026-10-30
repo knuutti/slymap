@@ -168,7 +168,28 @@
       "title": "Sly Cooper: Thieves in Time",
       "short": "Sly 4",
       "year": 2013,
-      "episodes": []
+      "episodes": [
+        {
+          "id": "prologue", "label": "Prologue",
+          "title": "Paris Prologue",
+          "maps": [
+            { "id": "sly4-paris-streets", "name": "Paris Streets", "location": "Paris, France", "kind": "level",
+              "image": "base_img/Sly4_Paris_Streets.png", 
+              "calib": { "origin": [2631.9, 3256.6], "scale": 18.006 },
+              "data": [] }
+          ]
+        },
+        {
+          "id": "e1", "number": 1, "title": "Turning Japanese",
+          "maps": [
+            { "id": "sly4-japan-village", "name": "Japan Village", "location": "Japan", "kind": "hub",
+              "image": "base_img/Sly4_Japan_Village.png",
+              "calib": { "origin": [1444.5, 1704.3], "scale": 6.0024 },
+              "size": [3410, 2890],
+              "data": [] }
+          ]
+        }
+      ]
     },
     {
       "id": "hackpack",

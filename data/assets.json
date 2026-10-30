@@ -1,290 +1,218 @@
 {
   "sly2/blimp": {
-    "hash": "09862b8677",
+    "hash": "7a5a2ee14d",
     "size": [
       4096,
       4096
     ],
-    "tiles": "tiles/sly2/blimp/09862b8677/{z}/{y}/{x}.webp",
+    "tiles": "tiles/sly2/blimp/7a5a2ee14d/{z}/{y}/{x}.webp",
     "tileSize": 256,
     "overlap": 2,
     "levels": 4,
-    "preview": "previews/sly2/blimp-09862b8677.webp",
-    "download": {
-      "path": "downloads/sly2/blimp-09862b8677.png",
-      "bytes": 8424833
-    }
+    "preview": "previews/sly2/blimp-7a5a2ee14d.webp"
   },
   "sly2/cairo": {
-    "hash": "64b8a77ff6",
+    "hash": "5f2afa6792",
     "size": [
       4096,
       4096
     ],
-    "tiles": "tiles/sly2/cairo/64b8a77ff6/{z}/{y}/{x}.webp",
+    "tiles": "tiles/sly2/cairo/5f2afa6792/{z}/{y}/{x}.webp",
     "tileSize": 256,
     "overlap": 2,
     "levels": 4,
-    "preview": "previews/sly2/cairo-64b8a77ff6.webp",
-    "download": {
-      "path": "downloads/sly2/cairo-64b8a77ff6.png",
-      "bytes": 6196863
-    }
+    "preview": "previews/sly2/cairo-5f2afa6792.webp"
   },
   "sly2/canada1": {
-    "hash": "2ee141b5ce",
+    "hash": "a2a212a560",
     "size": [
       4096,
       4096
     ],
-    "tiles": "tiles/sly2/canada1/2ee141b5ce/{z}/{y}/{x}.webp",
+    "tiles": "tiles/sly2/canada1/a2a212a560/{z}/{y}/{x}.webp",
     "tileSize": 256,
     "overlap": 2,
     "levels": 4,
-    "preview": "previews/sly2/canada1-2ee141b5ce.webp",
-    "download": {
-      "path": "downloads/sly2/canada1-2ee141b5ce.png",
-      "bytes": 15471542
-    }
+    "preview": "previews/sly2/canada1-a2a212a560.webp"
   },
   "sly2/canada2": {
-    "hash": "3455a45303",
+    "hash": "e1166e120d",
     "size": [
       4096,
       4096
     ],
-    "tiles": "tiles/sly2/canada2/3455a45303/{z}/{y}/{x}.webp",
+    "tiles": "tiles/sly2/canada2/e1166e120d/{z}/{y}/{x}.webp",
     "tileSize": 256,
     "overlap": 2,
     "levels": 4,
-    "preview": "previews/sly2/canada2-3455a45303.webp",
-    "download": {
-      "path": "downloads/sly2/canada2-3455a45303.png",
-      "bytes": 14159936
-    }
+    "preview": "previews/sly2/canada2-e1166e120d.webp"
   },
   "sly2/india1": {
-    "hash": "e2bdba2fce",
+    "hash": "e422ec9959",
     "size": [
       4096,
       4096
     ],
-    "tiles": "tiles/sly2/india1/e2bdba2fce/{z}/{y}/{x}.webp",
+    "tiles": "tiles/sly2/india1/e422ec9959/{z}/{y}/{x}.webp",
     "tileSize": 256,
     "overlap": 2,
     "levels": 4,
-    "preview": "previews/sly2/india1-e2bdba2fce.webp",
-    "download": {
-      "path": "downloads/sly2/india1-e2bdba2fce.png",
-      "bytes": 7571585
-    }
+    "preview": "previews/sly2/india1-e422ec9959.webp"
   },
   "sly2/india2": {
-    "hash": "b6c40a2374",
+    "hash": "5f3bbcb5b3",
     "size": [
       4096,
       4096
     ],
-    "tiles": "tiles/sly2/india2/b6c40a2374/{z}/{y}/{x}.webp",
+    "tiles": "tiles/sly2/india2/5f3bbcb5b3/{z}/{y}/{x}.webp",
     "tileSize": 256,
     "overlap": 2,
     "levels": 4,
-    "preview": "previews/sly2/india2-b6c40a2374.webp",
-    "download": {
-      "path": "downloads/sly2/india2-b6c40a2374.png",
-      "bytes": 12940374
-    }
+    "preview": "previews/sly2/india2-5f3bbcb5b3.webp"
   },
   "sly2/paris": {
-    "hash": "87c4447977",
+    "hash": "b060b95ee4",
     "size": [
       4096,
       4096
     ],
-    "tiles": "tiles/sly2/paris/87c4447977/{z}/{y}/{x}.webp",
+    "tiles": "tiles/sly2/paris/b060b95ee4/{z}/{y}/{x}.webp",
     "tileSize": 256,
     "overlap": 2,
     "levels": 4,
-    "preview": "previews/sly2/paris-87c4447977.webp",
-    "download": {
-      "path": "downloads/sly2/paris-87c4447977.png",
-      "bytes": 8240583
-    }
+    "preview": "previews/sly2/paris-b060b95ee4.webp"
   },
   "sly2/prague1": {
-    "hash": "7f46c3e1e8",
+    "hash": "a00c61aaeb",
     "size": [
       4096,
       4096
     ],
-    "tiles": "tiles/sly2/prague1/7f46c3e1e8/{z}/{y}/{x}.webp",
+    "tiles": "tiles/sly2/prague1/a00c61aaeb/{z}/{y}/{x}.webp",
     "tileSize": 256,
     "overlap": 2,
     "levels": 4,
-    "preview": "previews/sly2/prague1-7f46c3e1e8.webp",
-    "download": {
-      "path": "downloads/sly2/prague1-7f46c3e1e8.png",
-      "bytes": 10270670
-    }
+    "preview": "previews/sly2/prague1-a00c61aaeb.webp"
   },
   "sly2/prague2": {
-    "hash": "43b5e48817",
+    "hash": "4049e642db",
     "size": [
       4096,
       4096
     ],
-    "tiles": "tiles/sly2/prague2/43b5e48817/{z}/{y}/{x}.webp",
+    "tiles": "tiles/sly2/prague2/4049e642db/{z}/{y}/{x}.webp",
     "tileSize": 256,
     "overlap": 2,
     "levels": 4,
-    "preview": "previews/sly2/prague2-43b5e48817.webp",
-    "download": {
-      "path": "downloads/sly2/prague2-43b5e48817.png",
-      "bytes": 6871759
-    }
+    "preview": "previews/sly2/prague2-4049e642db.webp"
   },
   "sly3/china": {
-    "hash": "857122a53b",
+    "hash": "aee0775543",
     "size": [
       4096,
       4096
     ],
-    "tiles": "tiles/sly3/china/857122a53b/{z}/{y}/{x}.webp",
+    "tiles": "tiles/sly3/china/aee0775543/{z}/{y}/{x}.webp",
     "tileSize": 256,
     "overlap": 2,
     "levels": 4,
-    "preview": "previews/sly3/china-857122a53b.webp",
-    "download": {
-      "path": "downloads/sly3/china-857122a53b.png",
-      "bytes": 18035456
-    }
+    "preview": "previews/sly3/china-aee0775543.webp"
   },
   "sly3/holland": {
-    "hash": "9523487ae5",
+    "hash": "0047508806",
     "size": [
       4096,
       4096
     ],
-    "tiles": "tiles/sly3/holland/9523487ae5/{z}/{y}/{x}.webp",
+    "tiles": "tiles/sly3/holland/0047508806/{z}/{y}/{x}.webp",
     "tileSize": 256,
     "overlap": 2,
     "levels": 4,
-    "preview": "previews/sly3/holland-9523487ae5.webp",
-    "download": {
-      "path": "downloads/sly3/holland-9523487ae5.png",
-      "bytes": 17609088
-    }
+    "preview": "previews/sly3/holland-0047508806.webp"
   },
   "sly3/kaine": {
-    "hash": "346f543ec1",
+    "hash": "4c1374007f",
     "size": [
       4096,
       4096
     ],
-    "tiles": "tiles/sly3/kaine/346f543ec1/{z}/{y}/{x}.webp",
+    "tiles": "tiles/sly3/kaine/4c1374007f/{z}/{y}/{x}.webp",
     "tileSize": 256,
     "overlap": 2,
     "levels": 4,
-    "preview": "previews/sly3/kaine-346f543ec1.webp",
-    "download": {
-      "path": "downloads/sly3/kaine-346f543ec1.png",
-      "bytes": 10021126
-    }
+    "preview": "previews/sly3/kaine-4c1374007f.webp"
   },
   "sly3/outback": {
-    "hash": "8211b0b1fc",
+    "hash": "ddb9d073e0",
     "size": [
       4096,
       4096
     ],
-    "tiles": "tiles/sly3/outback/8211b0b1fc/{z}/{y}/{x}.webp",
+    "tiles": "tiles/sly3/outback/ddb9d073e0/{z}/{y}/{x}.webp",
     "tileSize": 256,
     "overlap": 2,
     "levels": 4,
-    "preview": "previews/sly3/outback-8211b0b1fc.webp",
-    "download": {
-      "path": "downloads/sly3/outback-8211b0b1fc.png",
-      "bytes": 15086254
-    }
+    "preview": "previews/sly3/outback-ddb9d073e0.webp"
   },
   "sly3/pirates": {
-    "hash": "b16644d5b2",
+    "hash": "671d04e186",
     "size": [
       4096,
       4096
     ],
-    "tiles": "tiles/sly3/pirates/b16644d5b2/{z}/{y}/{x}.webp",
+    "tiles": "tiles/sly3/pirates/671d04e186/{z}/{y}/{x}.webp",
     "tileSize": 256,
     "overlap": 2,
     "levels": 4,
-    "preview": "previews/sly3/pirates-b16644d5b2.webp",
-    "download": {
-      "path": "downloads/sly3/pirates-b16644d5b2.png",
-      "bytes": 15322393
-    }
+    "preview": "previews/sly3/pirates-671d04e186.webp"
   },
   "sly3/sailing": {
-    "hash": "73008dfea5",
+    "hash": "1d5527e5ce",
     "size": [
       4096,
       4096
     ],
-    "tiles": "tiles/sly3/sailing/73008dfea5/{z}/{y}/{x}.webp",
+    "tiles": "tiles/sly3/sailing/1d5527e5ce/{z}/{y}/{x}.webp",
     "tileSize": 256,
     "overlap": 2,
     "levels": 4,
-    "preview": "previews/sly3/sailing-73008dfea5.webp",
-    "download": {
-      "path": "downloads/sly3/sailing-73008dfea5.png",
-      "bytes": 24146378
-    }
+    "preview": "previews/sly3/sailing-1d5527e5ce.webp"
   },
   "sly3/venice": {
-    "hash": "7f10cea0b1",
+    "hash": "a327fc13ce",
     "size": [
       4096,
       4096
     ],
-    "tiles": "tiles/sly3/venice/7f10cea0b1/{z}/{y}/{x}.webp",
+    "tiles": "tiles/sly3/venice/a327fc13ce/{z}/{y}/{x}.webp",
     "tileSize": 256,
     "overlap": 2,
     "levels": 4,
-    "preview": "previews/sly3/venice-7f10cea0b1.webp",
-    "download": {
-      "path": "downloads/sly3/venice-7f10cea0b1.png",
-      "bytes": 17378251
-    }
+    "preview": "previews/sly3/venice-a327fc13ce.webp"
   },
   "sly4/sly4-japan-village": {
-    "hash": "2e0a843d40",
+    "hash": "b259987938",
     "size": [
-      3410,
-      2890
+      13640,
+      11560
     ],
-    "tiles": "tiles/sly4/sly4-japan-village/2e0a843d40/{z}/{y}/{x}.webp",
-    "tileSize": 256,
-    "overlap": 2,
-    "levels": 4,
-    "preview": "previews/sly4/sly4-japan-village-2e0a843d40.webp",
-    "download": {
-      "path": "downloads/sly4/sly4-japan-village-2e0a843d40.png",
-      "bytes": 7538272
-    }
-  },
-  "sly4/sly4-paris-streets": {
-    "hash": "696f661e70",
-    "size": [
-      8370,
-      6290
-    ],
-    "tiles": "tiles/sly4/sly4-paris-streets/696f661e70/{z}/{y}/{x}.webp",
+    "tiles": "tiles/sly4/sly4-japan-village/b259987938/{z}/{y}/{x}.webp",
     "tileSize": 256,
     "overlap": 2,
     "levels": 6,
-    "preview": "previews/sly4/sly4-paris-streets-696f661e70.webp",
-    "download": {
-      "path": "downloads/sly4/sly4-paris-streets-696f661e70.png",
-      "bytes": 24820134
-    }
+    "preview": "previews/sly4/sly4-japan-village-b259987938.webp"
+  },
+  "sly4/sly4-paris-streets": {
+    "hash": "992d8094b6",
+    "size": [
+      33480,
+      25160
+    ],
+    "tiles": "tiles/sly4/sly4-paris-streets/992d8094b6/{z}/{y}/{x}.webp",
+    "tileSize": 256,
+    "overlap": 2,
+    "levels": 8,
+    "preview": "previews/sly4/sly4-paris-streets-992d8094b6.webp"
   }
 }

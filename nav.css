@@ -348,25 +348,6 @@ body.browsing #browse {
 	font-size: 0.95rem;
 }
 
-.download-map {
-	display: flex;
-	align-items: center;
-	gap: 6px;
-	margin-top: 10px;
-	color: var(--nav-accent) !important;
-	font-size: 0.9rem;
-	text-decoration: none;
-}
-
-.download-map:hover span:first-of-type {
-	text-decoration: underline;
-}
-
-.download-size {
-	color: var(--nav-muted);
-	font-size: 0.8rem;
-}
-
 .prev-next {
 	display: grid;
 	grid-template-columns: 1fr 1fr;

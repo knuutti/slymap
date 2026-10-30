@@ -175,7 +175,7 @@
           "maps": [
             { "id": "sly4-paris-streets", "name": "Paris Streets", "location": "Paris, France", "kind": "level",
               "image": "base_img/Sly4_Paris_Streets.png", 
-              "calib": { "origin": [2631.9, 3256.6], "scale": 18.006 },
+              "calib": { "origin": [10527.6, 13026.4], "scale": 72.024 },
               "data": [] }
           ]
         },
@@ -184,7 +184,7 @@
           "maps": [
             { "id": "sly4-japan-village", "name": "Japan Village", "location": "Japan", "kind": "hub",
               "image": "base_img/Sly4_Japan_Village.png",
-              "calib": { "origin": [1444.5, 1704.3], "scale": 6.0024 },
+              "calib": { "origin": [5778, 6817.2], "scale": 24.01 },
               "size": [3410, 2890],
               "data": [] }
           ]

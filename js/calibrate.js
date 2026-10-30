@@ -3,7 +3,7 @@
  * lng = x, lat = -y (see coords.js). */
 
 import { loadManifest } from './manifest.js';
-import { createBaseLayer, createProjection, imageBounds, DEFAULT_IMAGE_SIZE } from './coords.js';
+import { createBaseLayer, createProjection, imageBounds, zoomRange, DEFAULT_IMAGE_SIZE } from './coords.js';
 import { fetchObjects, getTypeStyle, objectType } from './markers.js';
 import { fitCalibration, parseGamePosition, roundCalibration } from './calibration.js';
 import { SmoothWheelZoom } from './wheelzoom.js';
@@ -90,6 +90,9 @@ function setImage(source, size, base) {
   state.source = source;
   state.size = size;
   state.base = base.addTo(map);
+  // one level further in than the site, for placing points precisely
+  const zoom = zoomRange(size, map.getSize());
+  map.setMinZoom(zoom.min).setMaxZoom(zoom.max + 1);
   state.objects = [];
   state.placing = null;
   state.selected = null;
@@ -107,7 +110,7 @@ function openMap(key) {
   mapSelect.value = key;
   history.replaceState(null, '', `?map=${encodeURIComponent(key)}`);
   const size = def.assets?.size ?? def.size ?? DEFAULT_IMAGE_SIZE;
-  setImage({ kind: 'map', def }, size, createBaseLayer(def, imageBounds(size), manifest.assetBase, map));
+  setImage({ kind: 'map', def }, size, createBaseLayer(def, imageBounds(size), manifest.assetBase));
   loadObjects(def.data.map((file) => fetchObjects(file)), `the map's data (${def.data.length} file${def.data.length == 1 ? '' : 's'})`);
 }
 

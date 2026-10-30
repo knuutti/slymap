@@ -1,8 +1,8 @@
 /* Cuts every map image listed in data/games.json into 256px WebP tiles
- * plus a preview thumbnail and a full-size download copy, and records
- * them in data/assets.json. Each tile also holds a few pixels of its
- * neighbours (`overlap`), which the site draws over them so tile edges
- * don't show.
+ * plus a preview thumbnail, and records them in data/assets.json. Each
+ * tile also holds a few pixels of its neighbours (`overlap`), which the
+ * site draws over them so tile edges don't show. Images of any size work:
+ * each zoom level is kept on disk while it is cut, not in memory.
  *
  *   npm run tiles                  build new or changed maps
  *   npm run tiles -- sly2/paris    only these maps
@@ -15,9 +15,11 @@
  * browsers can cache tiles forever. */
 
 import { createHash } from 'node:crypto';
-import { existsSync } from 'node:fs';
-import { copyFile, mkdir, readdir, readFile, rm, stat, writeFile } from 'node:fs/promises';
+import { createReadStream, existsSync } from 'node:fs';
+import { mkdir, mkdtemp, readdir, readFile, rm, writeFile } from 'node:fs/promises';
+import os from 'node:os';
 import path from 'node:path';
+import { pipeline } from 'node:stream/promises';
 import { parseArgs } from 'node:util';
 import sharp from 'sharp';
 
@@ -26,8 +28,13 @@ const OUT_DIR = path.join(ROOT, 'dist-assets');
 const ASSETS_FILE = path.join(ROOT, 'data', 'assets.json');
 
 // changing these rebuilds every map (they are part of the hash)
-const SETTINGS = { tileSize: 256, overlap: 2, quality: 85, smartSubsample: true, previewWidth: 512, previewQuality: 80 };
+const SETTINGS = { tileSize: 256, overlap: 2, quality: 80, smartSubsample: true, previewWidth: 512, previewQuality: 80 };
 const CONCURRENCY = 8;
+// map renders are far beyond libvips' default safety limit
+const OPEN = { limitInputPixels: false };
+
+// cached open images would keep the temporary level files locked on Windows
+sharp.cache(false);
 
 const { values: options, positionals: onlyKeys } = parseArgs({
   allowPositionals: true,
@@ -53,6 +60,12 @@ function listMaps(catalog) {
     episode.maps.map((map) => ({ key: `${game.id}/${map.id}`, image: map.image }))));
 }
 
+async function hashFile(file) {
+  const hash = createHash('sha256').update(JSON.stringify(SETTINGS));
+  await pipeline(createReadStream(file), hash);
+  return hash.digest('hex').slice(0, 10);
+}
+
 /* Removes this map's older <folder>/<game>/<map>-<hash>.* files. */
 async function removeOldFiles(folder, key) {
   const dir = path.join(OUT_DIR, folder, path.dirname(key));
@@ -67,75 +80,81 @@ async function removeOldFiles(folder, key) {
   }
 }
 
-/* The full-size image offered on the site's "Download map image" button:
- * the source file itself, under downloads/. */
-async function addDownload(key, sourceFile, hash) {
-  const downloadPath = `downloads/${key}-${hash}${path.extname(sourceFile).toLowerCase()}`;
-  const target = path.join(OUT_DIR, downloadPath);
-  if (!existsSync(target)) {
-    await removeOldFiles('downloads', key);
-    await mkdir(path.dirname(target), { recursive: true });
-    await copyFile(sourceFile, target);
-  }
-  return { path: downloadPath, bytes: (await stat(target)).size };
-}
-
-/* Writes <tilesDir>/{z}/{y}/{x}.webp: level `levels` is full size, each
- * level below half the one above, level 0 a single tile. A tile covers
- * tileSize pixels plus `overlap` more on every side (transparent past the
- * image edge), so its files are tileSize + 2 * overlap pixels square. */
-async function writeTiles(sourceFile, tilesDir) {
+/* Cuts one level, stored in levelFile, into <tilesDir>/<z>/{y}/{x}.webp.
+ * A tile covers tileSize pixels plus `overlap` more on every side
+ * (transparent past the image edge), so its files are tileSize + 2 * overlap
+ * pixels square. The level is read one row of tiles at a time. */
+async function cutLevel(levelFile, width, height, z, tilesDir) {
   const { tileSize, overlap } = SETTINGS;
-  const full = await sharp(sourceFile).ensureAlpha().raw().toBuffer({ resolveWithObject: true });
-  const { width, height } = full.info;
-  const levels = Math.max(0, Math.ceil(Math.log2(Math.max(width, height) / tileSize)));
   const transparent = { r: 0, g: 0, b: 0, alpha: 0 };
+  for (let y = 0; y * tileSize < height; y++) {
+    const rowDir = path.join(tilesDir, String(z), String(y));
+    await mkdir(rowDir, { recursive: true });
+    const top = y * tileSize - overlap;
+    const bottom = top + tileSize + 2 * overlap;
+    const stripTop = Math.max(0, top);
+    const stripHeight = Math.min(height, bottom) - stripTop;
+    const strip = await sharp(levelFile, OPEN)
+      .extract({ left: 0, top: stripTop, width, height: stripHeight })
+      .raw()
+      .toBuffer();
+    const stripImage = { raw: { width, height: stripHeight, channels: 4 } };
 
-  let level = { data: full.data, width, height };
-  for (let z = levels; z >= 0; z--) {
-    if (z < levels) {
-      const halfWidth = Math.ceil(level.width / 2);
-      const halfHeight = Math.ceil(level.height / 2);
-      const data = await sharp(level.data, { raw: { width: level.width, height: level.height, channels: 4 } })
-        .resize(halfWidth, halfHeight, { fit: 'fill' })
-        .raw()
-        .toBuffer();
-      level = { data, width: halfWidth, height: halfHeight };
-    }
-    const { data, width: levelWidth, height: levelHeight } = level;
-    const jobs = [];
-    for (let y = 0; y * tileSize < levelHeight; y++) {
-      await mkdir(path.join(tilesDir, String(z), String(y)), { recursive: true });
-      for (let x = 0; x * tileSize < levelWidth; x++) {
-        jobs.push({ x, y });
-      }
-    }
-    const writeTile = async ({ x, y }) => {
+    const writeTile = async (x) => {
       const left = x * tileSize - overlap;
-      const top = y * tileSize - overlap;
       const right = left + tileSize + 2 * overlap;
-      const bottom = top + tileSize + 2 * overlap;
-      const inside = {
-        left: Math.max(0, left),
-        top: Math.max(0, top),
-        width: Math.min(levelWidth, right) - Math.max(0, left),
-        height: Math.min(levelHeight, bottom) - Math.max(0, top),
-      };
-      await sharp(data, { raw: { width: levelWidth, height: levelHeight, channels: 4 } })
-        .extract(inside)
+      const insideLeft = Math.max(0, left);
+      const insideWidth = Math.min(width, right) - insideLeft;
+      await sharp(strip, stripImage)
+        .extract({ left: insideLeft, top: 0, width: insideWidth, height: stripHeight })
         .extend({
-          left: inside.left - left,
-          top: inside.top - top,
-          right: right - (inside.left + inside.width),
-          bottom: bottom - (inside.top + inside.height),
+          left: insideLeft - left,
+          right: right - (insideLeft + insideWidth),
+          top: stripTop - top,
+          bottom: bottom - (stripTop + stripHeight),
           background: transparent,
         })
         .webp({ quality: SETTINGS.quality, smartSubsample: SETTINGS.smartSubsample })
-        .toFile(path.join(tilesDir, String(z), String(y), `${x}.webp`));
+        .toFile(path.join(rowDir, `${x}.webp`));
     };
-    for (let i = 0; i < jobs.length; i += CONCURRENCY) {
-      await Promise.all(jobs.slice(i, i + CONCURRENCY).map(writeTile));
+    const columns = Array.from({ length: Math.ceil(width / tileSize) }, (_, x) => x);
+    for (let i = 0; i < columns.length; i += CONCURRENCY) {
+      await Promise.all(columns.slice(i, i + CONCURRENCY).map(writeTile));
     }
+  }
+}
+
+/* Writes the tile pyramid and the preview: level `levels` is full size,
+ * each level below half the one above, level 0 a single tile. Levels are
+ * kept as uncompressed .v files in a temporary folder, which libvips reads
+ * without loading them whole. */
+async function writeTiles(sourceFile, tilesDir, previewFile) {
+  const { width, height } = await sharp(sourceFile, OPEN).metadata();
+  const levels = Math.max(0, Math.ceil(Math.log2(Math.max(width, height) / SETTINGS.tileSize)));
+  const tempDir = await mkdtemp(path.join(os.tmpdir(), 'slymap-tiles-'));
+  try {
+    let level = { file: path.join(tempDir, `${levels}.v`), width, height };
+    await sharp(sourceFile, OPEN).ensureAlpha().toFile(level.file);
+    let previewDone = false;
+    for (let z = levels; z >= 0; z--) {
+      await cutLevel(level.file, level.width, level.height, z, tilesDir);
+      const half = { file: path.join(tempDir, `${z - 1}.v`), width: Math.ceil(level.width / 2), height: Math.ceil(level.height / 2) };
+      // the preview comes from the smallest level that is still at least its size
+      if (!previewDone && (z === 0 || half.width < SETTINGS.previewWidth)) {
+        await sharp(level.file, OPEN)
+          .resize({ width: SETTINGS.previewWidth })
+          .webp({ quality: SETTINGS.previewQuality })
+          .toFile(previewFile);
+        previewDone = true;
+      }
+      if (z > 0) {
+        await sharp(level.file, OPEN).resize(half.width, half.height, { fit: 'fill' }).toFile(half.file);
+      }
+      await rm(level.file, { force: true, maxRetries: 5 });
+      level = half;
+    }
+  } finally {
+    await rm(tempDir, { recursive: true, force: true, maxRetries: 5 });
   }
   return { width, height, levels };
 }
@@ -147,15 +166,10 @@ async function buildMap(key, sourceFile, hash) {
   // drop this map's older builds so dist-assets mirrors what is in use
   await rm(path.join(OUT_DIR, 'tiles', key), { recursive: true, force: true });
   await removeOldFiles('previews', key);
-
-  const { width, height, levels } = await writeTiles(sourceFile, path.join(OUT_DIR, tilesPrefix));
-
   await mkdir(path.dirname(path.join(OUT_DIR, previewPath)), { recursive: true });
-  await sharp(sourceFile)
-    .resize({ width: SETTINGS.previewWidth })
-    .webp({ quality: SETTINGS.previewQuality })
-    .toFile(path.join(OUT_DIR, previewPath));
 
+  const { width, height, levels } = await writeTiles(sourceFile, path.join(OUT_DIR, tilesPrefix),
+    path.join(OUT_DIR, previewPath));
   return {
     hash,
     size: [height, width],
@@ -164,7 +178,6 @@ async function buildMap(key, sourceFile, hash) {
     overlap: SETTINGS.overlap,
     levels,
     preview: previewPath,
-    download: await addDownload(key, sourceFile, hash),
   };
 }
 
@@ -185,17 +198,10 @@ for (const { key, image } of maps) {
     console.warn(`skip  ${key}: ${sourceFile} not found`);
     continue;
   }
-  const hash = createHash('sha256')
-    .update(await readFile(sourceFile))
-    .update(JSON.stringify(SETTINGS))
-    .digest('hex')
-    .slice(0, 10);
+  const hash = await hashFile(sourceFile);
   const builtBefore = existsSync(path.join(OUT_DIR, 'tiles', key, hash));
   if (!options.force && assets[key]?.hash === hash && builtBefore) {
-    // builds from before downloads existed only need the download added
-    const hadDownload = assets[key].download && existsSync(path.join(OUT_DIR, assets[key].download.path));
-    assets[key].download = await addDownload(key, sourceFile, hash);
-    console.log(`ok    ${key} (unchanged${hadDownload ? '' : ', download added'})`);
+    console.log(`ok    ${key} (unchanged)`);
     continue;
   }
   try {

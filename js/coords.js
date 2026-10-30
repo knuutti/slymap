@@ -15,6 +15,17 @@ export function imageBounds([height, width]) {
   return L.latLngBounds([-height, 0], [0, width]);
 }
 
+/* Zoom range for a map image in a view of viewSize pixels: out to a bit
+ * past the whole image fitting, in to 2x the image's own pixels, or up to
+ * 4x for small images, whose pixels are coarser. */
+export function zoomRange([height, width], viewSize) {
+  const fit = Math.log2(Math.min(viewSize.x / width, viewSize.y / height));
+  return {
+    min: Math.floor((fit - 0.5) * 4) / 4,
+    max: Math.min(2, Math.max(1, Math.log2(16384 / Math.max(width, height)))),
+  };
+}
+
 /* Game [x, y] -> image-aligned [right, down] for a calib's flip and
  * rotate, and back. */
 export function createOrientation({ flip, rotate = 0 }) {
@@ -77,7 +88,7 @@ const OverlapTileLayer = L.TileLayer.extend({
 
 /* The map image: tiles when `npm run tiles` has built them, otherwise the
  * whole image. */
-export function createBaseLayer(def, bounds, assetBase, map) {
+export function createBaseLayer(def, bounds, assetBase) {
   const tiles = def.assets;
   if (!tiles) {
     return L.imageOverlay(assetBase + def.image, bounds);
@@ -89,8 +100,9 @@ export function createBaseLayer(def, bounds, assetBase, map) {
     zoomOffset: tiles.levels,
     minNativeZoom: -tiles.levels,
     maxNativeZoom: 0,
-    minZoom: map.getMinZoom(),
-    maxZoom: map.getMaxZoom(),
+    // the map's own zoom range (see zoomRange) is the limit
+    minZoom: -Infinity,
+    maxZoom: Infinity,
     bounds,
     noWrap: true,
     zIndex: 2, // above the preview

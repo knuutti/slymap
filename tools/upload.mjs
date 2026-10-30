@@ -1,4 +1,4 @@
-/* Syncs dist-assets/ (tiles, previews and downloads from `npm run tiles`) to the R2
+/* Syncs dist-assets/ (tiles and previews from `npm run tiles`) to the R2
  * bucket. Files already in the bucket with the same content are skipped.
  *
  *   npm run upload                 upload new and changed files
@@ -21,7 +21,8 @@ import {
 
 const ROOT = path.resolve(import.meta.dirname, '..');
 const SOURCE_DIR = path.join(ROOT, 'dist-assets');
-// only these bucket folders are managed (and pruned) by this script
+// only these bucket folders are managed (and pruned) by this script;
+// downloads/ is no longer built and stays listed so --prune deletes old copies
 const PREFIXES = ['tiles/', 'previews/', 'downloads/'];
 const CONCURRENCY = 16;
 const CONTENT_TYPES = {
@@ -98,13 +99,6 @@ const client = new S3Client({
   forcePathStyle: true,
   credentials: { accessKeyId: R2_ACCESS_KEY_ID, secretAccessKey: R2_SECRET_ACCESS_KEY },
 });
-
-/* downloads/sly2/paris-<hash>.png is saved as slymap-sly2-paris.png
- * instead of being opened in the browser. */
-function downloadDisposition(key) {
-  const match = key.match(/^downloads\/(.+)-[0-9a-f]{10}(\.[a-z]+)$/i);
-  return match ? `attachment; filename="slymap-${match[1].replaceAll('/', '-')}${match[2]}"` : undefined;
-}
 
 async function listLocalFiles(dir) {
   if (!existsSync(dir)) {
@@ -197,7 +191,6 @@ await runPool(uploads, async (key) => {
         Body: await readFile(path.join(SOURCE_DIR, key)),
         ContentType: CONTENT_TYPES[path.extname(key)] ?? 'application/octet-stream',
         CacheControl: CACHE_CONTROL,
-        ContentDisposition: downloadDisposition(key),
       }));
       return;
     } catch (error) {

@@ -1,5 +1,5 @@
 import { loadManifest } from './manifest.js';
-import { createBaseLayer, createProjection, imageBounds, DEFAULT_IMAGE_SIZE } from './coords.js';
+import { createBaseLayer, createProjection, imageBounds, zoomRange, DEFAULT_IMAGE_SIZE } from './coords.js';
 import { parseRoute, navigate, replaceRoute, migrateLegacyUrl } from './router.js';
 import { loadMapLayers } from './markers.js';
 import { MousePosition, ColorPicker } from './controls.js';
@@ -155,18 +155,21 @@ async function showMap(def, layers) {
   }
 
   const token = ++loadToken;
-  const bounds = imageBounds(def.assets?.size ?? def.size ?? DEFAULT_IMAGE_SIZE);
+  const size = def.assets?.size ?? def.size ?? DEFAULT_IMAGE_SIZE;
+  const bounds = imageBounds(size);
+  const zoom = zoomRange(size, map.getSize());
+  map.setMinZoom(zoom.min).setMaxZoom(zoom.max);
   current = {
     def,
     projection: createProjection(def.calib),
-    base: createBaseLayer(def, bounds, manifest.assetBase, map).addTo(map),
+    base: createBaseLayer(def, bounds, manifest.assetBase).addTo(map),
     links: null,
     layers: null,
     enabled: new Set(layers),
     carried: [],
   };
   current.links = createLinkLayer(def, current.projection).addTo(map);
-  map.setView(bounds.getCenter(), -1.5);
+  map.fitBounds(bounds, { animate: false });
   sidebar.setMap(def);
   document.title = `${def.name} - SlyMap`;
   objectPanel.setLayers({}, current.enabled, 'Loading objects…');

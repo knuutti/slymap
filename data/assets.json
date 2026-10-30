@@ -191,6 +191,42 @@
     "levels": 4,
     "preview": "previews/sly3/venice-a327fc13ce.webp"
   },
+  "sly4/sly4-arabia-village": {
+    "hash": "22264c857d",
+    "size": [
+      14880,
+      12920
+    ],
+    "tiles": "tiles/sly4/sly4-arabia-village/22264c857d/{z}/{y}/{x}.webp",
+    "tileSize": 256,
+    "overlap": 2,
+    "levels": 6,
+    "preview": "previews/sly4/sly4-arabia-village-22264c857d.webp"
+  },
+  "sly4/sly4-england-village": {
+    "hash": "20df688db7",
+    "size": [
+      16120,
+      14280
+    ],
+    "tiles": "tiles/sly4/sly4-england-village/20df688db7/{z}/{y}/{x}.webp",
+    "tileSize": 256,
+    "overlap": 2,
+    "levels": 6,
+    "preview": "previews/sly4/sly4-england-village-20df688db7.webp"
+  },
+  "sly4/sly4-ice-age-village": {
+    "hash": "9290678126",
+    "size": [
+      14880,
+      18360
+    ],
+    "tiles": "tiles/sly4/sly4-ice-age-village/9290678126/{z}/{y}/{x}.webp",
+    "tileSize": 256,
+    "overlap": 2,
+    "levels": 7,
+    "preview": "previews/sly4/sly4-ice-age-village-9290678126.webp"
+  },
   "sly4/sly4-japan-village": {
     "hash": "b259987938",
     "size": [
@@ -214,5 +250,29 @@
     "overlap": 2,
     "levels": 8,
     "preview": "previews/sly4/sly4-paris-streets-992d8094b6.webp"
+  },
+  "sly4/sly4-west-precidio": {
+    "hash": "08f641c40e",
+    "size": [
+      9920,
+      9520
+    ],
+    "tiles": "tiles/sly4/sly4-west-precidio/08f641c40e/{z}/{y}/{x}.webp",
+    "tileSize": 256,
+    "overlap": 2,
+    "levels": 6,
+    "preview": "previews/sly4/sly4-west-precidio-08f641c40e.webp"
+  },
+  "sly4/sly4-west-town": {
+    "hash": "08f641c40e",
+    "size": [
+      9920,
+      9520
+    ],
+    "tiles": "tiles/sly4/sly4-west-town/08f641c40e/{z}/{y}/{x}.webp",
+    "tileSize": 256,
+    "overlap": 2,
+    "levels": 6,
+    "preview": "previews/sly4/sly4-west-town-08f641c40e.webp"
   }
 }

@@ -400,7 +400,7 @@
             { "id": "hp-alter-ego-20", "name": "AE20", "kind": "level",
               "image": "base_img/HP_AE20.png",
               "data": [] 
-            },
+            }
 
           ]
         }

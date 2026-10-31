@@ -207,11 +207,16 @@ body.browsing #browse {
 .map-card-preview {
 	position: relative;
 	display: block;
-	aspect-ratio: 4 / 3;
+	aspect-ratio: 1 / 1;
+	overflow: hidden;
 	background: var(--nav-raised);
 }
 
+/* absolutely placed so a tall or wide image can't stretch the square box;
+ * it is cropped to fill it instead */
 .map-card-preview img {
+	position: absolute;
+	inset: 0;
 	width: 100%;
 	height: 100%;
 	object-fit: cover;

@@ -235,28 +235,36 @@
       "type": "Job Triggers",
       "position": [2602,-8141,72],
       "parameters": {
-        "purposeOfUse": "Normal"
+        "purposeOfUse": "Normal",
+        "jobType": "sly",
+        "jobName": "Satellite Sabotage"
       }
     },
     {
       "type": "Job Triggers",
       "position": [-3554,8917,-268],
       "parameters": {
-        "purposeOfUse": "Normal"
+        "purposeOfUse": "Normal",
+        "jobType": "sly",
+        "jobName": "Breaking and Entering"
       }
     },
     {
       "type": "Job Triggers",
       "position": [-5508,-6477,-172],
       "parameters": {
-        "purposeOfUse": "Normal"
+        "purposeOfUse": "Normal",
+        "jobType": "sly",
+        "jobName": "Follow Dimitri"
       }
     },
     {
       "type": "Job Triggers",
       "position": [-5934,1988,364],
       "parameters": {
-        "purposeOfUse": "Normal"
+        "purposeOfUse": "Normal",
+        "jobType": "sly",
+        "jobName": "Bug Dimitri's Office"
       }
     },
     {
@@ -320,42 +328,6 @@
       "position": [-7501,6013,1238],
       "parameters": {
         "purposeOfUse": "Normal"
-      }
-    },
-    {
-      "type": "CS Trigger",
-      "position": [0, 0, 0],
-      "rotation": [0, 0, 0, 1],
-      "parameters": {
-        "size": [2000, 100, 1500]
-      }
-    },
-    {
-      "type": "Custom Polygon",
-      "position": [500, 0, -800],
-      "parameters": {
-        "vertices": [
-          [0, 0],
-          [800, 200],
-          [1200, 900],
-          [600, 1400],
-          [-200, 1100],
-          [-400, 300]
-        ]
-      }
-    },
-    {
-      "type": "Path Line",
-      "position": [2000, 0, 1000],
-      "parameters": {
-        "points": [
-          [0, 0],
-          [1500, -500],
-          [2000, 300],
-          [2800, 800],
-          [3200, -200],
-          [4000, 1200]
-        ]
       }
     }
   ]

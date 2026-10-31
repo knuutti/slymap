@@ -1,0 +1,46 @@
+{
+  "objects": [
+    {
+      "type": "Scorpion Bases",
+      "position": [8075, 32, 0],
+      "parameters": {
+        "purposeOfUse": "Normal"
+      }
+    },
+    {
+      "type": "Scorpion Bases",
+      "position": [5970, 10748, 0],
+      "parameters": {
+        "purposeOfUse": "Normal"
+      }
+    },
+    {
+      "type": "Scorpion Bases",
+      "position": [-5834, 10720, 0],
+      "parameters": {
+        "purposeOfUse": "Normal"
+      }
+    },
+    {
+      "type": "Scorpion Bases",
+      "position": [-11956, -279, 0],
+      "parameters": {
+        "purposeOfUse": "Normal"
+      }
+    },
+    {
+      "type": "Scorpion Bases",
+      "position": [-4301, -7557, 0],
+      "parameters": {
+        "purposeOfUse": "Normal"
+      }
+    },
+    {
+      "type": "Scorpion Bases",
+      "position": [6357, -11269, 0],
+      "parameters": {
+        "purposeOfUse": "Normal"
+      }
+    }
+  ]
+}

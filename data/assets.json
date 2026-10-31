@@ -132,16 +132,16 @@
     "preview": "previews/sly2/blimp-7a5a2ee14d.webp"
   },
   "sly2/cairo": {
-    "hash": "5f2afa6792",
+    "hash": "7ae65584c6",
     "size": [
-      4096,
-      4096
+      19040,
+      13640
     ],
-    "tiles": "tiles/sly2/cairo/5f2afa6792/{z}/{y}/{x}.webp",
+    "tiles": "tiles/sly2/cairo/7ae65584c6/{z}/{y}/{x}.webp",
     "tileSize": 256,
     "overlap": 2,
-    "levels": 4,
-    "preview": "previews/sly2/cairo-5f2afa6792.webp"
+    "levels": 7,
+    "preview": "previews/sly2/cairo-7ae65584c6.webp"
   },
   "sly2/canada1": {
     "hash": "a2a212a560",
@@ -191,18 +191,6 @@
     "levels": 4,
     "preview": "previews/sly2/india2-5f3bbcb5b3.webp"
   },
-  "sly2/paris": {
-    "hash": "b060b95ee4",
-    "size": [
-      4096,
-      4096
-    ],
-    "tiles": "tiles/sly2/paris/b060b95ee4/{z}/{y}/{x}.webp",
-    "tileSize": 256,
-    "overlap": 2,
-    "levels": 4,
-    "preview": "previews/sly2/paris-b060b95ee4.webp"
-  },
   "sly2/prague1": {
     "hash": "a00c61aaeb",
     "size": [
@@ -226,6 +214,18 @@
     "overlap": 2,
     "levels": 4,
     "preview": "previews/sly2/prague2-4049e642db.webp"
+  },
+  "sly2/sly2-paris-hub": {
+    "hash": "b326899096",
+    "size": [
+      17000,
+      18600
+    ],
+    "tiles": "tiles/sly2/sly2-paris-hub/b326899096/{z}/{y}/{x}.webp",
+    "tileSize": 256,
+    "overlap": 2,
+    "levels": 7,
+    "preview": "previews/sly2/sly2-paris-hub-b326899096.webp"
   },
   "sly3/china": {
     "hash": "28ee6b9012",

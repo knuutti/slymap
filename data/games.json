@@ -74,8 +74,9 @@
           "id": "prologue", "label": "Prologue",
           "title": "A Shadow from the Past",
           "maps": [
-            { "id": "cairo", "name": "Cairo", "location": "Cairo, Egypt", "kind": "level",
-              "image": "base_img/cairo.png", "calib": { "origin": [2177, 2209], "scale": 0.0603 },
+            { "id": "cairo", "name": "Cairo", "location": "Egypt", "kind": "level",
+              "image": "base_img/Sly2_Cairo.png", "calib": { "origin": [6820.2, 10539.9], "scale": 0.24004, "flip": "y", "rotate": 90 },
+              "size": [19040, 13640],
               "data": ["hson/cairo.hson"] }
           ]
         },
@@ -83,8 +84,9 @@
           "id": "e1", "number": 1,
           "title": "The Black Chateau",
           "maps": [
-            { "id": "paris", "name": "Paris", "location": "Dimitri's nightclub, Paris", "kind": "hub",
-              "image": "base_img/paris.png", "calib": { "origin": [1973, 1966], "scale": 0.1406 },
+            { "id": "sly2-paris-hub", "name": "Paris Hub", "kind": "hub",
+              "image": "base_img/Sly2_Paris_Hub.png", "calib": { "origin": [9292.1, 7820.3], "scale": 0.71915, "flip": "y", "rotate": 90 },
+              "size": [17000, 18600],
               "data": ["hson/paris.hson"] }
           ]
         },
@@ -178,7 +180,7 @@
               { "id": "sly3-ayers-rock", "name": "Ayer's Rock", "kind": "level",
               "image": "base_img/Sly3_Ayers_Rock.png", "calib": { "origin": [3876.3, 3486.2], "scale": 0.18001, "flip": "y", "rotate": 90 },
               "size": [6970, 8060],
-              "data": [] }
+              "data": ["hson/sly3_ayers_rock.hson"] }
           ]
         },
         {

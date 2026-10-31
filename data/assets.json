@@ -311,6 +311,18 @@
     "levels": 5,
     "preview": "previews/sly3/sly3-ayers-rock-2d13b79bcc.webp"
   },
+  "sly3/sly3-gauntlet": {
+    "hash": "c471c302e6",
+    "size": [
+      14960,
+      11160
+    ],
+    "tiles": "tiles/sly3/sly3-gauntlet/c471c302e6/{z}/{y}/{x}.webp",
+    "tileSize": 256,
+    "overlap": 2,
+    "levels": 6,
+    "preview": "previews/sly3/sly3-gauntlet-c471c302e6.webp"
+  },
   "sly3/venice": {
     "hash": "a327fc13ce",
     "size": [

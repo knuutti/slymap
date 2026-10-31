@@ -220,6 +220,10 @@
           "maps": [
             { "id": "kaine", "name": "Kaine Island", "location": "South Pacific", "kind": "hub",
               "image": "base_img/kaine.png", "calib": { "origin": [2093, 1835], "scale": 0.0663 },
+              "data": [] },
+              { "id": "sly3-gauntlet", "name": "Gauntlet", "kind": "level",
+              "image": "base_img/Sly3_Gauntlet.png", "calib": { "origin": [3099.1, 9180.2], "scale": 0.23998, "flip": "y", "rotate": 90 },
+              "size": [14960, 11160],
               "data": [] }
           ]
         }

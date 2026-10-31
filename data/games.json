@@ -7,7 +7,62 @@
       "title": "Sly Cooper and the Thievius Raccoonus",
       "short": "Sly 1",
       "year": 2002,
-      "episodes": []
+      "episodes": [
+        {
+          "id": "paris", "label": "Intro",
+          "title": "Paris, France",
+          "maps": [
+            { "id": "sly1-paris-france", 
+              "name": "Police Headquarters", 
+              "kind": "level",
+              "image": "base_img/Sly1_Paris_France.png",
+              "calib": { "origin": [5582.9, 4424], "scale": 0.35988, "flip": "y", "rotate": 90 },
+              "size": [10200, 17360],
+              "data": [] }
+          ]
+        },
+        {
+          "id": "e1", "number": 1,
+          "title": "Tide of Terror",
+          "maps": [
+            { "id": "sly1-prowling-the-ground", "name": "Prowling the Grounds", "location": "", "kind": "hub",
+              "image": "base_img/Sly1_Prowling_the_Grounds.png", "calib": { "origin": [5579.8, 8496.6], "scale": 0.36007, "flip": "y", "rotate": 90 },
+              "size": [7480, 11160],
+              "data": [] },
+            { "id": "sly1-a-stealthy-approach", "name": "A Stealthy Approach", "location": "", "kind": "level",
+              "image": "base_img/Sly1_A_Stealthy_Approach.png", "calib": { "origin": [13022, 8501.9], "scale": 0.36017, "flip": "y", "rotate": 90 },
+              "size": [14280, 18600],
+              "data": [] },
+            { "id": "sly1-into-the-machine", "name": "Into the Machine", "location": "", "kind": "level",
+              "image": "base_img/Sly1_Into_the_Machine.png", "calib": { "origin": [3100.3, 1020.3], "scale": 0.35993, "flip": "y", "rotate": 90 },
+              "size": [19040, 7440],
+              "data": [] },
+            { "id": "sly1-fire-down-below", "name": "Fire Down Below", "location": "", "kind": "level",
+              "image": "base_img/Sly1_Fire_Down_Below.png", "calib": { "origin": [3101.8, 3061.5], "scale": 0.35996, "flip": "y", "rotate": 90 },
+              "size": [6120, 8680],
+              "data": [] },
+            { "id": "sly1-high-class-heist", "name": "High Class Heist", "location": "", "kind": "level",
+              "image": "base_img/Sly1_High_Class_Heist.png", "calib": { "origin": [3098.2, 5100.8], "scale": 0.36048, "flip": "y", "rotate": 90 },
+              "size": [8840, 6200],
+              "data": [] },
+            { "id": "sly1-treasure-in-the-depths", "name": "Treasure in the Depths", "location": "", "kind": "level",
+              "image": "base_img/Sly1_Treasure_in_the_Depths.png", "calib": { "origin": [1973, 1966], "scale": 0.1406 },
+              "data": [] },
+            { "id": "sly1-a-cunning-disguise", "name": "A Cunning Disguise", "location": "", "kind": "level",
+              "image": "base_img/Sly1_A_Cunning_Disguise.png", "calib": { "origin": [4336.6, 4417.2], "scale": 0.35985, "flip": "y", "rotate": 90 },
+              "size": [4760, 6200],
+              "data": [] },
+            { "id": "sly1-the-gunboat-graveyard", "name": "The Gunboat Graveyard", "location": "", "kind": "level",
+              "image": "base_img/Sly1_The_Gunboat_Graveyard.png", "calib": { "origin": [5586.6, 5097.4], "scale": 0.36143, "flip": "y", "rotate": 90 },
+              "size": [6800, 8680],
+              "data": [] },
+            { "id": "sly1-eye-of-the-storm", "name": "Eye of the Storm", "location": "", "kind": "level",
+              "image": "base_img/Sly1_Eye_of_the_Storm.png", "calib": { "origin": [3100.3, 1700.3], "scale": 0.35698, "flip": "y", "rotate": 90 },
+              "size": [3400, 6200],
+              "data": [] }
+          ]
+        }
+      ]
     },
     {
       "id": "sly2",

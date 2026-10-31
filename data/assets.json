@@ -1,4 +1,112 @@
 {
+  "sly1/sly1-a-cunning-disguise": {
+    "hash": "c4c59d48dd",
+    "size": [
+      4760,
+      6200
+    ],
+    "tiles": "tiles/sly1/sly1-a-cunning-disguise/c4c59d48dd/{z}/{y}/{x}.webp",
+    "tileSize": 256,
+    "overlap": 2,
+    "levels": 5,
+    "preview": "previews/sly1/sly1-a-cunning-disguise-c4c59d48dd.webp"
+  },
+  "sly1/sly1-a-stealthy-approach": {
+    "hash": "c1af807f7e",
+    "size": [
+      14280,
+      18600
+    ],
+    "tiles": "tiles/sly1/sly1-a-stealthy-approach/c1af807f7e/{z}/{y}/{x}.webp",
+    "tileSize": 256,
+    "overlap": 2,
+    "levels": 7,
+    "preview": "previews/sly1/sly1-a-stealthy-approach-c1af807f7e.webp"
+  },
+  "sly1/sly1-eye-of-the-storm": {
+    "hash": "086b96499b",
+    "size": [
+      3400,
+      6200
+    ],
+    "tiles": "tiles/sly1/sly1-eye-of-the-storm/086b96499b/{z}/{y}/{x}.webp",
+    "tileSize": 256,
+    "overlap": 2,
+    "levels": 5,
+    "preview": "previews/sly1/sly1-eye-of-the-storm-086b96499b.webp"
+  },
+  "sly1/sly1-fire-down-below": {
+    "hash": "cb803ecac5",
+    "size": [
+      6120,
+      8680
+    ],
+    "tiles": "tiles/sly1/sly1-fire-down-below/cb803ecac5/{z}/{y}/{x}.webp",
+    "tileSize": 256,
+    "overlap": 2,
+    "levels": 6,
+    "preview": "previews/sly1/sly1-fire-down-below-cb803ecac5.webp"
+  },
+  "sly1/sly1-high-class-heist": {
+    "hash": "4d5b6351d5",
+    "size": [
+      8840,
+      6200
+    ],
+    "tiles": "tiles/sly1/sly1-high-class-heist/4d5b6351d5/{z}/{y}/{x}.webp",
+    "tileSize": 256,
+    "overlap": 2,
+    "levels": 6,
+    "preview": "previews/sly1/sly1-high-class-heist-4d5b6351d5.webp"
+  },
+  "sly1/sly1-into-the-machine": {
+    "hash": "ea43ec59a3",
+    "size": [
+      19040,
+      7440
+    ],
+    "tiles": "tiles/sly1/sly1-into-the-machine/ea43ec59a3/{z}/{y}/{x}.webp",
+    "tileSize": 256,
+    "overlap": 2,
+    "levels": 7,
+    "preview": "previews/sly1/sly1-into-the-machine-ea43ec59a3.webp"
+  },
+  "sly1/sly1-paris-france": {
+    "hash": "114e18b1c0",
+    "size": [
+      10200,
+      17360
+    ],
+    "tiles": "tiles/sly1/sly1-paris-france/114e18b1c0/{z}/{y}/{x}.webp",
+    "tileSize": 256,
+    "overlap": 2,
+    "levels": 7,
+    "preview": "previews/sly1/sly1-paris-france-114e18b1c0.webp"
+  },
+  "sly1/sly1-prowling-the-ground": {
+    "hash": "e6b73128b8",
+    "size": [
+      7480,
+      11160
+    ],
+    "tiles": "tiles/sly1/sly1-prowling-the-ground/e6b73128b8/{z}/{y}/{x}.webp",
+    "tileSize": 256,
+    "overlap": 2,
+    "levels": 6,
+    "preview": "previews/sly1/sly1-prowling-the-ground-e6b73128b8.webp"
+  },
+  "sly1/sly1-the-gunboat-graveyard": {
+    "hash": "037a3cc052",
+    "size": [
+      6800,
+      8680
+    ],
+    "tiles": "tiles/sly1/sly1-the-gunboat-graveyard/037a3cc052/{z}/{y}/{x}.webp",
+    "tileSize": 256,
+    "overlap": 2,
+    "levels": 6,
+    "preview": "previews/sly1/sly1-the-gunboat-graveyard-037a3cc052.webp"
+  },
   "sly2/blimp": {
     "hash": "7a5a2ee14d",
     "size": [

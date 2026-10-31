@@ -299,6 +299,18 @@
     "levels": 4,
     "preview": "previews/sly3/sailing-1d5527e5ce.webp"
   },
+  "sly3/sly3-ayers-rock": {
+    "hash": "2d13b79bcc",
+    "size": [
+      6970,
+      8060
+    ],
+    "tiles": "tiles/sly3/sly3-ayers-rock/2d13b79bcc/{z}/{y}/{x}.webp",
+    "tileSize": 256,
+    "overlap": 2,
+    "levels": 5,
+    "preview": "previews/sly3/sly3-ayers-rock-2d13b79bcc.webp"
+  },
   "sly3/venice": {
     "hash": "a327fc13ce",
     "size": [

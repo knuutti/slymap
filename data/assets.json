@@ -1,4 +1,16 @@
 {
+  "hackpack/hp-alter-ego-1": {
+    "hash": "a7d94d73d2",
+    "size": [
+      3400,
+      14880
+    ],
+    "tiles": "tiles/hackpack/hp-alter-ego-1/a7d94d73d2/{z}/{y}/{x}.webp",
+    "tileSize": 256,
+    "overlap": 2,
+    "levels": 6,
+    "preview": "previews/hackpack/hp-alter-ego-1-a7d94d73d2.webp"
+  },
   "sly1/sly1-a-cunning-disguise": {
     "hash": "c4c59d48dd",
     "size": [

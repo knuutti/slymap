@@ -1,5 +1,5 @@
 import { loadManifest } from './manifest.js';
-import { createBaseLayer, createProjection, imageBounds, zoomRange, DEFAULT_IMAGE_SIZE } from './coords.js';
+import { createBaseLayer, createProjection, isCalibrated, imageBounds, zoomRange, DEFAULT_IMAGE_SIZE } from './coords.js';
 import { parseRoute, navigate, replaceRoute, migrateLegacyUrl } from './router.js';
 import { loadMapLayers } from './markers.js';
 import { MousePosition, ColorPicker } from './controls.js';
@@ -56,7 +56,7 @@ document.getElementById('map').addEventListener('click', (event) => {
 }, true);
 
 map.on('mousemove', (event) => {
-  if (current) {
+  if (current?.projection) {
     mousePosition.setPosition(current.projection.toGame(event.latlng));
   }
 });
@@ -159,22 +159,32 @@ async function showMap(def, layers) {
   const bounds = imageBounds(size);
   const zoom = zoomRange(size, map.getSize());
   map.setMinZoom(zoom.min).setMaxZoom(zoom.max);
+  // without a calib only the image is shown: positions would be guesses
+  const projection = isCalibrated(def.calib) ? createProjection(def.calib) : null;
   current = {
     def,
-    projection: createProjection(def.calib),
+    projection,
     base: createBaseLayer(def, bounds, manifest.assetBase).addTo(map),
     links: null,
     layers: null,
     enabled: new Set(layers),
     carried: [],
   };
-  current.links = createLinkLayer(def, current.projection).addTo(map);
+  current.links = (projection ? createLinkLayer(def, projection) : L.layerGroup()).addTo(map);
   map.fitBounds(bounds, { animate: false });
   sidebar.setMap(def);
   document.title = `${def.name} - SlyMap`;
+  mousePosition.setPosition(projection ? [0, 0] : null);
+
+  if (!projection) {
+    current.layers = {};
+    objectPanel.setLayers({}, current.enabled, 'This map isn\'t calibrated yet, so its objects can\'t be shown.');
+    setEnabledLayers(layers);
+    return;
+  }
   objectPanel.setLayers({}, current.enabled, 'Loading objects…');
 
-  const mapLayers = await loadMapLayers(def, current.projection, manifest.markerTypes,
+  const mapLayers = await loadMapLayers(def, projection, manifest.markerTypes,
     (key) => manifest.maps.get(key));
   if (token !== loadToken) {
     return;

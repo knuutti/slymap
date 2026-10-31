@@ -6,6 +6,9 @@ function getLinearDistance(pointA, pointB) {
 }
 
 function getPopupContent(layer, projection) {
+  if (!projection) {
+    return null; // map without a calib: no game units to measure in
+  }
   if (layer instanceof L.Marker || layer instanceof L.CircleMarker && !(layer instanceof L.Circle)) {
     return 'X,Y: ' + projection.toGame(layer.getLatLng()).join(',');
   }
@@ -33,7 +36,8 @@ function getPopupContent(layer, projection) {
   return null;
 }
 
-/* getProjection() returns the projection of the map currently shown. */
+/* getProjection() returns the projection of the map currently shown, or
+ * null when it has no calib. */
 export function setupDrawing(map, getProjection) {
   const drawnItems = new L.FeatureGroup().addTo(map);
 

@@ -1,6 +1,8 @@
 /* Loads data/games.json + data/marker-types.json and indexes every map
  * by its key ("<game>/<map>", e.g. "sly2/paris"). */
 
+import { isCalibrated } from './coords.js';
+
 async function fetchJson(url) {
   const response = await fetch(url);
   if (!response.ok) {
@@ -29,8 +31,8 @@ export async function loadManifest() {
         if (maps.has(key)) {
           console.error(`Duplicate map key in games.json: ${key}`);
         }
-        if (!map.calib?.origin || !map.calib?.scale) {
-          console.error(`Map ${key} is missing calib.origin / calib.scale`);
+        if (map.calib && !isCalibrated(map.calib)) {
+          console.error(`Map ${key} has an invalid calib (needs origin [x, y] and scale > 0)`);
         }
         const entry = { ...map, key, data: map.data ?? [], assets: assets[key] ?? null, game, episode };
         maps.set(key, entry);

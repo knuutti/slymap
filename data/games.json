@@ -317,7 +317,94 @@
       "title": "Bentley's Hackpack",
       "short": "Hackpack",
       "year": 2013,
-      "episodes": []
+      "episodes": [
+        {
+          "id": "alter-ego", "number": 1, "title": "Alter Ego",
+          "maps": [
+            { "id": "hp-alter-ego-1", "name": "AE1", "kind": "level",
+              "image": "base_img/HP_AE1.png",
+              "data": [] 
+            },
+            { "id": "hp-alter-ego-2", "name": "AE2", "kind": "level",
+              "image": "base_img/HP_AE2.png",
+              "data": [] 
+            },
+            { "id": "hp-alter-ego-3", "name": "AE3", "kind": "level",
+              "image": "base_img/HP_AE3.png",
+              "data": [] 
+            },
+            { "id": "hp-alter-ego-4", "name": "AE4", "kind": "level",
+              "image": "base_img/HP_AE4.png",
+              "data": [] 
+            },
+            { "id": "hp-alter-ego-5", "name": "AE5", "kind": "level",
+              "image": "base_img/HP_AE5.png",
+              "data": [] 
+            },
+            { "id": "hp-alter-ego-6", "name": "AE6", "kind": "level",
+              "image": "base_img/HP_AE6.png",
+              "data": [] 
+            },
+            { "id": "hp-alter-ego-7", "name": "AE7", "kind": "level",
+              "image": "base_img/HP_AE7.png",
+              "data": [] 
+            },
+            { "id": "hp-alter-ego-8", "name": "AE8", "kind": "level",
+              "image": "base_img/HP_AE8.png",
+              "data": [] 
+            },
+            { "id": "hp-alter-ego-9", "name": "AE9", "kind": "level",
+              "image": "base_img/HP_AE9.png",
+              "data": [] 
+            },
+            { "id": "hp-alter-ego-10", "name": "AE10", "kind": "level",
+              "image": "base_img/HP_AE10.png",
+              "data": [] 
+            },
+            { "id": "hp-alter-ego-11", "name": "AE11", "kind": "level",
+              "image": "base_img/HP_AE11.png",
+              "data": [] 
+            },
+            { "id": "hp-alter-ego-12", "name": "AE12", "kind": "level",
+              "image": "base_img/HP_AE12.png",
+              "data": [] 
+            },
+            { "id": "hp-alter-ego-13", "name": "AE13", "kind": "level",
+              "image": "base_img/HP_AE13.png",
+              "data": [] 
+            },
+            { "id": "hp-alter-ego-14", "name": "AE14", "kind": "level",
+              "image": "base_img/HP_AE14.png",
+              "data": [] 
+            },
+            { "id": "hp-alter-ego-15", "name": "AE15", "kind": "level",
+              "image": "base_img/HP_AE15.png",
+              "data": [] 
+            },
+            { "id": "hp-alter-ego-16", "name": "AE16", "kind": "level",
+              "image": "base_img/HP_AE16.png",
+              "data": [] 
+            },
+            { "id": "hp-alter-ego-17", "name": "AE17", "kind": "level",
+              "image": "base_img/HP_AE17.png",
+              "data": [] 
+            },
+            { "id": "hp-alter-ego-18", "name": "AE18", "kind": "level",
+              "image": "base_img/HP_AE18.png",
+              "data": [] 
+            },
+            { "id": "hp-alter-ego-19", "name": "AE19", "kind": "level",
+              "image": "base_img/HP_AE19.png",
+              "data": [] 
+            },
+            { "id": "hp-alter-ego-20", "name": "AE20", "kind": "level",
+              "image": "base_img/HP_AE20.png",
+              "data": [] 
+            },
+
+          ]
+        }
+      ]
     }
   ]
 }

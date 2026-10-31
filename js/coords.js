@@ -49,6 +49,13 @@ export function createOrientation({ flip, rotate = 0 }) {
   };
 }
 
+/* Whether a map has a usable calib. Maps without one show just the image:
+ * no objects, links or game coordinates, which would all be guesses. */
+export function isCalibrated(calib) {
+  return Array.isArray(calib?.origin) && calib.origin.length == 2 &&
+    calib.origin.every(Number.isFinite) && calib.scale > 0;
+}
+
 export function createProjection(calib) {
   const { origin: [originX, originY], scale } = calib;
   const orientation = createOrientation(calib);

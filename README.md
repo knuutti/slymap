@@ -61,7 +61,9 @@ Old `?map=paris` links are redirected.
    unit. Game +X runs right and +Y down the image; for a map whose game
    axes are turned compared to that, add `"rotate": 90` (or 180, 270,
    clockwise), and for a mirrored one `"flip": "x"` or `"flip": "y"`.
-   Use the calibration helper (below) to work these out.
+   Use the calibration helper (below) to work these out. A map can be added
+   without a `calib`: it then shows only the image, with no objects, map
+   links, coordinate readout or measurements, until it is calibrated.
 3. New object types can be given an icon or colour in `data/marker-types.json`.
 4. Optionally connect it to other maps. On the map entry, `links` adds
    labelled markers that open another map; `at` is the in-game X/Y shown in

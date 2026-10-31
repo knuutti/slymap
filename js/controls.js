@@ -15,8 +15,12 @@ export const MousePosition = L.Control.extend({
     return this._div;
   },
 
-  setPosition([x, y]) {
-    this._div.innerHTML = `X: ${x} ; Y: ${y}`;
+  /* null hides the readout (maps without a calib) */
+  setPosition(position) {
+    this._div.hidden = !position;
+    if (position) {
+      this._div.innerHTML = `X: ${position[0]} ; Y: ${position[1]}`;
+    }
   },
 });
 

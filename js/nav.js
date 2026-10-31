@@ -4,7 +4,7 @@
 import { navigate, routeHash } from './router.js';
 import { findObjects } from './objects.js';
 
-const KIND_LABELS = { hub: 'Hub world', level: 'Level', mission: 'Mission', boss: 'Boss' };
+const KIND_LABELS = { hub: 'Hub world', level: 'Level', mission: 'Mission', boss: 'Boss', hack: "Hack" };
 const NARROW_SCREEN = window.matchMedia('(max-width: 700px)');
 const SIDEBAR_STATE_KEY = 'slymap.sidebarOpen';
 

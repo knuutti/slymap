@@ -684,16 +684,16 @@
     "preview": "previews/sly4/sly4-alter-ego-6d-f36381d65c.webp"
   },
   "sly4/sly4-alter-ego-6x": {
-    "hash": "677de5462e",
+    "hash": "0e3bc45400",
     "size": [
       3400,
-      9920
+      8680
     ],
-    "tiles": "tiles/sly4/sly4-alter-ego-6x/677de5462e/{z}/{y}/{x}.webp",
+    "tiles": "tiles/sly4/sly4-alter-ego-6x/0e3bc45400/{z}/{y}/{x}.webp",
     "tileSize": 256,
     "overlap": 2,
     "levels": 6,
-    "preview": "previews/sly4/sly4-alter-ego-6x-677de5462e.webp"
+    "preview": "previews/sly4/sly4-alter-ego-6x-0e3bc45400.webp"
   },
   "sly4/sly4-alter-ego-7": {
     "hash": "8325893282",
@@ -744,16 +744,16 @@
     "preview": "previews/sly4/sly4-alter-ego-7d-7adce4f4e8.webp"
   },
   "sly4/sly4-alter-ego-7x": {
-    "hash": "34b7c1506b",
+    "hash": "1acd1da057",
     "size": [
       3400,
-      7440
+      8680
     ],
-    "tiles": "tiles/sly4/sly4-alter-ego-7x/34b7c1506b/{z}/{y}/{x}.webp",
+    "tiles": "tiles/sly4/sly4-alter-ego-7x/1acd1da057/{z}/{y}/{x}.webp",
     "tileSize": 256,
     "overlap": 2,
-    "levels": 5,
-    "preview": "previews/sly4/sly4-alter-ego-7x-34b7c1506b.webp"
+    "levels": 6,
+    "preview": "previews/sly4/sly4-alter-ego-7x-1acd1da057.webp"
   },
   "sly4/sly4-alter-ego-8": {
     "hash": "e17911b152",

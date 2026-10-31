@@ -158,7 +158,13 @@ async function showMap(def, layers) {
   const size = def.assets?.size ?? def.size ?? DEFAULT_IMAGE_SIZE;
   const bounds = imageBounds(size);
   const zoom = zoomRange(size, map.getSize());
-  map.setMinZoom(zoom.min).setMaxZoom(zoom.max);
+  // Set the limits without setMinZoom/setMaxZoom: when the old zoom falls
+  // outside the new range they start an animated zoom around the old
+  // center, which lands after fitBounds below and overrides it.
+  map.smoothWheelZoom._finish();
+  map.options.minZoom = zoom.min;
+  map.options.maxZoom = zoom.max;
+  map.fire('zoomlevelschange');
   // without a calib only the image is shown: positions would be guesses
   const projection = isCalibrated(def.calib) ? createProjection(def.calib) : null;
   current = {

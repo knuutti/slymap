@@ -229,9 +229,19 @@
           "id": "prologue", "label": "Prologue",
           "title": "Paris Prologue",
           "maps": [
-            { "id": "sly4-paris-streets", "name": "Paris Streets", "location": "Paris, France", "kind": "level",
+            { "id": "sly4-paris-streets", "name": "Paris Streets", "kind": "level",
               "image": "base_img/Sly4_Paris_Streets.png", 
               "calib": { "origin": [10527.6, 13026.4], "scale": 72.024 },
+              "data": [] },
+              { "id": "sly4-paris-sewers", "name": "Paris Sewers","kind": "level",
+              "image": "base_img/Sly4_Paris_Sewers.png", 
+              "calib": { "origin": [5578.7, 3742.7], "scale": 23.984, "rotate": 90 },
+              "size": [6800, 8680],
+              "data": [] },
+              { "id": "sly4-paris-blimp", "name": "Paris Blimp","kind": "level",
+              "image": "base_img/Sly4_Paris_Blimp.png", 
+              "calib": { "origin": [1863.1, 5098.1], "scale": 23.989, "rotate": 90 },
+              "size": [12240, 3720],
               "data": [] }
           ]
         },

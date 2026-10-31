@@ -107,6 +107,18 @@
     "levels": 6,
     "preview": "previews/sly1/sly1-the-gunboat-graveyard-037a3cc052.webp"
   },
+  "sly1/sly1-treasure-in-the-depths": {
+    "hash": "e7c62369bc",
+    "size": [
+      3400,
+      6200
+    ],
+    "tiles": "tiles/sly1/sly1-treasure-in-the-depths/e7c62369bc/{z}/{y}/{x}.webp",
+    "tileSize": 256,
+    "overlap": 2,
+    "levels": 5,
+    "preview": "previews/sly1/sly1-treasure-in-the-depths-e7c62369bc.webp"
+  },
   "sly2/blimp": {
     "hash": "7a5a2ee14d",
     "size": [
@@ -346,6 +358,30 @@
     "overlap": 2,
     "levels": 6,
     "preview": "previews/sly4/sly4-japan-village-b259987938.webp"
+  },
+  "sly4/sly4-paris-blimp": {
+    "hash": "44b6ccf782",
+    "size": [
+      12240,
+      3720
+    ],
+    "tiles": "tiles/sly4/sly4-paris-blimp/44b6ccf782/{z}/{y}/{x}.webp",
+    "tileSize": 256,
+    "overlap": 2,
+    "levels": 6,
+    "preview": "previews/sly4/sly4-paris-blimp-44b6ccf782.webp"
+  },
+  "sly4/sly4-paris-sewers": {
+    "hash": "6f3b1c24b0",
+    "size": [
+      6800,
+      8680
+    ],
+    "tiles": "tiles/sly4/sly4-paris-sewers/6f3b1c24b0/{z}/{y}/{x}.webp",
+    "tileSize": 256,
+    "overlap": 2,
+    "levels": 6,
+    "preview": "previews/sly4/sly4-paris-sewers-6f3b1c24b0.webp"
   },
   "sly4/sly4-paris-streets": {
     "hash": "992d8094b6",

@@ -11,6 +11,234 @@
     "levels": 6,
     "preview": "previews/hackpack/hp-alter-ego-1-a7d94d73d2.webp"
   },
+  "hackpack/hp-alter-ego-10": {
+    "hash": "c8bea557d8",
+    "size": [
+      6120,
+      18600
+    ],
+    "tiles": "tiles/hackpack/hp-alter-ego-10/c8bea557d8/{z}/{y}/{x}.webp",
+    "tileSize": 256,
+    "overlap": 2,
+    "levels": 7,
+    "preview": "previews/hackpack/hp-alter-ego-10-c8bea557d8.webp"
+  },
+  "hackpack/hp-alter-ego-11": {
+    "hash": "75a6d645a3",
+    "size": [
+      6120,
+      14880
+    ],
+    "tiles": "tiles/hackpack/hp-alter-ego-11/75a6d645a3/{z}/{y}/{x}.webp",
+    "tileSize": 256,
+    "overlap": 2,
+    "levels": 6,
+    "preview": "previews/hackpack/hp-alter-ego-11-75a6d645a3.webp"
+  },
+  "hackpack/hp-alter-ego-12": {
+    "hash": "ebd8487e57",
+    "size": [
+      7480,
+      16120
+    ],
+    "tiles": "tiles/hackpack/hp-alter-ego-12/ebd8487e57/{z}/{y}/{x}.webp",
+    "tileSize": 256,
+    "overlap": 2,
+    "levels": 6,
+    "preview": "previews/hackpack/hp-alter-ego-12-ebd8487e57.webp"
+  },
+  "hackpack/hp-alter-ego-13": {
+    "hash": "33f9fed7f7",
+    "size": [
+      8840,
+      14880
+    ],
+    "tiles": "tiles/hackpack/hp-alter-ego-13/33f9fed7f7/{z}/{y}/{x}.webp",
+    "tileSize": 256,
+    "overlap": 2,
+    "levels": 6,
+    "preview": "previews/hackpack/hp-alter-ego-13-33f9fed7f7.webp"
+  },
+  "hackpack/hp-alter-ego-14": {
+    "hash": "67b94bc372",
+    "size": [
+      12920,
+      16120
+    ],
+    "tiles": "tiles/hackpack/hp-alter-ego-14/67b94bc372/{z}/{y}/{x}.webp",
+    "tileSize": 256,
+    "overlap": 2,
+    "levels": 6,
+    "preview": "previews/hackpack/hp-alter-ego-14-67b94bc372.webp"
+  },
+  "hackpack/hp-alter-ego-15": {
+    "hash": "2eb1a3778d",
+    "size": [
+      10880,
+      17360
+    ],
+    "tiles": "tiles/hackpack/hp-alter-ego-15/2eb1a3778d/{z}/{y}/{x}.webp",
+    "tileSize": 256,
+    "overlap": 2,
+    "levels": 7,
+    "preview": "previews/hackpack/hp-alter-ego-15-2eb1a3778d.webp"
+  },
+  "hackpack/hp-alter-ego-16": {
+    "hash": "bd5f3f73c7",
+    "size": [
+      10880,
+      13640
+    ],
+    "tiles": "tiles/hackpack/hp-alter-ego-16/bd5f3f73c7/{z}/{y}/{x}.webp",
+    "tileSize": 256,
+    "overlap": 2,
+    "levels": 6,
+    "preview": "previews/hackpack/hp-alter-ego-16-bd5f3f73c7.webp"
+  },
+  "hackpack/hp-alter-ego-17": {
+    "hash": "4bd62d2a3a",
+    "size": [
+      8160,
+      18600
+    ],
+    "tiles": "tiles/hackpack/hp-alter-ego-17/4bd62d2a3a/{z}/{y}/{x}.webp",
+    "tileSize": 256,
+    "overlap": 2,
+    "levels": 7,
+    "preview": "previews/hackpack/hp-alter-ego-17-4bd62d2a3a.webp"
+  },
+  "hackpack/hp-alter-ego-18": {
+    "hash": "43d26c2bf6",
+    "size": [
+      9520,
+      19840
+    ],
+    "tiles": "tiles/hackpack/hp-alter-ego-18/43d26c2bf6/{z}/{y}/{x}.webp",
+    "tileSize": 256,
+    "overlap": 2,
+    "levels": 7,
+    "preview": "previews/hackpack/hp-alter-ego-18-43d26c2bf6.webp"
+  },
+  "hackpack/hp-alter-ego-19": {
+    "hash": "a5a7ab48c4",
+    "size": [
+      11560,
+      12400
+    ],
+    "tiles": "tiles/hackpack/hp-alter-ego-19/a5a7ab48c4/{z}/{y}/{x}.webp",
+    "tileSize": 256,
+    "overlap": 2,
+    "levels": 6,
+    "preview": "previews/hackpack/hp-alter-ego-19-a5a7ab48c4.webp"
+  },
+  "hackpack/hp-alter-ego-2": {
+    "hash": "117f7e1193",
+    "size": [
+      4760,
+      19840
+    ],
+    "tiles": "tiles/hackpack/hp-alter-ego-2/117f7e1193/{z}/{y}/{x}.webp",
+    "tileSize": 256,
+    "overlap": 2,
+    "levels": 7,
+    "preview": "previews/hackpack/hp-alter-ego-2-117f7e1193.webp"
+  },
+  "hackpack/hp-alter-ego-20": {
+    "hash": "ab968df81d",
+    "size": [
+      7480,
+      16120
+    ],
+    "tiles": "tiles/hackpack/hp-alter-ego-20/ab968df81d/{z}/{y}/{x}.webp",
+    "tileSize": 256,
+    "overlap": 2,
+    "levels": 6,
+    "preview": "previews/hackpack/hp-alter-ego-20-ab968df81d.webp"
+  },
+  "hackpack/hp-alter-ego-3": {
+    "hash": "95f1aece36",
+    "size": [
+      13600,
+      8680
+    ],
+    "tiles": "tiles/hackpack/hp-alter-ego-3/95f1aece36/{z}/{y}/{x}.webp",
+    "tileSize": 256,
+    "overlap": 2,
+    "levels": 6,
+    "preview": "previews/hackpack/hp-alter-ego-3-95f1aece36.webp"
+  },
+  "hackpack/hp-alter-ego-4": {
+    "hash": "bd61aa6e66",
+    "size": [
+      3400,
+      19840
+    ],
+    "tiles": "tiles/hackpack/hp-alter-ego-4/bd61aa6e66/{z}/{y}/{x}.webp",
+    "tileSize": 256,
+    "overlap": 2,
+    "levels": 7,
+    "preview": "previews/hackpack/hp-alter-ego-4-bd61aa6e66.webp"
+  },
+  "hackpack/hp-alter-ego-5": {
+    "hash": "ee350423d0",
+    "size": [
+      4760,
+      16120
+    ],
+    "tiles": "tiles/hackpack/hp-alter-ego-5/ee350423d0/{z}/{y}/{x}.webp",
+    "tileSize": 256,
+    "overlap": 2,
+    "levels": 6,
+    "preview": "previews/hackpack/hp-alter-ego-5-ee350423d0.webp"
+  },
+  "hackpack/hp-alter-ego-6": {
+    "hash": "fb1b35bdec",
+    "size": [
+      12920,
+      21080
+    ],
+    "tiles": "tiles/hackpack/hp-alter-ego-6/fb1b35bdec/{z}/{y}/{x}.webp",
+    "tileSize": 256,
+    "overlap": 2,
+    "levels": 7,
+    "preview": "previews/hackpack/hp-alter-ego-6-fb1b35bdec.webp"
+  },
+  "hackpack/hp-alter-ego-7": {
+    "hash": "047c94579d",
+    "size": [
+      9520,
+      8680
+    ],
+    "tiles": "tiles/hackpack/hp-alter-ego-7/047c94579d/{z}/{y}/{x}.webp",
+    "tileSize": 256,
+    "overlap": 2,
+    "levels": 6,
+    "preview": "previews/hackpack/hp-alter-ego-7-047c94579d.webp"
+  },
+  "hackpack/hp-alter-ego-8": {
+    "hash": "6343bb315b",
+    "size": [
+      6800,
+      11160
+    ],
+    "tiles": "tiles/hackpack/hp-alter-ego-8/6343bb315b/{z}/{y}/{x}.webp",
+    "tileSize": 256,
+    "overlap": 2,
+    "levels": 6,
+    "preview": "previews/hackpack/hp-alter-ego-8-6343bb315b.webp"
+  },
+  "hackpack/hp-alter-ego-9": {
+    "hash": "9ee2bd8350",
+    "size": [
+      7480,
+      21080
+    ],
+    "tiles": "tiles/hackpack/hp-alter-ego-9/9ee2bd8350/{z}/{y}/{x}.webp",
+    "tileSize": 256,
+    "overlap": 2,
+    "levels": 7,
+    "preview": "previews/hackpack/hp-alter-ego-9-9ee2bd8350.webp"
+  },
   "sly1/sly1-a-cunning-disguise": {
     "hash": "c4c59d48dd",
     "size": [

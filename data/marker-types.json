@@ -2,6 +2,8 @@
   "Bottle":         { "icon": "icons/bottle.png" },
   "Job Triggers":   { "color": "#e6194b", "iconBy": "jobType",
                       "icons": { "sly": "icons/sly_sq.png", "murray": "icons/murray_sq.png", "bentley": "icons/bentley_sq.png" } },
+  "Job Trigger":   { "color": "#e6194b", "iconBy": "jobType",
+                      "icons": { "sly": "icons/sly_sq.png", "murray": "icons/murray_sq.png", "bentley": "icons/bentley_sq.png" } },
   "Treasures":      { "color": "#ffd700" },
   "Mask":           { "icon": "icons/sly4_mask_icon.png"},
   "Safe House":     { "color": "#3cb44b" },

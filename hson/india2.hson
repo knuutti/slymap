@@ -209,6 +209,87 @@
       "parameters": {
         "purposeOfUse": "Normal"
       }
+    },
+    {
+      "type": "Job Triggers",
+      "position": [-9110,534,60],
+      "parameters": {
+        "purposeOfUse": "Normal",
+        "jobType": "sly",
+        "jobName": "Spice Room Recon"
+      }
+    },
+    {
+      "type": "Job Triggers",
+      "position": [-4882,-3777,700],
+      "parameters": {
+        "purposeOfUse": "Normal",
+        "jobType": "sly",
+        "jobName": "Freeing the Elephant"
+      }
+    },
+    {
+      "type": "Job Triggers",
+      "position": [-8900,-1380,2400],
+      "parameters": {
+        "purposeOfUse": "Normal",
+        "jobType": "sly",
+        "jobName": "Water Bug Run"
+      }
+    },
+    {
+      "type": "Job Triggers",
+      "position": [2951,549,1212],
+      "parameters": {
+        "purposeOfUse": "Normal",
+        "jobType": "bentley",
+        "jobName": "Leading Rajan"
+      }
+    },
+    {
+      "type": "Job Triggers",
+      "position": [7640,-1778,378],
+      "parameters": {
+        "purposeOfUse": "Normal",
+        "jobType": "bentley",
+        "jobName": "Blow the Dam"
+      }
+    },
+    {
+      "type": "Job Triggers",
+      "position": [3725,-1002,96],
+      "parameters": {
+        "purposeOfUse": "Normal",
+        "jobType": "sly",
+        "jobName": "Spice Grinder Destruction"
+      }
+    },
+    {
+      "type": "Job Triggers",
+      "position": [-7562,3863,-226],
+      "parameters": {
+        "purposeOfUse": "Normal",
+        "jobType": "sly",
+        "jobName": "Neyla's Secret"
+      }
+    },
+    {
+      "type": "Job Triggers",
+      "position": [-144,3846,3034],
+      "parameters": {
+        "purposeOfUse": "Normal",
+        "jobType": "sly",
+        "jobName": "Rip-Off the Ruby"
+      }
+    },
+    {
+      "type": "Job Triggers",
+      "position": [2844,-6436,1389],
+      "parameters": {
+        "purposeOfUse": "Normal",
+        "jobType": "murray",
+        "jobName": "Operation: Wet Tiger"
+      }
     }
   ]
 }

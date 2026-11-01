@@ -85,7 +85,7 @@
           "title": "The Black Chateau",
           "maps": [
             { "id": "sly2-paris-hub", "name": "Paris Hub", "kind": "hub",
-              "image": "base_img/Sly2_Paris_Hub.png", "calib": { "origin": [9292.1, 7820.3], "scale": 0.71915, "flip": "y", "rotate": 90 },
+              "image": "base_img/Sly2_Paris_Hub.png", "calib": { "origin": [9296.3, 7814.3], "scale": 0.72092, "flip": "y", "rotate": 90 },
               "size": [17000, 18600],
               "data": ["hson/paris.hson"] }
           ]
@@ -95,7 +95,7 @@
           "title": "A Starry Eyed Encounter",
           "maps": [
             { "id": "india1", "name": "Rajan's Palace", "location": "Rajan's palace, India", "kind": "hub",
-              "image": "base_img/india1.png", "calib": { "origin": [1973, 1528], "scale": 0.1269 },
+              "image": "base_img/india1.png", "calib": { "origin": [1973, 1528], "scale": 0.1269, "flip": "y", "rotate": 90 },
               "data": ["hson/india1.hson"] }
           ]
         },
@@ -104,7 +104,7 @@
           "title": "The Predator Awakes",
           "maps": [
             { "id": "india2", "name": "Spice Temple", "location": "Spice temple, India", "kind": "hub",
-              "image": "base_img/india2.png", "calib": { "origin": [2283, 2198], "scale": 0.146 },
+              "image": "base_img/india2.png", "calib": { "origin": [2283, 2198], "scale": 0.146, "flip": "y", "rotate": 90 },
               "data": ["hson/india2.hson"] }
           ]
         },
@@ -113,7 +113,7 @@
           "title": "Jail Break",
           "maps": [
             { "id": "prague1", "name": "Contessa's Jail", "location": "The Contessa's prison, Prague", "kind": "hub",
-              "image": "base_img/prague1.png", "calib": { "origin": [2675, 2129], "scale": 0.151 },
+              "image": "base_img/prague1.png", "calib": { "origin": [2675, 2129], "scale": 0.151, "flip": "y", "rotate": 90 },
               "data": ["hson/prague1.hson"] }
           ]
         },
@@ -122,7 +122,7 @@
           "title": "A Tangled Web",
           "maps": [
             { "id": "prague2", "name": "Contessa's Castle", "location": "Contessa's castle, Prague", "kind": "hub",
-              "image": "base_img/prague2.png", "calib": { "origin": [1972, 1742], "scale": 0.136 },
+              "image": "base_img/prague2.png", "calib": { "origin": [1972, 1742], "scale": 0.136, "flip": "y", "rotate": 90 },
               "data": ["hson/prague2.hson"] }
           ]
         },
@@ -131,7 +131,7 @@
           "title": "He Who Tames the Iron Horse",
           "maps": [
             { "id": "canada1", "name": "Nunavut Bay", "location": "Nunavut Bay, Canada", "kind": "hub",
-              "image": "base_img/canada1.png", "calib": { "origin": [2197, 2184], "scale": 0.1418 },
+              "image": "base_img/canada1.png", "calib": { "origin": [2197, 2184], "scale": 0.1418, "flip": "y", "rotate": 90 },
               "data": ["hson/canada1.hson"] }
           ]
         },
@@ -140,7 +140,7 @@
           "title": "Menace from the North, eh!",
           "maps": [
             { "id": "canada2", "name": "Lumber Camp", "location": "Lumber camp, Canada", "kind": "hub",
-              "image": "base_img/canada2.png", "calib": { "origin": [2132, 2312], "scale": 0.131 },
+              "image": "base_img/canada2.png", "calib": { "origin": [2132, 2312], "scale": 0.131, "flip": "y", "rotate": 90 },
               "data": ["hson/canada2.hson"] }
           ]
         },
@@ -149,7 +149,7 @@
           "title": "Anatomy for Disaster",
           "maps": [
             { "id": "blimp", "name": "Arpeggio's Blimp", "location": "Arpeggio's blimp", "kind": "hub",
-              "image": "base_img/blimp.png", "calib": { "origin": [2038, 2029], "scale": 0.136 },
+              "image": "base_img/blimp.png", "calib": { "origin": [2038, 2029], "scale": 0.136, "flip": "y", "rotate": 90 },
               "data": ["hson/blimp.hson"] }
           ]
         }
@@ -239,20 +239,25 @@
           "id": "prologue", "label": "Prologue",
           "title": "Paris Prologue",
           "maps": [
-            { "id": "sly4-paris-streets", "name": "Paris Streets", "kind": "level",
+            { 
+              "id": "sly4-paris-streets", "name": "Paris Streets", "kind": "level",
               "image": "base_img/Sly4_Paris_Streets.png", 
               "calib": { "origin": [10527.6, 13026.4], "scale": 72.024 },
-              "data": [] },
-              { "id": "sly4-paris-sewers", "name": "Paris Sewers","kind": "level",
+              "data": ["hson/sly4_paris_streets.hson"] },
+            { 
+              "id": "sly4-paris-sewers", "name": "Paris Sewers","kind": "level",
               "image": "base_img/Sly4_Paris_Sewers.png", 
               "calib": { "origin": [5578.7, 3742.7], "scale": 23.984, "rotate": 90 },
               "size": [6800, 8680],
-              "data": [] },
-              { "id": "sly4-paris-blimp", "name": "Paris Blimp","kind": "level",
+              "data": ["hson/sly4_paris_sewers.hson"] 
+            },
+            { 
+              "id": "sly4-paris-blimp", "name": "Paris Blimp","kind": "level",
               "image": "base_img/Sly4_Paris_Blimp.png", 
               "calib": { "origin": [1863.1, 5098.1], "scale": 23.989, "rotate": 90 },
               "size": [12240, 3720],
-              "data": [] }
+              "data": ["hson/sly4_paris_blimp.hson"] 
+            }
           ]
         },
         {
@@ -325,7 +330,7 @@
               "image": "base_img/Sly4_SR03.png",
               "data": [] 
             },
-            { "id": "sly4-spark-runner-1", "name": "Rug Rats Spark Runner", "kind": "hack",
+            { "id": "sly4-spark-runner-4", "name": "Rug Rats Spark Runner", "kind": "hack",
               "image": "base_img/Sly4_SR04.png",
               "data": [] 
             },

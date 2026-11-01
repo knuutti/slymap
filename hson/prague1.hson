@@ -2,266 +2,266 @@
   "objects": [
     {
       "type": "Bottle",
-      "position": [-2475.136, 7173.589, 1485.61],
+      "position": [7173.589, -2475.136, 1485.61],
       "parameters": {
         "purposeOfUse": "Normal"
       }
     },
     {
       "type": "Bottle",
-      "position": [-7755.91, -1923.787, 909.7183],
+      "position": [-1923.787, -7755.91, 909.7183],
       "parameters": {
         "purposeOfUse": "Normal"
       }
     },
     {
       "type": "Bottle",
-      "position": [-150.0001, -10131.02, 1563.135],
+      "position": [-10131.02, -150.0001, 1563.135],
       "parameters": {
         "purposeOfUse": "Normal"
       }
     },
     {
       "type": "Bottle",
-      "position": [-2350.13, -8060.612, 1887.116],
+      "position": [-8060.612, -2350.13, 1887.116],
       "parameters": {
         "purposeOfUse": "Normal"
       }
     },
     {
       "type": "Bottle",
-      "position": [-2464.812, 2069.108, 2438.015],
+      "position": [2069.108, -2464.812, 2438.015],
       "parameters": {
         "purposeOfUse": "Normal"
       }
     },
     {
       "type": "Bottle",
-      "position": [2053.032, 1561.749, 3383.23],
+      "position": [1561.749, 2053.032, 3383.23],
       "parameters": {
         "purposeOfUse": "Normal"
       }
     },
     {
       "type": "Bottle",
-      "position": [5484.134, -1044.412, 948.6985],
+      "position": [-1044.412, 5484.134, 948.6985],
       "parameters": {
         "purposeOfUse": "Normal"
       }
     },
     {
       "type": "Bottle",
-      "position": [1603.934, 4615.881, 1702.634],
+      "position": [4615.881, 1603.934, 1702.634],
       "parameters": {
         "purposeOfUse": "Normal"
       }
     },
     {
       "type": "Bottle",
-      "position": [2357.868, 6991.003, 675.0866],
+      "position": [6991.003, 2357.868, 675.0866],
       "parameters": {
         "purposeOfUse": "Normal"
       }
     },
     {
       "type": "Bottle",
-      "position": [-5187.906, 6077.157, -172.4146],
+      "position": [6077.157, -5187.906, -172.4146],
       "parameters": {
         "purposeOfUse": "Normal"
       }
     },
     {
       "type": "Bottle",
-      "position": [-10707.66, 1026.43, 1447.836],
+      "position": [1026.43, -10707.66, 1447.836],
       "parameters": {
         "purposeOfUse": "Normal"
       }
     },
     {
       "type": "Bottle",
-      "position": [-2562.583, -1558.502, 2854.656],
+      "position": [-1558.502, -2562.583, 2854.656],
       "parameters": {
         "purposeOfUse": "Normal"
       }
     },
     {
       "type": "Bottle",
-      "position": [1594.355, 3257.646, 2980.76],
+      "position": [3257.646, 1594.355, 2980.76],
       "parameters": {
         "purposeOfUse": "Normal"
       }
     },
     {
       "type": "Bottle",
-      "position": [-3980.936, -64.27448, 4317.467],
+      "position": [-64.27448, -3980.936, 4317.467],
       "parameters": {
         "purposeOfUse": "Normal"
       }
     },
     {
       "type": "Bottle",
-      "position": [-7211.779, 1976.321, 1952.691],
+      "position": [1976.321, -7211.779, 1952.691],
       "parameters": {
         "purposeOfUse": "Normal"
       }
     },
     {
       "type": "Bottle",
-      "position": [-10252.83, 7078.493, 165.2756],
+      "position": [7078.493, -10252.83, 165.2756],
       "parameters": {
         "purposeOfUse": "Normal"
       }
     },
     {
       "type": "Bottle",
-      "position": [-12666.26, -608.421, 660.6429],
+      "position": [-608.421, -12666.26, 660.6429],
       "parameters": {
         "purposeOfUse": "Normal"
       }
     },
     {
       "type": "Bottle",
-      "position": [3898.433, -2906.212, 4210.449],
+      "position": [-2906.212, 3898.433, 4210.449],
       "parameters": {
         "purposeOfUse": "Normal"
       }
     },
     {
       "type": "Bottle",
-      "position": [4351.385, 2307.572, 1599.088],
+      "position": [2307.572, 4351.385, 1599.088],
       "parameters": {
         "purposeOfUse": "Normal"
       }
     },
     {
       "type": "Bottle",
-      "position": [-1756.155, 4537.514, 1694.545],
+      "position": [4537.514, -1756.155, 1694.545],
       "parameters": {
         "purposeOfUse": "Normal"
       }
     },
     {
       "type": "Bottle",
-      "position": [-5154.028, 3346.341, -473.3032],
+      "position": [3346.341, -5154.028, -473.3032],
       "parameters": {
         "purposeOfUse": "Normal"
       }
     },
     {
       "type": "Bottle",
-      "position": [-5990.717, -9184.212, 970.8504],
+      "position": [-9184.212, -5990.717, 970.8504],
       "parameters": {
         "purposeOfUse": "Normal"
       }
     },
     {
       "type": "Bottle",
-      "position": [-2827.509, -4277.308, 1708.793],
+      "position": [-4277.308, -2827.509, 1708.793],
       "parameters": {
         "purposeOfUse": "Normal"
       }
     },
     {
       "type": "Bottle",
-      "position": [815.4102, -8255.681, 2835.513],
+      "position": [-8255.681, 815.4102, 2835.513],
       "parameters": {
         "purposeOfUse": "Normal"
       }
     },
     {
       "type": "Bottle",
-      "position": [2433.268, -1390.553, 2968.754],
+      "position": [-1390.553, 2433.268, 2968.754],
       "parameters": {
         "purposeOfUse": "Normal"
       }
     },
     {
       "type": "Bottle",
-      "position": [506.1068, -3646.705, 2394.074],
+      "position": [-3646.705, 506.1068, 2394.074],
       "parameters": {
         "purposeOfUse": "Normal"
       }
     },
     {
       "type": "Bottle",
-      "position": [-11468.12, -5689.428, 835.2319],
+      "position": [-5689.428, -11468.12, 835.2319],
       "parameters": {
         "purposeOfUse": "Normal"
       }
     },
     {
       "type": "Bottle",
-      "position": [1695.61, -6780.083, 1712.148],
+      "position": [-6780.083, 1695.61, 1712.148],
       "parameters": {
         "purposeOfUse": "Normal"
       }
     },
     {
       "type": "Bottle",
-      "position": [-1153.152, 2467.055, 1605.098],
+      "position": [2467.055, -1153.152, 1605.098],
       "parameters": {
         "purposeOfUse": "Normal"
       }
     },
     {
       "type": "Bottle",
-      "position": [-12740.2, 6281.404, 961.6239],
+      "position": [6281.404, -12740.2, 961.6239],
       "parameters": {
         "purposeOfUse": "Normal"
       }
     },
     {
       "type": "Ligthning Rod",
-      "position": [-798,-10933,1127],
+      "position": [-10933,-798,1127],
       "parameters": {
         "purposeOfUse": "Normal"
       }
     },
     {
       "type": "Ligthning Rod",
-      "position": [1580,-1386,3878],
+      "position": [-1386,1580,3878],
       "parameters": {
         "purposeOfUse": "Normal"
       }
     },
     {
       "type": "Ligthning Rod",
-      "position": [-1744,-4137,3841],
+      "position": [-4137,-1744,3841],
       "parameters": {
         "purposeOfUse": "Normal"
       }
     },
     {
       "type": "Ligthning Rod",
-      "position": [-9934,2260,924],
+      "position": [2260,-9934,924],
       "parameters": {
         "purposeOfUse": "Normal"
       }
     },
     {
       "type": "Ligthning Rod",
-      "position": [6,4772,3829],
+      "position": [4772,6,3829],
       "parameters": {
         "purposeOfUse": "Normal"
       }
     },
     {
       "type": "Safe House",
-      "position": [-10567,-7428,100],
+      "position": [-7428,-10567,100],
       "parameters": {
         "purposeOfUse": "Normal"
       }
     },
     {
       "type": "Treasures",
-      "position": [1847,-1953,3456],
+      "position": [-1953,1847,3456],
       "parameters": {
         "purposeOfUse": "Normal"
       }
     },
     {
       "type": "Treasures",
-      "position": [-700,1197,1765],
+      "position": [1197,-700,1765],
       "parameters": {
         "purposeOfUse": "Normal"
       }
@@ -270,14 +270,14 @@
       "type": "Treasures",
       "name": "Treasure 1",
       "description": "",
-      "position": [-795,-6488,1873],
+      "position": [-6488,-795,1873],
       "parameters": {
         "purposeOfUse": "Normal"
       }
     },
     {
       "type": "Job Triggers",
-      "position": [39,7146,2622],
+      "position": [7146,39,2622],
       "parameters": {
         "purposeOfUse": "Normal",
         "jobName": "Eavesdrop on Contessa",
@@ -286,7 +286,7 @@
     },
     {
       "type": "Job Triggers",
-      "position": [-9721,-6729,-222],
+      "position": [-6729,-9721,-222],
       "parameters": {
         "purposeOfUse": "Normal",
         "jobType": "bentley",
@@ -295,7 +295,7 @@
     },
     {
       "type": "Job Triggers",
-      "position": [-10742,7032,1026],
+      "position": [7032,-10742,1026],
       "parameters": {
         "purposeOfUse": "Normal",
         "jobType": "bentley",
@@ -304,7 +304,7 @@
     },
     {
       "type": "Job Triggers",
-      "position": [-6846,-1941,-383],
+      "position": [-1941,-6846,-383],
       "parameters": {
         "purposeOfUse": "Normal",
         "jobType": "sly",
@@ -313,35 +313,43 @@
     },
     {
       "type": "Job Triggers",
-      "position": [1045,-1387,3668],
+      "position": [-1387,1045,3668],
       "parameters": {
-        "purposeOfUse": "Normal"
+        "purposeOfUse": "Normal",
+        "jobType": "sly",
+        "jobName": "Lightning Action"
       }
     },
     {
       "type": "Job Triggers",
-      "position": [-5828,7019,-341],
+      "position": [7019,-5828,-341],
       "parameters": {
-        "purposeOfUse": "Normal"
+        "purposeOfUse": "Normal",
+        "jobType": "sly",
+        "jobName": "Disguise Bridge"
       }
     },
     {
       "type": "Job Triggers",
-      "position": [4,-1782,2361],
+      "position": [-1782,4,2361],
       "parameters": {
-        "purposeOfUse": "Normal"
+        "purposeOfUse": "Normal",
+        "jobType": "sly",
+        "jobName": "Code Capture"
       }
     },
     {
       "type": "Job Triggers",
-      "position": [-2378,4683,878],
+      "position": [4683,-2378,878],
       "parameters": {
-        "purposeOfUse": "Normal"
+        "purposeOfUse": "Normal",
+        "jobType": "sly",
+        "jobName": "Close the Contessa"
       }
     },
     {
       "type": "Job Triggers",
-      "position": [-10052,-6753,-160],
+      "position": [-6753,-10052,-160],
       "parameters": {
         "purposeOfUse": "Normal",
         "jobName": "OP: Trojan Tank",
@@ -350,77 +358,77 @@
     },
     {
       "type": "Code Displays",
-      "position": [-907,-2851,1786],
+      "position": [-2851,-907,1786],
       "parameters": {
         "purposeOfUse": "Normal"
       }
     },
     {
       "type": "Code Displays",
-      "position": [-320,-9496,471],
+      "position": [-9496,-320,471],
       "parameters": {
         "purposeOfUse": "Normal"
       }
     },
     {
       "type": "Code Displays",
-      "position": [-11194,2349,144],
+      "position": [2349,-11194,144],
       "parameters": {
         "purposeOfUse": "Normal"
       }
     },
     {
       "type": "Code Displays",
-      "position": [1038,6148,-74],
+      "position": [6148,1038,-74],
       "parameters": {
         "purposeOfUse": "Normal"
       }
     },
     {
       "type": "Computers",
-      "position": [2828,4696,-16],
+      "position": [4696,2828,-16],
       "parameters": {
         "purposeOfUse": "Normal"
       }
     },
     {
       "type": "Computers",
-      "position": [1383,8377,-84],
+      "position": [8377,1383,-84],
       "parameters": {
         "purposeOfUse": "Normal"
       }
     },
     {
       "type": "Computers",
-      "position": [5358,-1958,233],
+      "position": [-1958,5358,233],
       "parameters": {
         "purposeOfUse": "Normal"
       }
     },
     {
       "type": "Computers",
-      "position": [1743,-7076,629],
+      "position": [-7076,1743,629],
       "parameters": {
         "purposeOfUse": "Normal"
       }
     },
     {
       "type": "Computers",
-      "position": [-4840,-10125,373],
+      "position": [-10125,-4840,373],
       "parameters": {
         "purposeOfUse": "Normal"
       }
     },
     {
       "type": "Computers",
-      "position": [-7881,-6355,-93],
+      "position": [-6355,-7881,-93],
       "parameters": {
         "purposeOfUse": "Normal"
       }
     },
     {
       "type": "Vault Entrance",
-      "position": [1144,6852,-74],
+      "position": [6852,1144,-74],
       "parameters": {
         "purposeOfUse": "Normal"
       }

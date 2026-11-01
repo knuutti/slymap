@@ -1,0 +1,11 @@
+{
+  "objects": [
+    {
+      "type": "Mask",
+      "position": [113.67, 22.43, 0],
+      "parameters": {
+        "purposeOfUse": "Normal"
+      }
+    }
+  ]
+}

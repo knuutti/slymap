@@ -311,6 +311,39 @@
           ]
         },
         {
+          "id": "spark-runner", "title": "Spark Runner",
+          "maps": [
+            { "id": "sly4-spark-runner-1", "name": "Pretty in Pinker Spark Runner", "kind": "hack",
+              "image": "base_img/Sly4_SR01.png",
+              "data": [] 
+            },
+            { "id": "sly4-spark-runner-2", "name": "Operation: Jurassic Thievery Spark Runner", "kind": "hack",
+              "image": "base_img/Sly4_SR02.png",
+              "data": [] 
+            },
+            { "id": "sly4-spark-runner-3", "name": "Short Supply Spark Runner", "kind": "hack",
+              "image": "base_img/Sly4_SR03.png",
+              "data": [] 
+            },
+            { "id": "sly4-spark-runner-1", "name": "Rug Rats Spark Runner", "kind": "hack",
+              "image": "base_img/Sly4_SR04.png",
+              "data": [] 
+            },
+            { "id": "sly4-spark-runner-5", "name": "All Rolled Up! Spark Runner", "kind": "hack",
+              "image": "base_img/Sly4_SR05.png",
+              "data": [] 
+            },
+            { "id": "sly4-spark-runner-6", "name": "Spark Runner Arcade", "kind": "hack",
+              "image": "base_img/Sly4_SR06.png",
+              "data": [] 
+            },
+            { "id": "sly4-spark-runner-7", "name": "Maximum Chaors Arcade Spark Runner", "kind": "hack",
+              "image": "base_img/Sly4_SR07.png",
+              "data": [] 
+            }
+          ]
+        },
+        {
           "id": "alter-ego", "title": "Alter Ego",
           "maps": [
             { "id": "sly4-alter-ego-1", "name": "Something's Fishy Alter Ego", "kind": "hack",
@@ -419,6 +452,91 @@
       "short": "Hackpack",
       "year": 2013,
       "episodes": [
+        {
+          "id": "spark-runner", "title": "Spark Runner",
+          "maps": [
+            { "id": "hp-spark-runner-1", "name": "(1) Primer", "kind": "hack",
+              "image": "base_img/HP_SR01.png",
+              "data": [] 
+            },
+            { "id": "hp-spark-runner-2", "name": "(2) Long Fall", "kind": "hack",
+              "image": "base_img/HP_SR02.png",
+              "data": [] 
+            },
+            { "id": "hp-spark-runner-3", "name": "(3) Bumpin'", "kind": "hack",
+              "image": "base_img/HP_SR03.png",
+              "data": [] 
+            },
+            { "id": "hp-spark-runner-4", "name": "(4) Zig-Zag", "kind": "hack",
+              "image": "base_img/HP_SR04.png",
+              "data": [] 
+            },
+            { "id": "hp-spark-runner-5", "name": "(5) Grindin'", "kind": "hack",
+              "image": "base_img/HP_SR05.png",
+              "data": [] 
+            },
+            { "id": "hp-spark-runner-6", "name": "(7) Zipline", "kind": "hack",
+              "image": "base_img/HP_SR06.png",
+              "data": [] 
+            },
+            { "id": "hp-spark-runner-7", "name": "(9) Drop Out", "kind": "hack",
+              "image": "base_img/HP_SR07.png",
+              "data": [] 
+            },
+            { "id": "hp-spark-runner-8", "name": "(10) Movers", "kind": "hack",
+              "image": "base_img/HP_SR08.png",
+              "data": [] 
+            },
+            { "id": "hp-spark-runner-9", "name": "(11) Loopy", "kind": "hack",
+              "image": "base_img/HP_SR09.png",
+              "data": [] 
+            },
+            { "id": "hp-spark-runner-10", "name": "(12) Circuit", "kind": "hack",
+              "image": "base_img/HP_SR10.png",
+              "data": [] 
+            },
+            { "id": "hp-spark-runner-11", "name": "(13) Wired", "kind": "hack",
+              "image": "base_img/HP_SR11.png",
+              "data": [] 
+            },
+            { "id": "hp-spark-runner-12", "name": "(14) Cross", "kind": "hack",
+              "image": "base_img/HP_SR12.png",
+              "data": [] 
+            },
+            { "id": "hp-spark-runner-13", "name": "(15) Corkscrew", "kind": "hack",
+              "image": "base_img/HP_SR13.png",
+              "data": [] 
+            },
+            { "id": "hp-spark-runner-14", "name": "(16) Serpentine", "kind": "hack",
+              "image": "base_img/HP_SR14.png",
+              "data": [] 
+            },
+            { "id": "hp-spark-runner-15", "name": "(18) Islands", "kind": "hack",
+              "image": "base_img/HP_SR15.png",
+              "data": [] 
+            },
+            { "id": "hp-spark-runner-16", "name": "(20) Diamond", "kind": "hack",
+              "image": "base_img/HP_SR16.png",
+              "data": [] 
+            },
+            { "id": "hp-spark-runner-17", "name": "(21) Big Slope", "kind": "hack",
+              "image": "base_img/HP_SR17.png",
+              "data": [] 
+            },
+            { "id": "hp-spark-runner-18", "name": "(22) Speedway", "kind": "hack",
+              "image": "base_img/HP_SR18.png",
+              "data": [] 
+            },
+            { "id": "hp-spark-runner-19", "name": "(23) Switchback", "kind": "hack",
+              "image": "base_img/HP_SR19.png",
+              "data": [] 
+            },
+            { "id": "hp-spark-runner-20", "name": "(24) Finale", "kind": "hack",
+              "image": "base_img/HP_SR20.png",
+              "data": [] 
+            }
+          ]
+        },
         {
           "id": "alter-ego", "title": "Alter Ego",
           "maps": [

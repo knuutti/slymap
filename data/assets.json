@@ -239,6 +239,246 @@
     "levels": 7,
     "preview": "previews/hackpack/hp-alter-ego-9-9ee2bd8350.webp"
   },
+  "hackpack/hp-spark-runner-1": {
+    "hash": "88a2daf0a8",
+    "size": [
+      6120,
+      8680
+    ],
+    "tiles": "tiles/hackpack/hp-spark-runner-1/88a2daf0a8/{z}/{y}/{x}.webp",
+    "tileSize": 256,
+    "overlap": 2,
+    "levels": 6,
+    "preview": "previews/hackpack/hp-spark-runner-1-88a2daf0a8.webp"
+  },
+  "hackpack/hp-spark-runner-10": {
+    "hash": "32ad9183fa",
+    "size": [
+      6800,
+      7440
+    ],
+    "tiles": "tiles/hackpack/hp-spark-runner-10/32ad9183fa/{z}/{y}/{x}.webp",
+    "tileSize": 256,
+    "overlap": 2,
+    "levels": 5,
+    "preview": "previews/hackpack/hp-spark-runner-10-32ad9183fa.webp"
+  },
+  "hackpack/hp-spark-runner-11": {
+    "hash": "99dde67ad0",
+    "size": [
+      8160,
+      7440
+    ],
+    "tiles": "tiles/hackpack/hp-spark-runner-11/99dde67ad0/{z}/{y}/{x}.webp",
+    "tileSize": 256,
+    "overlap": 2,
+    "levels": 5,
+    "preview": "previews/hackpack/hp-spark-runner-11-99dde67ad0.webp"
+  },
+  "hackpack/hp-spark-runner-12": {
+    "hash": "6e057f2905",
+    "size": [
+      4760,
+      7440
+    ],
+    "tiles": "tiles/hackpack/hp-spark-runner-12/6e057f2905/{z}/{y}/{x}.webp",
+    "tileSize": 256,
+    "overlap": 2,
+    "levels": 5,
+    "preview": "previews/hackpack/hp-spark-runner-12-6e057f2905.webp"
+  },
+  "hackpack/hp-spark-runner-13": {
+    "hash": "2690f1a6d3",
+    "size": [
+      5440,
+      6200
+    ],
+    "tiles": "tiles/hackpack/hp-spark-runner-13/2690f1a6d3/{z}/{y}/{x}.webp",
+    "tileSize": 256,
+    "overlap": 2,
+    "levels": 5,
+    "preview": "previews/hackpack/hp-spark-runner-13-2690f1a6d3.webp"
+  },
+  "hackpack/hp-spark-runner-14": {
+    "hash": "aa114f2d4c",
+    "size": [
+      4760,
+      7440
+    ],
+    "tiles": "tiles/hackpack/hp-spark-runner-14/aa114f2d4c/{z}/{y}/{x}.webp",
+    "tileSize": 256,
+    "overlap": 2,
+    "levels": 5,
+    "preview": "previews/hackpack/hp-spark-runner-14-aa114f2d4c.webp"
+  },
+  "hackpack/hp-spark-runner-15": {
+    "hash": "0ed2508e33",
+    "size": [
+      8840,
+      12400
+    ],
+    "tiles": "tiles/hackpack/hp-spark-runner-15/0ed2508e33/{z}/{y}/{x}.webp",
+    "tileSize": 256,
+    "overlap": 2,
+    "levels": 6,
+    "preview": "previews/hackpack/hp-spark-runner-15-0ed2508e33.webp"
+  },
+  "hackpack/hp-spark-runner-16": {
+    "hash": "d54e64f01f",
+    "size": [
+      10200,
+      8680
+    ],
+    "tiles": "tiles/hackpack/hp-spark-runner-16/d54e64f01f/{z}/{y}/{x}.webp",
+    "tileSize": 256,
+    "overlap": 2,
+    "levels": 6,
+    "preview": "previews/hackpack/hp-spark-runner-16-d54e64f01f.webp"
+  },
+  "hackpack/hp-spark-runner-17": {
+    "hash": "5787f57511",
+    "size": [
+      4080,
+      7440
+    ],
+    "tiles": "tiles/hackpack/hp-spark-runner-17/5787f57511/{z}/{y}/{x}.webp",
+    "tileSize": 256,
+    "overlap": 2,
+    "levels": 5,
+    "preview": "previews/hackpack/hp-spark-runner-17-5787f57511.webp"
+  },
+  "hackpack/hp-spark-runner-18": {
+    "hash": "2345243af0",
+    "size": [
+      8840,
+      6200
+    ],
+    "tiles": "tiles/hackpack/hp-spark-runner-18/2345243af0/{z}/{y}/{x}.webp",
+    "tileSize": 256,
+    "overlap": 2,
+    "levels": 6,
+    "preview": "previews/hackpack/hp-spark-runner-18-2345243af0.webp"
+  },
+  "hackpack/hp-spark-runner-19": {
+    "hash": "b368685f46",
+    "size": [
+      7480,
+      9920
+    ],
+    "tiles": "tiles/hackpack/hp-spark-runner-19/b368685f46/{z}/{y}/{x}.webp",
+    "tileSize": 256,
+    "overlap": 2,
+    "levels": 6,
+    "preview": "previews/hackpack/hp-spark-runner-19-b368685f46.webp"
+  },
+  "hackpack/hp-spark-runner-2": {
+    "hash": "232a3b8b3d",
+    "size": [
+      6800,
+      7440
+    ],
+    "tiles": "tiles/hackpack/hp-spark-runner-2/232a3b8b3d/{z}/{y}/{x}.webp",
+    "tileSize": 256,
+    "overlap": 2,
+    "levels": 5,
+    "preview": "previews/hackpack/hp-spark-runner-2-232a3b8b3d.webp"
+  },
+  "hackpack/hp-spark-runner-20": {
+    "hash": "97fce8ca38",
+    "size": [
+      10200,
+      11160
+    ],
+    "tiles": "tiles/hackpack/hp-spark-runner-20/97fce8ca38/{z}/{y}/{x}.webp",
+    "tileSize": 256,
+    "overlap": 2,
+    "levels": 6,
+    "preview": "previews/hackpack/hp-spark-runner-20-97fce8ca38.webp"
+  },
+  "hackpack/hp-spark-runner-3": {
+    "hash": "a3e791d85b",
+    "size": [
+      4760,
+      4960
+    ],
+    "tiles": "tiles/hackpack/hp-spark-runner-3/a3e791d85b/{z}/{y}/{x}.webp",
+    "tileSize": 256,
+    "overlap": 2,
+    "levels": 5,
+    "preview": "previews/hackpack/hp-spark-runner-3-a3e791d85b.webp"
+  },
+  "hackpack/hp-spark-runner-4": {
+    "hash": "cc5f359526",
+    "size": [
+      4760,
+      8680
+    ],
+    "tiles": "tiles/hackpack/hp-spark-runner-4/cc5f359526/{z}/{y}/{x}.webp",
+    "tileSize": 256,
+    "overlap": 2,
+    "levels": 6,
+    "preview": "previews/hackpack/hp-spark-runner-4-cc5f359526.webp"
+  },
+  "hackpack/hp-spark-runner-5": {
+    "hash": "638da4069d",
+    "size": [
+      7480,
+      9920
+    ],
+    "tiles": "tiles/hackpack/hp-spark-runner-5/638da4069d/{z}/{y}/{x}.webp",
+    "tileSize": 256,
+    "overlap": 2,
+    "levels": 6,
+    "preview": "previews/hackpack/hp-spark-runner-5-638da4069d.webp"
+  },
+  "hackpack/hp-spark-runner-6": {
+    "hash": "099655618d",
+    "size": [
+      6800,
+      7440
+    ],
+    "tiles": "tiles/hackpack/hp-spark-runner-6/099655618d/{z}/{y}/{x}.webp",
+    "tileSize": 256,
+    "overlap": 2,
+    "levels": 5,
+    "preview": "previews/hackpack/hp-spark-runner-6-099655618d.webp"
+  },
+  "hackpack/hp-spark-runner-7": {
+    "hash": "ae6ecf19fb",
+    "size": [
+      4760,
+      7440
+    ],
+    "tiles": "tiles/hackpack/hp-spark-runner-7/ae6ecf19fb/{z}/{y}/{x}.webp",
+    "tileSize": 256,
+    "overlap": 2,
+    "levels": 5,
+    "preview": "previews/hackpack/hp-spark-runner-7-ae6ecf19fb.webp"
+  },
+  "hackpack/hp-spark-runner-8": {
+    "hash": "77d8f88ce3",
+    "size": [
+      7480,
+      6200
+    ],
+    "tiles": "tiles/hackpack/hp-spark-runner-8/77d8f88ce3/{z}/{y}/{x}.webp",
+    "tileSize": 256,
+    "overlap": 2,
+    "levels": 5,
+    "preview": "previews/hackpack/hp-spark-runner-8-77d8f88ce3.webp"
+  },
+  "hackpack/hp-spark-runner-9": {
+    "hash": "9412af5a40",
+    "size": [
+      7480,
+      4960
+    ],
+    "tiles": "tiles/hackpack/hp-spark-runner-9/9412af5a40/{z}/{y}/{x}.webp",
+    "tileSize": 256,
+    "overlap": 2,
+    "levels": 5,
+    "preview": "previews/hackpack/hp-spark-runner-9-9412af5a40.webp"
+  },
   "sly1/sly1-a-cunning-disguise": {
     "hash": "c4c59d48dd",
     "size": [
@@ -850,6 +1090,78 @@
     "overlap": 2,
     "levels": 8,
     "preview": "previews/sly4/sly4-paris-streets-992d8094b6.webp"
+  },
+  "sly4/sly4-spark-runner-1": {
+    "hash": "8a1a7e9fa7",
+    "size": [
+      8160,
+      9920
+    ],
+    "tiles": "tiles/sly4/sly4-spark-runner-1/8a1a7e9fa7/{z}/{y}/{x}.webp",
+    "tileSize": 256,
+    "overlap": 2,
+    "levels": 6,
+    "preview": "previews/sly4/sly4-spark-runner-1-8a1a7e9fa7.webp"
+  },
+  "sly4/sly4-spark-runner-2": {
+    "hash": "8cec542ad9",
+    "size": [
+      4760,
+      7440
+    ],
+    "tiles": "tiles/sly4/sly4-spark-runner-2/8cec542ad9/{z}/{y}/{x}.webp",
+    "tileSize": 256,
+    "overlap": 2,
+    "levels": 5,
+    "preview": "previews/sly4/sly4-spark-runner-2-8cec542ad9.webp"
+  },
+  "sly4/sly4-spark-runner-3": {
+    "hash": "d9243e34e6",
+    "size": [
+      8160,
+      7440
+    ],
+    "tiles": "tiles/sly4/sly4-spark-runner-3/d9243e34e6/{z}/{y}/{x}.webp",
+    "tileSize": 256,
+    "overlap": 2,
+    "levels": 5,
+    "preview": "previews/sly4/sly4-spark-runner-3-d9243e34e6.webp"
+  },
+  "sly4/sly4-spark-runner-5": {
+    "hash": "a7f167fda1",
+    "size": [
+      8160,
+      6200
+    ],
+    "tiles": "tiles/sly4/sly4-spark-runner-5/a7f167fda1/{z}/{y}/{x}.webp",
+    "tileSize": 256,
+    "overlap": 2,
+    "levels": 5,
+    "preview": "previews/sly4/sly4-spark-runner-5-a7f167fda1.webp"
+  },
+  "sly4/sly4-spark-runner-6": {
+    "hash": "b36c7145d4",
+    "size": [
+      8840,
+      11160
+    ],
+    "tiles": "tiles/sly4/sly4-spark-runner-6/b36c7145d4/{z}/{y}/{x}.webp",
+    "tileSize": 256,
+    "overlap": 2,
+    "levels": 6,
+    "preview": "previews/sly4/sly4-spark-runner-6-b36c7145d4.webp"
+  },
+  "sly4/sly4-spark-runner-7": {
+    "hash": "6411f7b8f8",
+    "size": [
+      5440,
+      9920
+    ],
+    "tiles": "tiles/sly4/sly4-spark-runner-7/6411f7b8f8/{z}/{y}/{x}.webp",
+    "tileSize": 256,
+    "overlap": 2,
+    "levels": 6,
+    "preview": "previews/sly4/sly4-spark-runner-7-6411f7b8f8.webp"
   },
   "sly4/sly4-west-precidio": {
     "hash": "08f641c40e",

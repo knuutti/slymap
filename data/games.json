@@ -680,7 +680,7 @@
           { 
             "id": "g2_garden", "name": "Garden", "kind": "level",
             "image": "base_img/G2_Garden.png",
-            "calib": { "origin": [5045, 3764.2], "scale": 72.199, "rotate": 90 },
+            "calib": { "origin": [5062.3, 3767], "scale": 72.019, "rotate": 90 },
             "size": [21080, 19320],
             "data": ["hson/garfield2_garden.hson"] 
             
@@ -688,7 +688,7 @@
           { 
             "id": "g2_castle", "name": "Castle", "kind": "level",
             "image": "base_img/G2_Castle.png",
-            "calib": { "origin": [6903.1, 2406.1], "scale": 72.206, "rotate": 90 },
+            "calib": { "origin": [6899.4, 2405.1], "scale": 72.02, "rotate": 90 },
             "size": [14280, 9200],
             "data": ["hson/garfield2_castle.hson"] 
             
@@ -696,7 +696,7 @@
           { 
             "id": "g2_sewers", "name": "Sewers", "kind": "level",
             "image": "base_img/G2_Sewers.png",
-            "calib": { "origin": [8777.5, -1110.1], "scale": 72.742, "rotate": 90 },
+            "calib": { "origin": [8741, -993.7], "scale": 72.007, "rotate": 90 },
             "size": [12920, 11960],
             "data": ["hson/garfield2_sewers.hson"] 
             
@@ -704,7 +704,7 @@
           { 
             "id": "g2_roof", "name": "Roof", "kind": "level",
             "image": "base_img/G2_Roof.png",
-            "calib": { "origin": [9676.7, 10609.6], "scale": 70.998, "rotate": 90 },
+            "calib": { "origin": [9652.5, 10562.2], "scale": 72.035, "rotate": 90 },
             "size": [21080, 19320],
             "data": ["hson/garfield2_roof.hson"] 
             

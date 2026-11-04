@@ -682,7 +682,7 @@
             "image": "base_img/G2_Garden.png",
             "calib": { "origin": [5045, 3764.2], "scale": 72.199, "rotate": 90 },
             "size": [21080, 19320],
-            "data": [] 
+            "data": ["hson/garfield2_garden.hson"] 
             
           },
           { 
@@ -690,7 +690,7 @@
             "image": "base_img/G2_Castle.png",
             "calib": { "origin": [6903.1, 2406.1], "scale": 72.206, "rotate": 90 },
             "size": [14280, 9200],
-            "data": [] 
+            "data": ["hson/garfield2_castle.hson"] 
             
           },
           { 
@@ -698,7 +698,7 @@
             "image": "base_img/G2_Sewers.png",
             "calib": { "origin": [8777.5, -1110.1], "scale": 72.742, "rotate": 90 },
             "size": [12920, 11960],
-            "data": [] 
+            "data": ["hson/garfield2_sewers.hson"] 
             
           },
           { 
@@ -706,7 +706,7 @@
             "image": "base_img/G2_Roof.png",
             "calib": { "origin": [9676.7, 10609.6], "scale": 70.998, "rotate": 90 },
             "size": [21080, 19320],
-            "data": [] 
+            "data": ["hson/garfield2_roof.hson"] 
             
           }
          ] 

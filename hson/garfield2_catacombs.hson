@@ -1,0 +1,12 @@
+{
+  "objects": [
+    {"type": "Hall Exit", "name": "Exit to the Hall", "position": [96.9, 48.9, 4.5], "parameters": {}},
+    {"type": "Entry Point", "name": "Start point", "position": [96.4, 25.6, 0.1], "parameters": {}},
+    {"type": "Mission", "name": "Boss", "position": [96.9, 11.3, 2.5], "parameters": {"mission": "Boss", "level": "Catacombs", "requires": "All 30 level missions", "countsToward": "Nightmare difficulty"}},
+    {"type": "Switch", "name": "Squash switch 1", "position": [90.0, 4.2, 0.8], "parameters": {}},
+    {"type": "Switch", "name": "Squash switch 2", "position": [93.0, 5.7, 0.8], "parameters": {}},
+    {"type": "Switch", "name": "Squash switch 3", "position": [96.6, 6.2, 0.8], "parameters": {}},
+    {"type": "Switch", "name": "Squash switch 4", "position": [100.0, 5.7, 0.8], "parameters": {}},
+    {"type": "Switch", "name": "Squash switch 5", "position": [103.0, 4.2, 0.8], "parameters": {}}
+  ]
+}

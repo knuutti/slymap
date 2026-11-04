@@ -1,0 +1,15 @@
+{
+  "objects": [
+    {"type": "Mission", "name": "Tutorials 1-7", "position": [-10.0, -16.0, -0.9], "parameters": {"mission": "Tutorial", "level": "Hall", "note": "All seven tutorials start here; 1-6 are mandatory, 7 is not required by any rule"}},
+    {"type": "Level Door", "name": "Garden door", "position": [0.0, -22.6, 0.6], "parameters": {"link": "garfield2/g2_garden"}},
+    {"type": "Entry Point", "name": "Arrival from Garden", "position": [-0.5, -13.0, -1.9], "parameters": {}},
+    {"type": "Level Door", "name": "Castle door", "position": [22.6, -14.3, 0.1], "parameters": {"link": "garfield2/g2_castle"}},
+    {"type": "Entry Point", "name": "Arrival from Castle", "position": [10.3, -14.4, -1.9], "parameters": {}},
+    {"type": "Level Door", "name": "Sewers door", "position": [-8.1, -5.1, 0.1], "parameters": {"link": "garfield2/g2_sewers"}},
+    {"type": "Entry Point", "name": "Arrival from Sewers", "position": [-0.4, -5.1, -1.4], "parameters": {}},
+    {"type": "Level Door", "name": "Rooftops door", "position": [18.4, 7.8, 7.1], "parameters": {"link": "garfield2/g2_roof"}},
+    {"type": "Entry Point", "name": "Arrival from Rooftops", "position": [13.2, 3.4, 4.5], "parameters": {}},
+    {"type": "Level Door", "name": "Catacombs door", "position": [-33.3, -15.0, -0.9], "parameters": {"note": "Opens after all 30 level missions"}},
+    {"type": "Entry Point", "name": "Arrival from Catacombs", "position": [-24.8, -14.5, -1.9], "parameters": {}}
+  ]
+}

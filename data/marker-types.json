@@ -15,5 +15,12 @@
   "Ligthning Rod":  { "color": "#ffe119", "label": "Lightning Rod" },
   "CS Trigger":     { "color": "#f032e6" },
   "Custom Polygon": { "color": "#469990" },
-  "Path Line":      { "color": "#0a6edc" }
+  "Path Line":      { "color": "#0a6edc" },
+  "Lasagna":        { "color": "#e8a020" },
+  "Lasagna Route":  { "color": "#c0602a" },
+  "Mission":        { "color": "#e6194b" },
+  "Hall Exit":      { "color": "#3cb44b" },
+  "Entry Point":    { "color": "#aaffc3" },
+  "Level Door":     { "color": "#911eb4" },
+  "Switch":         { "color": "#42d4f4" }
 }

@@ -669,6 +669,41 @@
           ]
         }
       ]
+    },
+    {
+      "id": "garfield2",
+      "title": "Garfield 2",
+      "short": "Garfield 2",
+      "hidden": true,
+      "episodes": [
+        { "id": "main", "title": "", "maps": [ 
+          { 
+            "id": "g2_garden", "name": "Garden", "kind": "level",
+            "image": "base_img/G2_Garden.png",
+            "data": [] 
+            
+          },
+          { 
+            "id": "g2_castle", "name": "Castle", "kind": "level",
+            "image": "base_img/G2_Castle.png",
+            "data": [] 
+            
+          },
+          { 
+            "id": "g2_sewers", "name": "Sewers", "kind": "level",
+            "image": "base_img/G2_Sewers.png",
+            "data": [] 
+            
+          },
+          { 
+            "id": "g2_roof", "name": "Roof", "kind": "level",
+            "image": "base_img/G2_Roof.png",
+            "data": [] 
+            
+          }
+         ] 
+        }
+      ]
     }
   ]
 }

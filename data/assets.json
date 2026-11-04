@@ -1,4 +1,52 @@
 {
+  "garfield2/g2_castle": {
+    "hash": "70610fd54d",
+    "size": [
+      14280,
+      9200
+    ],
+    "tiles": "tiles/garfield2/g2_castle/70610fd54d/{z}/{y}/{x}.webp",
+    "tileSize": 256,
+    "overlap": 2,
+    "levels": 6,
+    "preview": "previews/garfield2/g2_castle-70610fd54d.webp"
+  },
+  "garfield2/g2_garden": {
+    "hash": "b8fdb4fd1b",
+    "size": [
+      21080,
+      19320
+    ],
+    "tiles": "tiles/garfield2/g2_garden/b8fdb4fd1b/{z}/{y}/{x}.webp",
+    "tileSize": 256,
+    "overlap": 2,
+    "levels": 7,
+    "preview": "previews/garfield2/g2_garden-b8fdb4fd1b.webp"
+  },
+  "garfield2/g2_roof": {
+    "hash": "53c86e253c",
+    "size": [
+      21080,
+      19320
+    ],
+    "tiles": "tiles/garfield2/g2_roof/53c86e253c/{z}/{y}/{x}.webp",
+    "tileSize": 256,
+    "overlap": 2,
+    "levels": 7,
+    "preview": "previews/garfield2/g2_roof-53c86e253c.webp"
+  },
+  "garfield2/g2_sewers": {
+    "hash": "c22c823db0",
+    "size": [
+      12920,
+      11960
+    ],
+    "tiles": "tiles/garfield2/g2_sewers/c22c823db0/{z}/{y}/{x}.webp",
+    "tileSize": 256,
+    "overlap": 2,
+    "levels": 6,
+    "preview": "previews/garfield2/g2_sewers-c22c823db0.webp"
+  },
   "hackpack/hp-alter-ego-1": {
     "hash": "a7d94d73d2",
     "size": [
@@ -1092,16 +1140,16 @@
     "preview": "previews/sly4/sly4-paris-streets-992d8094b6.webp"
   },
   "sly4/sly4-spark-runner-1": {
-    "hash": "8a1a7e9fa7",
+    "hash": "aba40decf9",
     "size": [
-      8160,
-      9920
+      10880,
+      7440
     ],
-    "tiles": "tiles/sly4/sly4-spark-runner-1/8a1a7e9fa7/{z}/{y}/{x}.webp",
+    "tiles": "tiles/sly4/sly4-spark-runner-1/aba40decf9/{z}/{y}/{x}.webp",
     "tileSize": 256,
     "overlap": 2,
     "levels": 6,
-    "preview": "previews/sly4/sly4-spark-runner-1-8a1a7e9fa7.webp"
+    "preview": "previews/sly4/sly4-spark-runner-1-aba40decf9.webp"
   },
   "sly4/sly4-spark-runner-2": {
     "hash": "8cec542ad9",
@@ -1126,6 +1174,18 @@
     "overlap": 2,
     "levels": 5,
     "preview": "previews/sly4/sly4-spark-runner-3-d9243e34e6.webp"
+  },
+  "sly4/sly4-spark-runner-4": {
+    "hash": "8a1a7e9fa7",
+    "size": [
+      8160,
+      9920
+    ],
+    "tiles": "tiles/sly4/sly4-spark-runner-4/8a1a7e9fa7/{z}/{y}/{x}.webp",
+    "tileSize": 256,
+    "overlap": 2,
+    "levels": 6,
+    "preview": "previews/sly4/sly4-spark-runner-4-8a1a7e9fa7.webp"
   },
   "sly4/sly4-spark-runner-5": {
     "hash": "a7f167fda1",

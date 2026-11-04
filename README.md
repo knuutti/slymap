@@ -79,6 +79,15 @@ Old `?map=paris` links are redirected.
    its popup then has an "Open map" link.
 5. Build and upload the tiles, then commit (see below).
 
+### Hidden games
+
+A game with `"hidden": true` in `data/games.json` is left out of the browse
+page, the game tabs and buttons, map and object search, and the calibration
+helper's list (unless run locally). It can only be reached by a direct link:
+`#/<game>` or `#/<game>/<map>`. Avoid `links` to it from listed maps, as they
+would show up under "Connected maps". This only keeps it out of sight: the
+data files are still public.
+
 ## Calibration helper
 
 `calibrate.html` (e.g. `http://localhost:8000/calibrate.html`, or the same

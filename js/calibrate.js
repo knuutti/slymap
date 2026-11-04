@@ -539,7 +539,8 @@ map.on('mousemove', (event) => readout.update(event.latlng));
 collector.addExamples([]);
 
 // map list
-manifest.games.filter((game) => game.entries.length).forEach((game) => {
+// hidden games are listed only when run locally; ?map=<key> opens them anywhere
+(isLocal ? manifest.games : manifest.listedGames).filter((game) => game.entries.length).forEach((game) => {
   const group = document.createElement('optgroup');
   group.label = game.title;
   game.entries.forEach((entry) => group.append(new Option(entry.name, entry.key)));

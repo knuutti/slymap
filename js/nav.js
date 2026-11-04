@@ -62,7 +62,7 @@ function storeOpen(open) {
 /* ---------------------------------------------------------------- browse */
 
 export function createBrowse(root, manifest) {
-  const kinds = [...new Set([...manifest.maps.values()].map((entry) => entry.kind).filter(Boolean))];
+  const kinds = [...new Set(manifest.listedGames.flatMap((game) => game.entries).map((entry) => entry.kind).filter(Boolean))];
   root.innerHTML = `
     <header class="browse-header">
       <a class="brand" href="#/">SlyMap</a>
@@ -91,7 +91,7 @@ export function createBrowse(root, manifest) {
   let gameId = null;
   let objectSearch = 0; // ignores results of searches that were replaced
 
-  tabs.innerHTML = [{ id: '', short: 'All games' }, ...manifest.games]
+  tabs.innerHTML = [{ id: '', short: 'All games' }, ...manifest.listedGames]
     .map((game) => `<a href="${routeHash(game.id)}" data-game="${escapeHtml(game.id)}">${escapeHtml(game.short)}</a>`)
     .join('');
 
@@ -116,7 +116,7 @@ export function createBrowse(root, manifest) {
     const kind = kindFilter.value;
     const filtering = query || kind;
     const keep = (entry) => (!kind || entry.kind === kind) && (!query || matches(entry, query));
-    const games = manifest.games.filter((game) => !gameId || game.id === gameId);
+    const games = gameId ? [manifest.findGame(gameId)] : manifest.listedGames;
 
     const sections = games.map((game) => {
       const entries = game.entries.filter(keep);
@@ -214,10 +214,6 @@ export function createSidebar(root, manifest, { getLayers, onResize }) {
   let current = null;
   let listGame = null;
 
-  gameButtons.innerHTML = manifest.games
-    .map((game) => `<button type="button" data-game="${escapeHtml(game.id)}">${escapeHtml(game.short)}</button>`)
-    .join('');
-
   function setOpen(open, remember = true) {
     root.classList.toggle('collapsed', !open);
     toggle.setAttribute('aria-expanded', String(open));
@@ -236,13 +232,22 @@ export function createSidebar(root, manifest, { getLayers, onResize }) {
       ${detail ? `<span class="map-link-detail">${escapeHtml(detail)}</span>` : ''}</a></li>`;
   }
 
+  /* A hidden game only gets a button while one of its maps is open. */
+  function renderGameButtons() {
+    const games = current.game.hidden ? [...manifest.listedGames, current.game] : manifest.listedGames;
+    gameButtons.innerHTML = games
+      .map((game) => `<button type="button" data-game="${escapeHtml(game.id)}">${escapeHtml(game.short)}</button>`)
+      .join('');
+  }
+
   function renderList() {
     const query = search.value.trim().toLowerCase();
     gameButtons.querySelectorAll('button').forEach((button) =>
       button.setAttribute('aria-pressed', String(!query && button.dataset.game === listGame.id)));
 
     if (query) {
-      const results = [...manifest.maps.values()].filter((entry) => matches(entry, query));
+      const results = [...manifest.maps.values()]
+        .filter((entry) => (!entry.game.hidden || entry.game === current.game) && matches(entry, query));
       list.innerHTML = results.length
         ? `<ul>${results.map((entry) => mapLink(entry,
           [entry.game.short, entry.episode.label || entry.episode.title].filter(Boolean).join(' · '))).join('')}</ul>`
@@ -310,6 +315,7 @@ export function createSidebar(root, manifest, { getLayers, onResize }) {
       current = entry;
       listGame = entry.game;
       search.value = '';
+      renderGameButtons();
       renderCurrent();
       renderList();
       list.querySelector('[aria-current]')?.scrollIntoView({ block: 'nearest' });

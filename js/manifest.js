@@ -61,6 +61,8 @@ export async function loadManifest() {
 
   return {
     games: catalog.games,
+    // games with "hidden": true are left out of every list; direct links still work
+    listedGames: catalog.games.filter((game) => !game.hidden),
     maps,
     markerTypes,
     // map images live under assetBase (the site itself, or a CDN bucket)

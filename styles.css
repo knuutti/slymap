@@ -1,15 +1,9 @@
-@font-face {
-	/* font-family: 'axis';
-	src: url('AxisCondProN-B.otf');
-	*/
-	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
-* { font-family: 'axis', sans-serif; }
+/* The map and its popups; the page's colours and fonts are in nav.css. */
 body { margin: 0; }
 #map {
 	height: 100vh;
 	/* dark like the maps, so any gap between tiles doesn't show as a light line */
-	background: var(--nav-bg);
+	background: var(--canvas);
 }
 .markers_invert {
 	filter: invert(1);
@@ -40,16 +34,25 @@ body { margin: 0; }
 }
 
 .leaflet-popup h1 {
-margin: 4px 0;
-text-align: center;
+	margin: 0 0 6px;
+	font-size: 15px;
+	font-weight: 600;
 }
 .leaflet-popup p {
-	font-family: monospace;
-	font-size: 1.2em;
-	margin: 6px 0;
+	font-family: var(--mono);
+	font-size: 12px;
+	margin: 2px 0;
+}
+.leaflet-popup pre {
+	margin: 6px 0 0;
+	padding: 4px 6px;
+	font-size: 11px;
+	background: var(--input);
+	border: 1px solid var(--line);
 }
 .emphasize {
-	font-weight: bold;
+	font-weight: 600;
+	color: var(--muted);
 }
 .leaflet-popup-content{
 	width: 400px;
@@ -115,12 +118,19 @@ text-align: center;
 }
 ul.rectangle_tooltip { list-style-type: none; margin: 0; padding: 0; }
 
-input[type=color] {
-	margin: 0px 2px;
-	width: 30px;
+/* the drawing colour, under the draw toolbar */
+.colors input[type=color] {
+	display: block;
+	width: 32px;
+	height: 26px;
+	padding: 1px;
+	border: 1px solid var(--line);
+	border-radius: 2px;
+	background: var(--control);
+	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
 }
 pre {
-	font-family: monospace;
+	font-family: var(--mono);
 }
 
 

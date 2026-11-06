@@ -494,6 +494,7 @@ $('#mode').addEventListener('click', (event) => {
     button.setAttribute('aria-pressed', button.dataset.mode == mode));
   document.querySelectorAll('.calibrate-only').forEach((element) => { element.hidden = collecting; });
   $('#collect').hidden = !collecting;
+  $('#panel-title').textContent = collecting ? 'Collect Objects' : 'Calibrate';
   // a double-click finishes a path or area instead of zooming
   map.doubleClickZoom[collecting ? 'disable' : 'enable']();
   map.closePopup();
@@ -518,23 +519,19 @@ mapElement.addEventListener('drop', async (event) => {
   }
 });
 
-// mouse position as image pixel and, with a fit, in-game position
-const Readout = L.Control.extend({
-  options: { position: 'bottomleft' },
-  onAdd() {
-    this._div = L.DomUtil.create('div', 'calib-readout');
-    return this._div;
-  },
-  update(latlng) {
-    const pixel = toPixel(latlng);
-    const fit = currentFit();
-    const game = fit ? createProjection(fit).toGame(latlng) : null;
-    this._div.textContent = `pixel ${Math.round(pixel[0])}, ${Math.round(pixel[1])}` +
-      (game ? ` · in-game ${game[0]}, ${game[1]}` : '');
-  },
+// mouse position as image pixel and, with a fit, in-game position, in the status bar
+const readout = $('#readout');
+map.on('mousemove', (event) => {
+  if (!state.source) {
+    return;
+  }
+  const pixel = toPixel(event.latlng);
+  const fit = currentFit();
+  const game = fit ? createProjection(fit).toGame(event.latlng) : null;
+  readout.textContent = `pixel ${Math.round(pixel[0])}, ${Math.round(pixel[1])}` +
+    (game ? ` · in-game ${game[0]}, ${game[1]}` : '');
 });
-const readout = new Readout().addTo(map);
-map.on('mousemove', (event) => readout.update(event.latlng));
+map.on('mouseout', () => { readout.textContent = ''; });
 
 collector.addExamples([]);
 

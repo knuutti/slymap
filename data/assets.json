@@ -732,16 +732,16 @@
     "preview": "previews/sly2/prague1-a00c61aaeb.webp"
   },
   "sly2/prague2": {
-    "hash": "4049e642db",
+    "hash": "b4bd2932f6",
     "size": [
-      4096,
-      4096
+      7480,
+      8680
     ],
-    "tiles": "tiles/sly2/prague2/4049e642db/{z}/{y}/{x}.webp",
+    "tiles": "tiles/sly2/prague2/b4bd2932f6/{z}/{y}/{x}.webp",
     "tileSize": 256,
     "overlap": 2,
-    "levels": 4,
-    "preview": "previews/sly2/prague2-4049e642db.webp"
+    "levels": 6,
+    "preview": "previews/sly2/prague2-b4bd2932f6.webp"
   },
   "sly2/sly2-paris-hub": {
     "hash": "b326899096",

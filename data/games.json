@@ -87,7 +87,7 @@
             { "id": "sly2-paris-hub", "name": "Paris Hub", "kind": "hub",
               "image": "base_img/Sly2_Paris_Hub.png", "calib": { "origin": [9296.3, 7814.3], "scale": 0.72092, "flip": "y", "rotate": 90 },
               "size": [17000, 18600],
-              "data": ["hson/paris.hson"] }
+              "data": ["hson/sly2_paris_hub.hson"] }
           ]
         },
         {
@@ -105,7 +105,7 @@
           "maps": [
             { "id": "india2", "name": "Spice Temple", "location": "Spice temple, India", "kind": "hub",
               "image": "base_img/india2.png", "calib": { "origin": [2283, 2198], "scale": 0.146, "flip": "y", "rotate": 90 },
-              "data": ["hson/india2.hson"] }
+              "data": ["hson/sly2_temple_hub.hson"] }
           ]
         },
         {
@@ -122,8 +122,9 @@
           "title": "A Tangled Web",
           "maps": [
             { "id": "prague2", "name": "Contessa's Castle", "location": "Contessa's castle, Prague", "kind": "hub",
-              "image": "base_img/prague2.png", "calib": { "origin": [1972, 1742], "scale": 0.136, "flip": "y", "rotate": 90 },
-              "data": ["hson/prague2.hson"] }
+              "image": "base_img/Sly2_Castle_Hub.png", "calib": { "origin": [4341.5, 3062.3], "scale": 0.23959, "flip": "y", "rotate": 90 },
+              "size": [7480, 8680],
+              "data": ["hson/sly2_castle_hub.hson"] }
           ]
         },
         {

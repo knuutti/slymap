@@ -1,0 +1,6 @@
+{
+  "objects": [
+    {"type": "Mask", "name": "Mask 9", "position": [79.76, 122.35, 58.36], "parameters": {"purposeOfUse": "Normal"}},
+    {"type": "Mask", "name": "Mask 10", "position": [35.32, -128.99, 50.86], "parameters": {"purposeOfUse": "Normal"}}
+  ]
+}

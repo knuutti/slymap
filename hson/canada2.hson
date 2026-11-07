@@ -4,210 +4,240 @@
       "type": "Bottle",
       "position": [-3735, -6802, 1051],
       "parameters": {
-        "purposeOfUse": "Normal"
+        "purposeOfUse": "Normal",
+        "game": "sly2"
       }
     },
     {
       "type": "Bottle",
       "position": [-6720, -6578, -220],
       "parameters": {
-        "purposeOfUse": "Normal"
+        "purposeOfUse": "Normal",
+        "game": "sly2"
       }
     },
     {
       "type": "Bottle",
       "position": [-4122, -4994, 989],
       "parameters": {
-        "purposeOfUse": "Normal"
+        "purposeOfUse": "Normal",
+        "game": "sly2"
       }
     },
     {
       "type": "Bottle",
       "position": [-1555, -2998, 140],
       "parameters": {
-        "purposeOfUse": "Normal"
+        "purposeOfUse": "Normal",
+        "game": "sly2"
       }
     },
     {
       "type": "Bottle",
       "position": [1516, -1664, -424],
       "parameters": {
-        "purposeOfUse": "Normal"
+        "purposeOfUse": "Normal",
+        "game": "sly2"
       }
     },
     {
       "type": "Bottle",
       "position": [2489, 720, 953],
       "parameters": {
-        "purposeOfUse": "Normal"
+        "purposeOfUse": "Normal",
+        "game": "sly2"
       }
     },
     {
       "type": "Bottle",
       "position": [-696, 706, 964],
       "parameters": {
-        "purposeOfUse": "Normal"
+        "purposeOfUse": "Normal",
+        "game": "sly2"
       }
     },
     {
       "type": "Bottle",
       "position": [-2732, 1694, 242],
       "parameters": {
-        "purposeOfUse": "Normal"
+        "purposeOfUse": "Normal",
+        "game": "sly2"
       }
     },
     {
       "type": "Bottle",
       "position": [-6367, -2185, 1109],
       "parameters": {
-        "purposeOfUse": "Normal"
+        "purposeOfUse": "Normal",
+        "game": "sly2"
       }
     },
     {
       "type": "Bottle",
       "position": [-8740, -187, 1214],
       "parameters": {
-        "purposeOfUse": "Normal"
+        "purposeOfUse": "Normal",
+        "game": "sly2"
       }
     },
     {
       "type": "Bottle",
       "position": [-9439, -3615, -643],
       "parameters": {
-        "purposeOfUse": "Normal"
+        "purposeOfUse": "Normal",
+        "game": "sly2"
       }
     },
     {
       "type": "Bottle",
       "position": [-16205, -3949, -685],
       "parameters": {
-        "purposeOfUse": "Normal"
+        "purposeOfUse": "Normal",
+        "game": "sly2"
       }
     },
     {
       "type": "Bottle",
       "position": [-13718, -4000, 5078],
       "parameters": {
-        "purposeOfUse": "Normal"
+        "purposeOfUse": "Normal",
+        "game": "sly2"
       }
     },
     {
       "type": "Bottle",
       "position": [-8040, 4340, 321],
       "parameters": {
-        "purposeOfUse": "Normal"
+        "purposeOfUse": "Normal",
+        "game": "sly2"
       }
     },
     {
       "type": "Bottle",
       "position": [-12614, 2761, -691],
       "parameters": {
-        "purposeOfUse": "Normal"
+        "purposeOfUse": "Normal",
+        "game": "sly2"
       }
     },
     {
       "type": "Bottle",
       "position": [-9613, 7136, 768],
       "parameters": {
-        "purposeOfUse": "Normal"
+        "purposeOfUse": "Normal",
+        "game": "sly2"
       }
     },
     {
       "type": "Bottle",
       "position": [-6717, 9811, 1215],
       "parameters": {
-        "purposeOfUse": "Normal"
+        "purposeOfUse": "Normal",
+        "game": "sly2"
       }
     },
     {
       "type": "Bottle",
       "position": [-2517, 11992, 1397],
       "parameters": {
-        "purposeOfUse": "Normal"
+        "purposeOfUse": "Normal",
+        "game": "sly2"
       }
     },
     {
       "type": "Bottle",
       "position": [-1101, 11630, 2411],
       "parameters": {
-        "purposeOfUse": "Normal"
+        "purposeOfUse": "Normal",
+        "game": "sly2"
       }
     },
     {
       "type": "Bottle",
       "position": [1545, 8930, 1202],
       "parameters": {
-        "purposeOfUse": "Normal"
+        "purposeOfUse": "Normal",
+        "game": "sly2"
       }
     },
     {
       "type": "Bottle",
       "position": [1730, 6538, 1113],
       "parameters": {
-        "purposeOfUse": "Normal"
+        "purposeOfUse": "Normal",
+        "game": "sly2"
       }
     },
     {
       "type": "Bottle",
       "position": [853, 5624, -993],
       "parameters": {
-        "purposeOfUse": "Normal"
+        "purposeOfUse": "Normal",
+        "game": "sly2"
       }
     },
     {
       "type": "Bottle",
       "position": [-478, 2953, 688],
       "parameters": {
-        "purposeOfUse": "Normal"
+        "purposeOfUse": "Normal",
+        "game": "sly2"
       }
     },
     {
       "type": "Bottle",
       "position": [-1675, 4294, 1564],
       "parameters": {
-        "purposeOfUse": "Normal"
+        "purposeOfUse": "Normal",
+        "game": "sly2"
       }
     },
     {
       "type": "Bottle",
       "position": [-3009, 6244, 1523],
       "parameters": {
-        "purposeOfUse": "Normal"
+        "purposeOfUse": "Normal",
+        "game": "sly2"
       }
     },
     {
       "type": "Bottle",
       "position": [-2130, 8643, 962],
       "parameters": {
-        "purposeOfUse": "Normal"
+        "purposeOfUse": "Normal",
+        "game": "sly2"
       }
     },
     {
       "type": "Bottle",
       "position": [-5377, 4502, 874],
       "parameters": {
-        "purposeOfUse": "Normal"
+        "purposeOfUse": "Normal",
+        "game": "sly2"
       }
     },
     {
       "type": "Bottle",
       "position": [5914, -226, 785],
       "parameters": {
-        "purposeOfUse": "Normal"
+        "purposeOfUse": "Normal",
+        "game": "sly2"
       }
     },
     {
       "type": "Bottle",
       "position": [6288, 2848, -782],
       "parameters": {
-        "purposeOfUse": "Normal"
+        "purposeOfUse": "Normal",
+        "game": "sly2"
       }
     },
     {
       "type": "Bottle",
       "position": [5381, 5675, 941],
       "parameters": {
-        "purposeOfUse": "Normal"
+        "purposeOfUse": "Normal",
+        "game": "sly2"
       }
     }
   ]
